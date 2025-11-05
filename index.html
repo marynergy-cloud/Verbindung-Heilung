@@ -238,8 +238,6 @@
             <h3>🌱 Ganzheitliche Heilung &amp; Routinen</h3>
             <p>Durch Praktiken wie Qigong, Meditation, Yoga, Laufen, Calisthenics, achtsames Essen, Fasten, Kälteexposition, Sauna, Musik und Tanz, Journaling und Lesen pflegst du Körper, Geist und Herz. Diese Routinen fördern Verbindung, Klarheit, Balance, Stärke, Resilienz, Vitalität und spirituelles Wachstum.</p>
           </div>
-</p>
-          </div>
 
           <div class="section">
             <h3>🌱 Raum für Erneuerung</h3>
@@ -330,11 +328,201 @@
           </div>
 
 
-          <div class="section">
-            <h3>🌸 Inspirierende Bücher &amp; Persönlichkeiten</h3>
-            <p><strong>Bücher:</strong> The Book of Five Rings, Meditations, Think and Grow Rich, The Art of War, The Prince, The Richest Man in Babylon, 1984, The Bible, A New Earth</p>
-            <p><strong>Persönlichkeiten:</strong> Buddha, Jesus, Konfuzius, Laozi, Heraklit, Sokrates, Plato, Epiktet, Franz von Assisi, Rumi, Leonardo da Vinci, Giordano Bruno, Galileo, Spinoza, Newton, Kant, Lincoln, Tolstoi, Nietzsche, Gandhi, Tesla, Einstein, Alan Watts, Jim Rohn</p>
-          </div>
+             <!-- Styles -->
+<style>
+  .clickable {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  /* Off-canvas panel */
+  .panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 2000;
+    justify-content: flex-end; /* panel on right */
+  }
+  .panel-overlay.open { display: flex; }
+
+  .panel {
+    width: 420px;
+    max-width: 95%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
+    transform: translateX(20px);
+    transition: transform 0.22s ease;
+    position: relative;
+  }
+  .panel.open { transform: translateX(0); }
+
+  .panel .close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .panel .hero {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+
+  .panel h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+  }
+  .panel .content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #222;
+    white-space: pre-wrap; /* preserve newlines in data-info */
+  }
+
+  /* responsive */
+  @media (max-width: 520px) {
+    .panel { width: 100%; }
+  }
+</style>
+
+<!-- Content -->
+<div class="section">
+  <h3>🌸 Inspirierende Bücher & Persönlichkeiten</h3>
+
+  <p><strong>Bücher:</strong>
+    <span class="clickable" data-info="Miyamoto Musashi war ein legendärer Samurai, Stratege und Philosoph, der über 60 Duelle gewann, ohne je zu verlieren. Als Begründer der Niten-Ichi-Ryū und Meister des Zwei-Schwerter-Kampfes war er für seine unorthodoxen Taktiken und sein präzises Handeln bekannt. In The Book of Five Rings vereinte er Strategie, Lebensweisheit und mentale Stärke – kein anderes Buch hat mich je so tief beeinflusst." data-img="">Das Buch der fünf Ringe</span>,
+    <span class="clickable" data-info="Meditations - Mark Aurel: Römischer Kaiser und Philosoph; seine Meditationen lehren Stoizismus, Selbstreflexion und ethische Lebensführung, betonen Gelassenheit, innere Stärke und die Verantwortung für das eigene Handeln." data-img="">Selbstbetrachtungen</span>,
+    <span class="clickable" data-info="Think and Grow Rich – Napoleon Hill: Erfolgs- und Persönlichkeitsratgeber; vermittelt Prinzipien wie Zielsetzung, Selbstdisziplin, positives Denken und konsequentes Handeln, die Wohlstand und persönliche Erfüllung fördern. Das Buch prägte nicht nur mich, sondern auch zahlreiche bekannte Persönlichkeiten wie Bob Proctor und Jim Rohn. Die Tragweite der Prinzipien in diesem Buch wird den wenigsten je wirklich bewusst." data-img="">DENKE NACH UND WERDE REICH</span>,
+    <span class="clickable" data-info="The Art of War – Sun Tzu: Klassisches Werk über Strategie, Taktik und Führung; lehrt, Herausforderungen klug zu analysieren, Gegner zu verstehen und mit Klarheit und Flexibilität zu handeln – übertragbar auf Krieg, Geschäft und Leben. Begriffe wie „Himmel und Erde“, die auch meine Philosophie von Aktion, Substanz, Himmel und Erde prägen, stammen aus diesem Buch." data-img="">Die Kunst des Krieges</span>,
+    <span class="clickable" data-info="The Prince – Niccolò Machiavelli: Klassisches Werk der politischen Philosophie; zeigt pragmatische Strategien für Macht, Führung und Einfluss und betont, wie politische Ziele oft klug, flexibel und realistisch verfolgt werden müssen. Es lehrt, dass Effektivität manchmal über Idealvorstellungen steht, ohne die langfristige Stabilität zu vernachlässigen, und prägte nicht nur mich, sondern inspirierte auch Persönlichkeiten wie Tupac, der philosophische und politische Werke wie dieses studierte, um Machtstrukturen und Gesellschaft besser zu verstehen." data-img="">Der Fürst</span>,
+    <span class="clickable" data-info="THE RICHEST MAN IN BABYLON – George S. Clason: Klassischer Ratgeber für finanzielle Bildung; vermittelt zeitlose Prinzipien zu Sparen, Investieren und Vermögensaufbau anhand einprägsamer Geschichten aus dem alten Babylon. Das Buch zeigt, wie man durch Disziplin, kluge Entscheidungen und langfristiges Denken Wohlstand aufbauen und finanzielle Freiheit erreichen kann." data-img="">Der reichste Mann von Babylon</span>,
+    <span class="clickable" data-info="„1984“ – George Orwell: Ein dystopischer Roman über Überwachung, Totalitarismus und Propaganda; er zeigt eine Gesellschaft, in der Freiheit, Wahrheit und Individualität unterdrückt werden, und regt zur Reflexion über Machtstrukturen, Manipulation sowie die Bedeutung von Freiheit und kritischem Denken an – Themen, die heute aktueller denn je sind." data-img="">1984</span>,
+    <span class="clickable" data-info="Die Bibel: Ein zeitloser Klassiker, zentral für das Christentum und einflussreich für Kultur, Ethik und Moral. Sie vermittelt Weisheit, spirituelle Orientierung und Werte wie Mitgefühl, Gerechtigkeit und Nächstenliebe – Werte, die bis heute Menschen weltweit prägen. Wie Biografien und Autobiografien vermittelt sie sowohl Vorbilder zum Nachahmen als auch Warnungen, aus denen wir lernen können." data-img="">Die Bibel</span>,
+    <span class="clickable" data-info="Eckhart Tolle beschreibt in Eine neue Erde, wie Menschen ihr Bewusstsein erweitern können, um ein erfüllteres und friedlicheres Leben zu führen. Er erklärt, dass das Ego die Ursache von Leiden, Konflikten und Unzufriedenheit ist, und zeigt Wege, sich von egozentrierten Denkmustern zu lösen. Außerdem beschreibt er, wie eine bewusste, achtsame Lebensweise inneren Frieden fördert und zu einer positiven Transformation der Welt beitragen kann." data-img="">Eine neue Erde</span>
+  </p>
+
+  <p><strong>Persönlichkeiten:</strong>
+    <!-- Beispiel: data-info ausfüllen; optional data-img / data-bg ergänzen -->
+    <span class="clickable"
+          data-info="Die Geschichte von Siddharta Gautama faszinierte mich bereits in meiner Jugend, denn ich erkannte, dass der Buddhismus einen Weg bietet, das eigene Leben zu meistern. Besonders die Idee beeindruckte mich: Wenn man einen Fluss überquert, lässt man das Floß hinter sich – so sollte auch der Buddhismus verstanden werden. Die Lehre ist ein Werkzeug, kein Besitz. Sie fordert dazu auf, den Buddhismus nicht als Last oder starres Dogma zu betrachten, sondern als Hilfe, die man schließlich loslassen kann."
+          data-img="">
+      Buddha
+    </span>,
+    <span class="clickable" data-info="Jesus von Nazareth steht für Mitgefühl, Vergebung und Nächstenliebe. Seine Lehren inspirieren mich persönlich, achtsam und liebevoll mit anderen umzugehen, und haben mein Verständnis von Gerechtigkeit und innerer Haltung geprägt." data-img="">Jesus</span>,
+    <span class="clickable" data-info="Konfuzius steht für Ethik, Weisheit und die Bedeutung von Bildung und Selbstreflexion. Ein Aphorismus von ihm gab mir mit 18 in einer lebensbedrohlichen Situation Halt und half mir, ruhig und klar zu handeln." data-img="">Konfuzius</span>,
+    <span class="clickable" data-info="Laozi steht für Dao, Natürlichkeit, Wu Wei (Handeln durch Nichthandeln) und Harmonie mit der Natur, und viele seiner Weisheiten kann ich auf mein eigenes Leben übertragen und mich mit ihnen identifizieren." data-img="">Laozi</span>,
+    <span class="clickable" data-info="Heraklit steht für Veränderung, Wandel und das Prinzip 'Panta Rhei' (Alles fließt). Er lehrt die Einheit der Gegensätze, das Wirken des Logos und die Kraft des Feuers als Urprinzip. Viele seiner Einsichten über Vergänglichkeit, Beständigkeit im Wandel und fortwährende Bewegung stimmen mit meinen Überzeugungen überein." data-img="">Heraklit</span>,
+    <span class="clickable" data-info="Sokrates: Philosoph, der mich seit meiner Jugend als kritischer Denker und Wahrheitssucher prägt; seine sokratische Methode, Tugendforschung und der Schierlingsbecher stehen für Hingabe an die Wahrheit und die Spannung zwischen Recht und Gerechtigkeit." data-img="">Sokrates</span>,
+    <span class="clickable" data-info="Platon: Philosoph, Schüler Sokrates’, Gründer der Akademie; seine Ideen zu Wissen, Wirklichkeit, Tugend, Gerechtigkeit und dem Idealstaat – veranschaulicht im Höhlengleichnis, das heute oft mit der Illusion einer simulierten Welt wie im Film Matrix verglichen wird – prägen bis heute Philosophie und Denken." data-img="Epiktet steht für die stoische Philosophie, die lehrt, dass Glück nicht von äußeren Umständen, sondern von der eigenen inneren Haltung abhängt; entscheidend sei, was in unserer Kontrolle liegt, und das zu akzeptieren, was wir nicht ändern können.">Plato</span>,
+    <span class="clickable" data-info="" data-img="">Epiktet</span>,
+    <span class="clickable" data-info="Franz von Assisi steht für ein Leben in radikaler Einfachheit und Demut, geprägt von Mitgefühl mit den Armen und Ausgegrenzten. Er betont die Verbundenheit aller Lebewesen mit Gott, lebt in Einklang mit der Natur und setzt auf Frieden, Liebe und selbstloses Dienen als Weg zu spiritueller Erfüllung." data-img="">Franz von Assisi</span>,
+    <span class="clickable" data-info="Rumi steht für die tiefe spirituelle Sehnsucht nach Einheit mit dem Göttlichen, für Liebe, Toleranz und die transformative Kraft von innerer Reflexion. Seine Lehren betonen, dass wahrer Frieden und Erfüllung aus der Verbindung mit dem eigenen inneren Selbst und der göttlichen Liebe entstehen." data-img="">Rumi</span>,
+    <span class="clickable" data-info="Leonardo da Vinci steht für grenzenlose Neugier, kreatives Genie und die Vereinigung von Kunst und Wissenschaft. Er verkörpert die Suche nach Wissen, die Beobachtung der Natur und die Fähigkeit, komplexe Zusammenhänge mit künstlerischer Meisterschaft zu verbinden." data-img="">Leonardo da Vinci</span>,
+    <span class="clickable" data-info="Giordano Bruno steht für unerschütterlichen Mut im Streben nach Wahrheit, geistige Freiheit und die Erweiterung des menschlichen Denkens über traditionelle Grenzen hinaus. Er verkörpert die Vision eines unendlichen Universums und die Überzeugung, dass Wissen und Glauben hinterfragt und selbstständig erforscht werden müssen." data-img="">Giordano Bruno</span>,
+    <span class="clickable" data-info="Galileo Galilei steht für den mutigen Einsatz der Vernunft und empirischen Beobachtung, die Verteidigung der Wissenschaft gegen Dogma und die bahnbrechende Entdeckung der Naturgesetze. Er verkörpert die Verbindung von Forschergeist, Präzision und dem unerschütterlichen Glauben an die Wahrheit durch Erfahrung und Beweis." data-img="">Galileo</span>,
+    <span class="clickable" data-info="Baruch Spinoza steht für rationales Denken, die Suche nach ethischer Klarheit und die Einsicht in die Einheit von Natur und Gott – wie er es selbst formuliert: „Deus sive Natura.“ – „Gott oder die Natur.“" data-img="">Spinoza</span>,
+    <span class="clickable" data-info="Isaac Newton steht für bahnbrechende Entdeckungen in Physik und Mathematik, die die Ordnung und Gesetzmäßigkeit des Universums offenbaren. Er erkannte, dass die Naturgesetze, wie etwa „zu jeder Aktion gibt es eine gleichgroße und entgegengesetzte Reaktion“, die Bewegung und Harmonie der Welt bestimmen. In diesem höchst schönen System von Sonne, Planeten und Kometen sah Newton den Beweis für die Existenz und Weisheit Gottes." data-img="">Newton</span>,
+    <span class="clickable" data-info="Leibniz steht für Rationalismus, Logik und Mathematik; er entwickelte das binäre System, das die Grundlage moderner Computer bildet. Seine Philosophie verbindet Vernunft, Ordnung und die Idee einer universellen Sprache der Zahlen." data-img="">Leibniz</span>,
+    <span class="clickable" data-info="Kant: Bedeutender deutscher Philosoph. Mit Werken wie der Kritik der reinen Vernunft und der Kritik der praktischen Vernunft prägte er die Erkenntnistheorie, Ethik und Metaphysik. Sein Konzept des kategorischen Imperativs und seine transzendentale Philosophie beeinflussen bis heute die moderne Philosophie weltweit." data-img="">Kant</span>,
+    <span class="clickable" data-info="Abraham Lincoln: Bedeutender US-amerikanischer Politiker und 16. Präsident der Vereinigten Staaten; seine Führung im Bürgerkrieg bewahrte die Union und leitete die Abschaffung der Sklaverei ein. Lincolns Prinzipien von Freiheit, Gleichheit und nationaler Einheit prägen bis heute Politik und gesellschaftliches Denken weltweit." data-img="">Lincoln</span>,
+    <span class="clickable" data-info="Leo Tolstoi: Russischer Schriftsteller und Philosoph; inspiriert von der Bergpredigt Jesu betont er in „Das Gottesreich ist in euch“, dass Gottes Reich in jedem Menschen beginnt. Tolstoi fordert Gewaltlosigkeit, innere Selbstprüfung, ein Leben in Mitgefühl und Wahrheit und praktiziert daher auch Vegetarismus. Für ihn ist die persönliche Transformation die Grundlage für gesellschaftlichen Frieden und Gerechtigkeit." data-img="">Tolstoi</span>,
+    <span class="clickable" data-info="Nikola Tesla: Erfinder, Elektroingenieur und Visionär; mit Wechselstrom, der Tesla-Spule, Hochspannung, Funktechnik, drahtloser Energieübertragung und hunderten Patenten prägte er Wissenschaft und Technik. Innovation, Exzentrik und Ingenieurskunst machen ihn bis heute zu einer legendären Figur. „Wenn du die Geheimnisse des Universums entdecken willst, denke in Begriffen von Energie, Frequenz und Schwingung.“" data-img="">Tesla</span>,
+    <span class="clickable" data-info="Friedrich Nietzsche: Philosoph, der radikales Hinterfragen von Moral, Religion und traditionellen Werten verkörpert; er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits fremdbestimmter Normen, um Größe und Authentizität zu erreichen." data-img="">Nietzsche</span>,
+    <span class="clickable" data-info="Mahatma Gandhi: Indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands; inspiriert von Tolstois Werk „Das Reich Gottes ist in euch“ übernahm er die Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie im Kampf für Indiens Unabhängigkeit und soziale Gerechtigkeit um." data-img="">Gandhi</span>,
+    <span class="clickable" data-info="Albert Einstein: Visionärer Physiker und Mathematiker, dessen Arbeiten unser Verständnis von Raum, Zeit und Energie revolutionierten; er verkörpert Neugier, Kreativität und die Fähigkeit, die Gesetze des Universums mit Staunen und kritischer Reflexion zu erfassen, stets verbunden mit humanistischer Verantwortung. „Der intuitive Geist ist ein heiliges Geschenk, und der rationale Geist ist ein treuer Diener. Wir haben eine Gesellschaft erschaffen, die den Diener ehrt und das Geschenk vergessen hat.“" data-img="">Einstein</span>,
+    <span class="clickable" data-info="Alan Watts: Philosoph und Vermittler östlicher Weisheit im Westen, besonders Zen-Buddhismus und Taoismus; er betont die Verbundenheit allen Lebens, die Illusion des getrennten Selbst und die Bedeutung, im gegenwärtigen Moment frei von Angst und starren Vorstellungen zu leben. „Ein Mensch, der die ganze Zeit denkt, hat nichts, worüber er nachdenken könnte, außer über Gedanken. So verliert er den Bezug zur Realität und lebt in einer Welt der Illusion.“" data-img="">Alan Watts</span>,
+    <span class="clickable" data-info="Jim Rohn: Einer meiner größten Mentoren und entscheidend für meine persönlichen Impulse; er steht für Selbstdisziplin, die Kraft von Gewohnheiten und zielgerichtetes Handeln und zeigt, dass Erfolg und Erfüllung aus kontinuierlichem Lernen, Eigenverantwortung und konsequentem Handeln erwachsen." data-img="">Jim Rohn</span>
+  </p>
+</div>
+
+<!-- Off-canvas panel -->
+<div id="panelOverlay" class="panel-overlay" aria-hidden="true">
+  <div id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+    <button class="close" id="panelClose" aria-label="Schließen">&times;</button>
+    <div class="hero" id="panelHero" style="background: #f4f4f4;"></div>
+    <h2 id="panelTitle">Titel</h2>
+    <div class="content" id="panelContent">Hier erscheint der Text...</div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  // Auswahl
+  const panelOverlay = document.getElementById('panelOverlay');
+  const panel = document.getElementById('panel');
+  const panelHero = document.getElementById('panelHero');
+  const panelTitle = document.getElementById('panelTitle');
+  const panelContent = document.getElementById('panelContent');
+  const panelClose = document.getElementById('panelClose');
+
+  // Hilfsfunktion: Panel öffnen mit Daten
+  function openPanel(title, infoHTML, imgUrl, bgUrl) {
+    panelTitle.textContent = title || 'Ohne Titel';
+    // Wenn du einfache newlines in data-info hast, white-space: pre-wrap hält sie.
+    // Hier setzen wir innerText so, dass Zeilenumbrüche erhalten bleiben:
+    panelContent.innerText = infoHTML || 'Noch kein Text hinterlegt.';
+    // Bild vorziehen (falls vorhanden)
+    if (imgUrl) {
+      panelHero.style.backgroundImage = 'url(' + imgUrl + ')';
+      panelHero.style.display = 'block';
+    } else if (bgUrl) {
+      panelHero.style.backgroundImage = 'url(' + bgUrl + ')';
+      panelHero.style.display = 'block';
+    } else {
+      panelHero.style.backgroundImage = '';
+      panelHero.style.display = 'none';
+    }
+
+    panelOverlay.classList.add('open');
+    panel.classList.add('open');
+    panelOverlay.setAttribute('aria-hidden', 'false');
+    // Fokus auf close button für a11y
+    panelClose.focus();
+  }
+
+  // Panel schließen
+  function closePanel() {
+    panelOverlay.classList.remove('open');
+    panel.classList.remove('open');
+    panelOverlay.setAttribute('aria-hidden', 'true');
+  }
+
+  // Event: Klick auf .clickable
+  document.querySelectorAll('.clickable').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      // title: sichtbarer Text
+      const title = item.textContent.trim();
+      // info: text aus data-info (verwendet innerText später, damit "pre-wrap" greift)
+      const info = item.getAttribute('data-info') || '';
+      const img = item.getAttribute('data-img') || '';
+      const bg = item.getAttribute('data-bg') || '';
+      openPanel(title, info, img, bg);
+    });
+  });
+
+  // Schließen-Events
+  panelClose.addEventListener('click', closePanel);
+  panelOverlay.addEventListener('click', function(e) {
+    // nur schließen, wenn Klick außerhalb des Panels
+    if (e.target === panelOverlay) closePanel();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePanel();
+  });
+</script>
 
           <blockquote>„In unserer Zeit neigt man dazu, Künste, Fertigkeiten und Werkzeuge, ja mit ihnen gar sich selbst zu verkaufen. Mehr als die Frucht zählt die Blüte, der schöne Schein. – Miyamoto Musashi, <em>Das Buch der fünf Ringe</em></blockquote>
 
