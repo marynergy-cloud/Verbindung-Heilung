@@ -11,22 +11,17 @@
        Basis & Barrierefreiheit
        -------------------- */
     :root {
-      /* Layout & Spacing */
       --max-width: 700px;
       --radius: 12px;
       --tab-padding: 1.5rem;
-
-      /* Farben & Kontraste */
       --accent: #007b5e;
       --text: #111;
-      --overlay: rgba(255, 255, 255, 0.92); /* Standard: helle Box */
-
-      /* Erweiterungen */
+      --overlay: rgba(255, 255, 255, 0.92);
       --background: #ffffff;
       --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     }
 
-    /* Nur für Screenreader – bleibt für visuelle Nutzer unsichtbar */
+    /* Screenreader helper */
     .visually-hidden {
       position: absolute !important;
       width: 1px;
@@ -39,13 +34,23 @@
       white-space: nowrap;
       border: 0;
     }
-
-    /* Global box-sizing (inkl. Pseudo-Elemente) */
-    *, *::before, *::after {
-      box-sizing: border-box;
+    .visually-hidden.focusable:focus,
+    .visually-hidden.focusable:active {
+      position: static !important;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
     }
 
-    /* Grundlayout / Body */
+    /* Box sizing */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* Body / Background */
+    html, body { height: 100%; margin: 0; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -53,47 +58,34 @@
       color: var(--text);
       line-height: 1.45;
       color-scheme: light dark;
-
-      /* Hintergrund: separierte Eigenschaften erleichtern Responsive-Overrides */
       background-image: url('healing-bg.jpg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
       background-color: var(--background);
-
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-synthesis: none;
     }
 
-    /* Mobile-Fallback: fixed backgrounds bremsen Mobile-Browser */
     @media (max-width: 1024px) {
-      body {
-        background-attachment: scroll;
-        /* Optional: background-image: url('healing-bg-small.jpg'); */
-      }
+      body { background-attachment: scroll; }
     }
 
-    /* Header & Footer – leicht über dem Hintergrund, halbtransparent */
-    header,
-    footer {
+    /* Header / Footer */
+    header, footer {
       text-align: center;
       padding: 1rem;
       color: var(--text);
-      background-color: rgba(255, 255, 255, 0.78);
+      background-color: rgba(255,255,255,0.78);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Navigation */
-    nav {
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-
-    /* Nav-Buttons / Tabs */
+    /* Nav / Tabs */
+    nav { text-align: center; margin-top: 0.5rem; }
     nav button {
       margin: 0 0.35rem;
       padding: 0.45rem 0.9rem;
@@ -105,34 +97,13 @@
       transition: background-color 0.18s ease, color 0.18s ease;
       outline: none;
     }
+    nav button:focus { outline: 3px solid rgba(0,123,94,0.3); outline-offset: 3px; }
+    nav button.active { background-color: var(--accent); color: #fff; font-weight: 600; }
 
-    /* Fokuszustand für Nav-Buttons */
-    nav button:focus {
-      outline: 3px solid rgba(0, 123, 94, 0.3);
-      outline-offset: 3px;
-    }
+    main { max-width: var(--max-width); margin: 1.25rem auto 3rem; padding: 0 1rem; }
 
-    /* Aktiver Tab / ausgewählter Button */
-    nav button.active {
-      background-color: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      transition: background-color 0.18s ease, color 0.18s ease;
-    }
+    .tabs { position: relative; }
 
-    /* Hauptbereich */
-    main {
-      max-width: var(--max-width);
-      margin: 1.25rem auto 3rem;
-      padding: 0 1rem;
-    }
-
-    /* Tabs */
-    .tabs {
-      position: relative;
-    }
-
-    /* Inhalt der einzelnen Tabs */
     .tab-content {
       display: none;
       position: relative;
@@ -141,15 +112,11 @@
       padding: var(--tab-padding);
       border-radius: var(--radius);
       overflow: visible;
-
-      /* Hintergrund & Farben */
       background-size: cover;
       background-position: center;
       color: var(--text);
       --overlay-local: var(--overlay);
       --text-local: var(--text);
-
-      /* Schatten & Animation */
       box-shadow: var(--shadow);
       opacity: 0;
       transform: translateY(8px);
@@ -158,17 +125,8 @@
         transform 0.28s ease,
         background-image 0.6s ease-in-out;
     }
+    .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; will-change: opacity, transform; }
 
-    /* Aktiver Tab */
-    .tab-content.active {
-      display: block;
-      opacity: 1;
-      transform: none;
-      pointer-events: auto;
-      will-change: opacity, transform;
-    }
-
-    /* Textbox über dem Hintergrund */
     .tab-inner {
       position: relative;
       max-width: calc(var(--max-width) - 64px);
@@ -177,172 +135,106 @@
       color: var(--text-local, var(--text));
       border-radius: calc(var(--radius) - 2px);
       padding: 1.6rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       line-height: 1.65;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+    .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
 
-    /* Lesbare Zeilenbreite im Tab-Inhalt */
-    .tab-inner p {
-      max-width: 58ch;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Hintergrund-Fallbacks für Tabs */
-    .bg-connect,
-    .bg-education,
-    .bg-art {
+    .bg-connect, .bg-education, .bg-art {
       background-color: #f7fbf9;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
     }
 
-    /* Inhaltstypografie */
-    .subtle-text {
-      color: #666;
-      margin: 0 0 0.25rem 0;
-      text-align: center;
-    }
+    /* Typo */
+    .subtle-text { color: #666; margin: 0 0 0.25rem 0; text-align: center; }
+    h1 { margin: 0.25rem 0; font-size: 1.4rem; }
+    h2 { margin: 0.25rem 0 0.75rem; font-weight: 600; text-align: center; }
+    h3 { margin: 1rem 0 0.5rem; font-size: 1rem; }
+    p { margin: 0.6rem 0; }
+    .section { margin: 1rem 0; }
 
-    h1 {
-      margin: 0.25rem 0;
-      font-size: 1.4rem;
-    }
-
-    h2 {
-      margin: 0.25rem 0 0.75rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    h3 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1rem;
-    }
-
-    p {
-      margin: 0.6rem 0;
-    }
-
-    .section {
-      margin: 1rem 0;
-    }
-
-    /* Blockquote */
     blockquote {
       margin: 1rem 0;
       padding: 0.8rem 1rem;
       border-left: 4px solid var(--accent);
       border-radius: 6px;
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255,255,255,0.85);
       font-style: italic;
       color: inherit;
     }
 
-    /* Listen */
-    ul {
-      margin: 0.5rem 0 1rem 1.2rem;
-      padding-left: 1.2rem;
-    }
+    ul { margin: 0.5rem 0 1rem 1.2rem; padding-left: 1.2rem; }
+    .fine-text { display:block; margin-top:1.25rem; font-size:0.92rem; color:#444; text-align:center; }
 
-    /* Feiner Text */
-    .fine-text {
-      display: block;
-      margin-top: 1.25rem;
-      font-size: 0.92rem;
-      color: #444;
-      text-align: center;
-    }
+    a:focus, button:focus, input:focus { outline: 3px solid rgba(0,123,94,0.16); outline-offset: 3px; }
 
-    /* Fokus-Verbesserungen für interaktive Elemente */
-    a:focus,
-    button:focus,
-    input:focus {
-      outline: 3px solid rgba(0, 123, 94, 0.16);
-      outline-offset: 3px;
-    }
-
-    /* Responsive Anpassungen */
     @media (max-width: 560px) {
-      main {
-        margin-top: 0.8rem;
-        padding: 0 0.8rem;
-      }
-
-      nav button {
-        padding: 0.4rem 0.6rem;
-      }
-
-      .tab-content {
-        padding: 0.9rem;
-        border-radius: 10px;
-        min-height: 260px;
-      }
-
-      .tab-inner {
-        padding: 1rem;
-        max-width: calc(100% - 32px);
-      }
+      main { margin-top: 0.8rem; padding: 0 0.8rem; }
+      nav button { padding: 0.4rem 0.6rem; }
+      .tab-content { padding: 0.9rem; border-radius: 10px; min-height: 260px; }
+      .tab-inner { padding: 1rem; max-width: calc(100% - 32px); }
     }
 
-    /* prefers-reduced-motion */
     @media (prefers-reduced-motion: reduce) {
       .tab-content { transition: none !important; }
       * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
     }
 
-    /* Dark Mode */
+    /* Dark mode */
     @media (prefers-color-scheme: dark) {
-      :root {
-        --accent: #2bd19b;
-        --text: #eee;
-        --overlay: rgba(0, 0, 0, 0.6);
-        --background: #071011;
-      }
-
-      body {
-        background-color: var(--background);
-        color: var(--text);
-      }
-
-      header,
-      footer {
-        background-color: rgba(6, 10, 12, 0.6);
-        color: #fff;
-      }
-
-      .tab-inner {
-        color: var(--text);
-        background-color: var(--overlay);
-      }
-
-      blockquote {
-        background-color: rgba(10, 10, 10, 0.45);
-        border-left-color: var(--accent);
-        color: #ddd;
-      }
+      :root { --accent: #2bd19b; --text: #eee; --overlay: rgba(0,0,0,0.6); --background: #071011; }
+      body { background-color: var(--background); color: var(--text); }
+      header, footer { background-color: rgba(6,10,12,0.6); color: #fff; }
+      .tab-inner { color: var(--text); background-color: var(--overlay); }
+      blockquote { background-color: rgba(10,10,10,0.45); border-left-color: var(--accent); color: #ddd; }
     }
+
+    /* ===== panel & clickable styles (off-canvas) ===== */
+    :root { --link-accent: #1f6feb; --link-accent-weak: rgba(31,111,235,0.14); --link-muted: #374151; }
+
+    .clickable {
+      color: var(--link-muted);
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding: 0 1px;
+      transition: color .14s ease, border-color .14s ease, box-shadow .14s;
+    }
+    .clickable:hover, .clickable:active { color: var(--link-accent); border-bottom-color: var(--link-accent-weak); }
+    .clickable:focus-visible { outline: none; border-radius: 3px; box-shadow: 0 0 0 4px rgba(31,111,235,0.12); }
+
+    .panel-overlay { position: fixed; inset: 0; display: none; z-index: 2000; justify-content: flex-end; align-items: flex-start; background: rgba(0,0,0,0.4); }
+    .panel-overlay.open { display: flex; }
+    .panel { width: 420px; max-width: 95%; height: 100vh; background: #fff; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.22s ease; position: relative; padding: 20px; }
+    .panel.open { transform: translateX(0); }
+    .panel .close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; font-size: 22px; cursor: pointer; }
+    .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
+    .panel h2 { margin: 0 0 8px 0; font-size: 1.25rem; }
+    .panel .content { font-size: 0.95rem; line-height: 1.5; color: #222; white-space: pre-wrap; }
+    @media (max-width: 520px) { .panel { width: 100%; } }
   </style>
 </head>
 <body>
+  <a href="#main" class="visually-hidden focusable">Zum Inhalt springen</a>
+
   <header>
     <h1>Marynergy</h1>
     <p>Verbindung · Wachstum · Heilung</p>
+
     <nav aria-label="Haupttabs" role="tablist">
-      <!-- type="button" ist wichtig, um versehentliche Formularübermittlungen zu vermeiden -->
-      <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true">Verbindung &amp; Heilung</button>
-      <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false">Bildung &amp; Wachstum</button>
-      </nav> 
+  <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true">Verbindung &amp; Heilung</button>
+  <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false">Bildung &amp; Wachstum</button>
+</nav>
+
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="tabs" id="tabs">
-      <!-- Für Lazy-Load: data-bg legt das Bild fest, wird per JS als background-image gesetzt -->
-      <!-- Tab 1: Verbindung & Heilung -->
       <section id="connect" class="tab-content bg-connect active" role="tabpanel" aria-labelledby="tab-btn-connect" aria-hidden="false" data-bg="healing-bg.jpg">
         <div class="tab-inner">
           <p class="subtle-text">愛 LIEBE</p>
@@ -351,8 +243,8 @@
             „In der Welt des ‚Nichts‘ gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen; das gilt sogar für die Kampfkunst. Darum soll der Geist dem ‚Nichts‘ gehören. Dies bedeutet: Unbegrenzt-Sein." – Miyamoto Musashi, <em>Das Buch der Fünf Ringe</em>
           </blockquote>
 
-
-          <div class="section">
+          <!-- ... (Inhalt beibehalten wie gepostet) ... -->
+ <div class="section">
             <h3>🌱 Kernlehre</h3>
             <p>Die Einheit von Körper, Geist und Herz wird durch Achtsamkeit, spirituelle Praxis und körperliches Training gepflegt, während die Verbindung zum größeren Ganzen erfahren wird — sei es als Dao, Zen, Chi oder Natur.</p>
           </div>
@@ -402,7 +294,7 @@
           </div>
       </section>
 
-      <section id="education" class="tab-content bg-education" role="tabpanel" aria-labelledby="tab-btn-education" aria-hidden="true" data-bg="education-bg.png">
+        <section id="education" class="tab-content bg-education" role="tabpanel" aria-labelledby="tab-btn-education" aria-hidden="true" data-bg="education-bg.png">
         <div class="tab-inner">
           <h2>Bildung und Wachstum</h2>
           <blockquote>
@@ -451,6 +343,10 @@
             </ul>
             <p><em>Der beste Beitrag, den du für andere leisten kannst, ist deine eigene Entwicklung.</em></p>
           </div>
+          
+  
+
+          <!-- Styles -->
 <style>
   :root{
     --link-accent: #1f6feb;
@@ -584,7 +480,7 @@
     <span class="clickable" data-info="Alan Watts: Philosoph und Vermittler östlicher Weisheit im Westen, besonders Zen-Buddhismus und Taoismus; er betont die Verbundenheit allen Lebens, die Illusion des getrennten Selbst und die Bedeutung, im gegenwärtigen Moment frei von Angst und starren Vorstellungen zu leben. „Ein Mensch, der die ganze Zeit denkt, hat nichts, worüber er nachdenken könnte, außer über Gedanken. So verliert er den Bezug zur Realität und lebt in einer Welt der Illusion.“" data-img="">Alan Watts</span>,
     <span class="clickable" data-info="Jim Rohn: Einer meiner größten Mentoren und entscheidend für meine persönlichen Impulse; er steht für Selbstdisziplin, die Kraft von Gewohnheiten und zielgerichtetes Handeln und zeigt, dass Erfolg und Erfüllung aus kontinuierlichem Lernen, Eigenverantwortung und konsequentem Handeln erwachsen." data-img="">Jim Rohn</span>
   </p>
-       <blockquote>
+  <blockquote>
         „In unserer Zeit neigt man dazu, Künste, Fertigkeiten und Werkzeuge, ja
         mit ihnen gar sich selbst zu verkaufen. Mehr als die Frucht zählt die
         Blüte, der schöne Schein." – Miyamoto Musashi, <em>Das Buch der fünf Ringe</em>
@@ -753,18 +649,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
 });
 </script>
-</div>
 
-  </main>
+
+</section>
 
   <footer>
-  <p>Dankbar, dass du hier bist 🙏</p>
+    <p>Dankbarkeit 🙏</p>
+    <p><small>Quelle der Inspiration.</small></p>
 
-<p><small>Quelle der Inspiration.</small></p>
+    <p><a href="mailto:marynergy@gmail.com">marynergy@gmail.com</a></p>
 
-  <p><a href="mailto:marynergy@gmail.com">marynergy@gmail.com</a></p>
 
-  <script>
+    <script>
     /* ======================================================================
        Tab-Logik, Lazy-load backgrounds, Helligkeits-Messung, Accessibility
        ====================================================================== */
