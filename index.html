@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
-        /* --- Ergänzungen / Anpassungen für Alegreya, zentrierte Überschriften und Panel-Italics --- */
+    /* --- Ergänzungen / Anpassungen für Alegreya, zentrierte Überschriften und Panel-Italics --- */
 
 /* 1) Stelle sicher, dass überall Alegreya verwendet wird */
 html, body, header, footer, main, nav, .tab-content, .tab-inner, .panel, .panel * {
@@ -69,7 +69,11 @@ blockquote, p, li, a, button, nav button {
   font-size: inherit;
   font-family: inherit;
 }
-    /* Schriftarten */
+
+/* Hinweis: Falls du möchtest, dass Überschriften NICHT in Schriftart, sondern nur in Ausrichtung abweichen,
+   entferne font-family/font-weight/font-size in der Überschriftenregel und lasse nur text-align:center; */
+
+    /* Fonts */
     @font-face {
       font-family: 'Alegreya';
       src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
@@ -95,13 +99,13 @@ blockquote, p, li, a, button, nav button {
       font-display: swap;
     }
 
-    /* Grundschriftart und Größe */
+    /* Base font family and size */
     body {
       font-family: 'Alegreya', Georgia, "Times New Roman", serif;
-      font-size: 1rem; /* Einheitliche Größe */
+      font-size: 1rem; /* Uniform size */
     }
 
-    /* Kursiv beibehalten */
+    /* Keep italics */
     i, em {
       font-style: italic;
     }
@@ -313,6 +317,7 @@ blockquote, p, li, a, button, nav button {
     .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
   </style>
 </head>
+
 
 <body>
   <header>
