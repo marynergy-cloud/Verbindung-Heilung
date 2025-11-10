@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marynergie — Verbindung · Wachstum · Heilung</title>
-  <meta name="description" content="Marynergie — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
+  <title>Marynergy — Verbindung · Wachstum · Heilung</title>
+  <meta name="description" content="Marynergy — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
   <meta name="theme-color" content="#007b5e">
 
   <!-- Google Fonts -->
@@ -15,14 +15,60 @@
   <link rel="icon" href="/favicon.ico">
 
   <!-- Open Graph -->
-  <meta property="og:site_name" content="Marynergie">
-  <meta property="og:title" content="Marynergie — Verbindung · Wachstum · Heilung">
+  <meta property="og:site_name" content="Marynergy">
+  <meta property="og:title" content="Marynergy — Verbindung · Wachstum · Heilung">
   <meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung und Einblicke für ganzheitliches persönliches Wachstum.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://your-domain.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
+        /* --- Ergänzungen / Anpassungen für Alegreya, zentrierte Überschriften und Panel-Italics --- */
+
+/* 1) Stelle sicher, dass überall Alegreya verwendet wird */
+html, body, header, footer, main, nav, .tab-content, .tab-inner, .panel, .panel * {
+  font-family: 'Alegreya', Georgia, "Times New Roman", serif !important;
+}
+
+/* 2) Einheitliche Basis-Größe (bei Bedarf anpassen). Damit erben alle Elemente dieselbe Größe. */
+html, body {
+  font-size: 1rem; /* Basisgröße: 1rem = normale Textgröße */
+}
+
+/* 3) Überschriften zentrieren (nicht linksbündig) — Überschriften bleiben erkennbar anders (Größe/Gewicht) */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Alegreya', serif;
+  font-weight: 700; /* Überschriften etwas schwerer */
+  line-height: 1.2;
+  /* optional: leicht größere Schrift für Überschriften — passe an oder entferne, wenn du gleiche Größe willst */
+  font-size: 1.125rem;
+}
+
+/* 4) Sicherstellen, dass kursive Schrift im Panel dieselbe Größe hat wie normaler Text */
+.panel, .panel * {
+  font-size: inherit;   /* alle Elemente im Panel erben die Basisgröße */
+  font-family: inherit;
+}
+.panel i, .panel em {
+  font-style: italic;
+  font-size: inherit;   /* explizit: gleiche Größe wie normaler Text */
+  font-weight: inherit;
+}
+
+/* 5) Generell: i / em überall nicht verkleinern (falls irgendwo spezifische Regeln vorhanden sind) */
+i, em {
+  font-size: inherit !important;
+  font-style: italic;
+}
+
+/* 6) Optional: Falls bestimmte Komponenten (z. B. blockquote) vorher andere Größen hatten, normalisieren */
+blockquote, p, li, a, button, nav button {
+  font-size: inherit;
+  font-family: inherit;
+}
     /* Schriftarten */
     @font-face {
       font-family: 'Alegreya';
