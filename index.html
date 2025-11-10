@@ -6,7 +6,52 @@
   <title>Marynergy — Verbindung · Wachstum · Heilung</title>
   <meta name="description" content="Marynergy — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
   <meta name="theme-color" content="#007b5e">
+  <!-- Character Encoding -->
+<meta charset="UTF-8">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Marynergy">
+<meta property="og:title" content="Marynergy — Verbindung · Wachstum · Heilung">
+<meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung und Impulse für ganzheitliche Menschwerdung.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://your-domain.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
   <style>
+       @font-face {
+      font-family: 'Alegreya';
+      src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
+           url('fonts/Alegreya-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Alegreya';
+      src: url('fonts/Alegreya-Italic.woff2') format('woff2'),
+           url('fonts/Alegreya-Italic.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Alegreya';
+      src: url('fonts/Alegreya-Bold.woff2') format('woff2'),
+           url('fonts/Alegreya-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      font-family: 'Alegreya', Georgia, "Times New Roman", serif;
+    }
   :root {
     --max-width: 700px;
     --radius: 12px;
@@ -87,6 +132,7 @@
     font-synthesis: none;
     margin: 0;
   }
+
 
   html::before {
     content: "";
@@ -443,33 +489,49 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, scrollY);
   }
 
-  function openPanel(title, infoHTML, imgUrl){
+  function openPanel(triggerEl, title, infoHTML, imgUrl){
+    // ARIA
+    if(triggerEl) triggerEl.setAttribute('aria-expanded','true');
     titleEl.textContent = title || 'Ohne Titel';
+    // contentEl.innerHTML = infoHTML || ''; // falls Input unsicher: sanitizen!
     contentEl.innerHTML = infoHTML || '';
     if(imgUrl){ hero.style.backgroundImage = `url("${imgUrl}")`; hero.style.display = 'block'; } 
     else { hero.style.backgroundImage = ''; hero.style.display = 'none'; }
     overlay.classList.add('open'); panel.classList.add('open'); overlay.setAttribute('aria-hidden','false');
     panel.scrollTop = contentEl.scrollTop = 0;
     lockBackground(savedScrollY);
-    closeBtn.focus({preventScroll:true});
+    // Fokus ins Panel
+    closeBtn?.focus({preventScroll:true});
   }
 
   function closePanel(){
     overlay.classList.remove('open'); panel.classList.remove('open'); overlay.setAttribute('aria-hidden','true');
+    // reset aria-expanded on lastClicked
+    if(lastClicked) lastClicked.setAttribute('aria-expanded','false');
     setTimeout(() => { unlockBackground(); lastClicked?.focus(); savedScrollY=0; }, 240);
   }
 
   document.querySelectorAll('.clickable').forEach(el=>{
     if(!el.hasAttribute('role')) el.setAttribute('role','button');
     if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
-    el.addEventListener('click', (e)=>{ e.preventDefault(); savedScrollY=window.scrollY; lastClicked=el; openPanel(el.textContent.trim(), el.getAttribute('data-info'), el.getAttribute('data-img')); });
+    // ensure aria attributes exist
+    if(!el.hasAttribute('aria-haspopup')) el.setAttribute('aria-haspopup','dialog');
+    if(!el.hasAttribute('aria-expanded')) el.setAttribute('aria-expanded','false');
+
+    el.addEventListener('click', (e)=>{ 
+      e.preventDefault();
+      savedScrollY=window.scrollY;
+      lastClicked=el;
+      openPanel(el, el.textContent.trim(), el.getAttribute('data-info'), el.getAttribute('data-img'));
+    });
     el.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.code==='Space'){ e.preventDefault(); el.click(); } });
   });
-  closeBtn.addEventListener('click', closePanel);
+
+  closeBtn?.addEventListener('click', closePanel);
   overlay.addEventListener('click', (e)=>{ if(e.target===overlay) closePanel(); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePanel(); });
 
-  // Tabs
+  // Tabs (Beibehaltung deiner Logik)
   const nav = document.querySelector('nav[role="tablist"]');
   const tabs = Array.from(nav.querySelectorAll('[role="tab"]'));
   const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
@@ -493,6 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   activateTab(tabs.find(t=>t.getAttribute('aria-selected')==='true')||tabs[0]);
 });
+
 </script>
 
 <!-- Off-Canvas Panel -->
