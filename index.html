@@ -49,12 +49,50 @@
       font-style: normal;
       font-display: swap;
     }
-    body {
-      font-family: 'Alegreya', Georgia, "Times New Roman", serif;
-    }
-    i, em {
-    font-style: italic;
-    font-size: 0.85rem; /* gewünschte Größe */
+ /* Basis-Schrift für den Body */
+body {
+    font-family: 'Alegreya', Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;      /* einheitliche Größe für normalen Text */
+    line-height: 1.45;       /* angenehmer Zeilenabstand */
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    margin: 0;
+}
+
+/* Alle normalen Textelemente übernehmen die gleiche Größe */
+p, span, div, li, a, em, i, strong, blockquote, .clickable, .tab-inner, .panel .content {
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+/* Italic und Blockquote behalten ihren Stil, aber gleiche Größe */
+em, i, blockquote {
+    font-size: 0.85rem;
+}
+
+/* Überschriften bleiben unberührt */
+h1, h2, h3, h4, h5, h6 {
+    /* eigene Größen */
+}
+
+/* Panels */
+.panel .content {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #222;
+    white-space: pre-wrap;
+}
+
+/* Clickable-Texte in Panels und Tabs */
+.clickable {
+    font-size: 0.85rem;
+}
+
+/* Optional: kleine Anpassung für Feintext */
+.fine-text {
+    font-size: 0.65rem; /* bleibt kleiner, als Hinweis oder Fußnoten */
 }
 
   :root {
