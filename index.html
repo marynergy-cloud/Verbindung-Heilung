@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marynergy — Verbindung · Wachstum · Heilung</title>
-  <meta name="description" content="Marynergy — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
+  <title>Marynergie — Verbindung · Wachstum · Heilung</title>
+  <meta name="description" content="Marynergie — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
   <meta name="theme-color" content="#007b5e">
-  <!-- Character Encoding -->
-<meta charset="UTF-8">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@300;400;700&display=swap" rel="stylesheet">
 
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
 
-<!-- Open Graph -->
-<meta property="og:site_name" content="Marynergy">
-<meta property="og:title" content="Marynergy — Verbindung · Wachstum · Heilung">
-<meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung und Impulse für ganzheitliche Menschwerdung.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://your-domain.com/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Marynergie">
+  <meta property="og:title" content="Marynergie — Verbindung · Wachstum · Heilung">
+  <meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung und Einblicke für ganzheitliches persönliches Wachstum.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
-       @font-face {
+    /* Schriftarten */
+    @font-face {
       font-family: 'Alegreya';
       src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
            url('fonts/Alegreya-Regular.woff') format('woff');
@@ -49,273 +48,226 @@
       font-style: normal;
       font-display: swap;
     }
- /* Basis-Schrift für den Body */
-body {
-    font-family: 'Alegreya', Georgia, "Times New Roman", serif;
-    font-size: 0.85rem;      /* einheitliche Größe für normalen Text */
-    line-height: 1.45;       /* angenehmer Zeilenabstand */
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-synthesis: none;
-    margin: 0;
-}
 
-/* Alle normalen Textelemente übernehmen die gleiche Größe */
-p, span, div, li, a, em, i, strong, blockquote, .clickable, .tab-inner, .panel .content {
-    font-size: 0.85rem;
-    line-height: 1.45;
-}
+    /* Grundschriftart und Größe */
+    body {
+      font-family: 'Alegreya', Georgia, "Times New Roman", serif;
+      font-size: 1rem; /* Einheitliche Größe */
+    }
 
-/* Italic und Blockquote behalten ihren Stil, aber gleiche Größe */
-em, i, blockquote {
-    font-size: 0.75rem;
-}
+    /* Kursiv beibehalten */
+    i, em {
+      font-style: italic;
+    }
 
-/* Überschriften bleiben unberührt */
-h1, h2, h3, h4, h5, h6 {
-    /* eigene Größen */
-}
+    :root {
+      --max-width: 700px;
+      --radius: 12px;
+      --tab-padding: 1.5rem;
+      --accent: #007b5e;
+      --text: #111;
+      --overlay: rgba(255, 255, 255, 0.78);
+      --background: #ffffff;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      --link-default: #007b5e;
+      --link-hover: #1e90ff;
+      --link-focus: #2bd19b;
+      --link-muted: #555;
+      --link-accent: #1e90ff;
+      --link-accent-weak: rgba(30,144,255,0.3);
+    }
 
-/* Panels */
-.panel .content {
-    font-size: 0.85rem;
-    line-height: 1.45;
-    color: #222;
-    white-space: pre-wrap;
-}
+    .clickable {
+      color: #000;
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding: 0 1px;
+      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .clickable:hover,
+    .clickable:active {
+      color: #1e90ff;
+      border-bottom-color: rgba(30,144,255,0.3);
+    }
+    .clickable:focus-visible {
+      outline: none;
+      color: #2bd19b;
+      box-shadow: 0 0 0 4px rgba(43,209,155,0.4);
+      border-radius: 3px;
+    }
 
-/* Clickable-Texte in Panels und Tabs */
-.clickable {
-    font-size: 0.85rem;
-}
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+    .visually-hidden.focusable:focus,
+    .visually-hidden.focusable:active {
+      position: static !important;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
+    }
 
-/* Optional: kleine Anpassung für Feintext */
-.fine-text {
-    font-size: 0.65rem; /* bleibt kleiner, als Hinweis oder Fußnoten */
-}
+    *, *::before, *::after { box-sizing: border-box; }
 
-  :root {
-    --max-width: 700px;
-    --radius: 12px;
-    --tab-padding: 1.5rem;
-    --accent: #007b5e;
-    --text: #111;
-    --overlay: rgba(255, 255, 255, 0.78);
-    --background: #ffffff;
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    --link-default: #007b5e;
-    --link-hover: #1e90ff;
-    --link-focus: #2bd19b;
-    --link-muted: #555;
-    --link-accent: #1e90ff;
-    --link-accent-weak: rgba(30,144,255,0.3);
-  }
+    html, body { height: 100%; margin: 0; }
 
-  .clickable {
-  color: #000; /* Standardfarbe schwarz */
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding: 0 1px;
-  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      line-height: 1.45;
+      color-scheme: light dark;
+      background-color: var(--background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-synthesis: none;
+      margin: 0;
+    }
 
-.clickable:hover,
-.clickable:active {
-  color: #1e90ff; /* Blau beim Hover */
-  border-bottom-color: rgba(30,144,255,0.3);
-}
+    html::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: url('healing-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
 
-.clickable:focus-visible {
-  outline: none;
-  color: #2bd19b; /* leuchtendes Grün beim Fokus */
-  box-shadow: 0 0 0 4px rgba(43,209,155,0.4);
-  border-radius: 3px;
-}
+    @media (max-width: 1024px) {
+      body { background-attachment: scroll; }
+    }
 
+    header, footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--text);
+      background-color: rgba(245, 243, 231, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-  .visually-hidden {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
-  }
-  .visually-hidden.focusable:focus,
-  .visually-hidden.focusable:active {
-    position: static !important;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-    clip-path: none;
-    white-space: normal;
-  }
+    nav { text-align: center; margin-top: 0.5rem; }
+    nav button {
+      margin: 0 0.35rem;
+      padding: 0.45rem 0.9rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 6px;
+      font: inherit;
+      transition: background-color 0.18s ease, color 0.18s ease;
+      outline: none;
+    }
+    nav button:focus { outline: 3px solid rgba(0,123,94,0.3); outline-offset: 3px; }
+    nav button.active { background-color: var(--accent); color: #fff; font-weight: 600; }
 
-  *, *::before, *::after { box-sizing: border-box; }
+    main { max-width: var(--max-width); margin: 1.25rem auto 3rem; padding: 0 1rem; }
+    .tabs { position: relative; }
 
-  html, body { height: 100%; margin: 0; }
-  body {
-    min-height: 100vh;
-    font-family: "Alegreya", Georgia, "Times New Roman", serif;
-    font-size: 0.9rem;
-    color: var(--text);
-    line-height: 1.45;
-    color-scheme: light dark;
-    background-color: var(--background);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-synthesis: none;
-    margin: 0;
-  }
+    .tab-content {
+      display: none;
+      position: relative;
+      margin: 0 auto;
+      min-height: 340px;
+      padding: var(--tab-padding);
+      border-radius: var(--radius);
+      overflow: visible;
+      background-size: cover;
+      background-position: center;
+      color: var(--text);
+      --overlay-local: var(--overlay);
+      --text-local: var(--text);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.28s ease,
+        transform 0.28s ease,
+        background-image 0.6s ease-in-out;
+    }
+    .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
 
+    .tab-inner {
+      position: relative;
+      max-width: calc(var(--max-width) - 64px);
+      margin: 0 auto;
+      background-color: var(--overlay-local, var(--overlay));
+      color: var(--text-local, var(--text));
+      border-radius: calc(var(--radius) - 2px);
+      padding: 1.6rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      line-height: 1.65;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
 
-  html::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image: url('healing-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
+    .bg-connect, .bg-education { background-color: #f7fbf9; }
+    .subtle-text { color: #666; margin: 0 0 0.25rem 0; text-align: center; }
+    p { margin: 0.6rem 0; }
+    .section { margin: 1rem 0; }
 
-  @media (max-width: 1024px) {
-    body { background-attachment: scroll; }
-  }
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.7rem 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      background-color: rgba(255,255,255,0.85);
+      font-style: italic;
+      color: inherit;
+    }
 
-  header, footer {
-    text-align: center;
-    padding: 1rem;
-    color: var(--text);
-    background-color: rgba(245, 243, 231, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+    ul { margin: 0.5rem 0 1rem 1.2rem; padding-left: 1.2rem; }
 
-  nav { text-align: center; margin-top: 0.5rem; }
-  nav button {
-    margin: 0 0.35rem;
-    padding: 0.45rem 0.9rem;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 6px;
-    font: inherit;
-    transition: background-color 0.18s ease, color 0.18s ease;
-    outline: none;
-  }
-  nav button:focus { outline: 3px solid rgba(0,123,94,0.3); outline-offset: 3px; }
-  nav button.active { background-color: var(--accent); color: #fff; font-weight: 600; }
+    a:focus, button:focus { outline: 3px solid rgba(0,123,94,0.16); outline-offset: 3px; }
 
-  main { max-width: var(--max-width); margin: 1.25rem auto 3rem; padding: 0 1rem; }
+    @media (max-width: 560px) {
+      main { margin-top: 0.8rem; padding: 0 0.8rem; }
+      nav button { padding: 0.4rem 0.6rem; }
+      .tab-content { padding: 0.9rem; border-radius: 10px; min-height: 260px; }
+      .tab-inner { padding: 1rem; max-width: calc(100% - 32px); }
+    }
 
-  .tabs { position: relative; }
+    @media (prefers-reduced-motion: reduce) {
+      .tab-content { transition: none !important; }
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+    }
 
-  .tab-content {
-    display: none;
-    position: relative;
-    margin: 0 auto;
-    min-height: 340px;
-    padding: var(--tab-padding);
-    border-radius: var(--radius);
-    overflow: visible;
-    background-size: cover;
-    background-position: center;
-    color: var(--text);
-    --overlay-local: var(--overlay);
-    --text-local: var(--text);
-    box-shadow: var(--shadow);
-    opacity: 0;
-    transform: translateY(8px);
-    transition:
-      opacity 0.28s ease,
-      transform 0.28s ease,
-      background-image 0.6s ease-in-out;
-  }
-  .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
+    @media (prefers-color-scheme: dark) {
+      :root { --accent: #2bd19b; --text: #eee; --overlay: rgba(0,0,0,0.6); --background: #071011; }
+      body { background-color: var(--background); color: var(--text); }
+      header, footer { background-color: rgba(6,10,12,0.6); color: #fff; }
+      .tab-inner { color: var(--text); background-color: var(--overlay); }
+      blockquote { background-color: rgba(10,10,10,0.45); border-left-color: var(--accent); color: #ddd; }
+    }
 
-  .tab-inner {
-    position: relative;
-    max-width: calc(var(--max-width) - 64px);
-    margin: 0 auto;
-    background-color: var(--overlay-local, var(--overlay));
-    color: var(--text-local, var(--text));
-    border-radius: calc(var(--radius) - 2px);
-    padding: 1.6rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    line-height: 1.65;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
-
-  .bg-connect, .bg-education { background-color: #f7fbf9; }
-
-  .subtle-text { color: #666; margin: 0 0 0.25rem 0; text-align: center; }
-  h1 { margin: 0.25rem 0; font-size: 1.4rem; }
-  h2 { margin: 0.25rem 0 0.65rem; font-weight: 600; text-align: center; }
-  h3 { margin: 1rem 0 0.5rem; font-size: 1rem; }
-  p { margin: 0.6rem 0; }
-  .section { margin: 1rem 0; }
-
-  blockquote {
-    margin: 1rem 0;
-    padding: 0.7rem 1rem;
-    border-left: 4px solid var(--accent);
-    border-radius: 6px;
-    background-color: rgba(255,255,255,0.85);
-    font-style: italic;
-    color: inherit;
-  }
-
-  ul { margin: 0.5rem 0 1rem 1.2rem; padding-left: 1.2rem; }
-  .fine-text { display:block; margin-top:1.25rem; font-size:0.65rem; color:#444; text-align:center; }
-
-  a:focus, button:focus { outline: 3px solid rgba(0,123,94,0.16); outline-offset: 3px; }
-
-  @media (max-width: 560px) {
-    main { margin-top: 0.8rem; padding: 0 0.8rem; }
-    nav button { padding: 0.4rem 0.6rem; }
-    .tab-content { padding: 0.9rem; border-radius: 10px; min-height: 260px; }
-    .tab-inner { padding: 1rem; max-width: calc(100% - 32px); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tab-content { transition: none !important; }
-    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root { --accent: #2bd19b; --text: #eee; --overlay: rgba(0,0,0,0.6); --background: #071011; }
-    body { background-color: var(--background); color: var(--text); }
-    header, footer { background-color: rgba(6,10,12,0.6); color: #fff; }
-    .tab-inner { color: var(--text); background-color: var(--overlay); }
-    blockquote { background-color: rgba(10,10,10,0.45); border-left-color: var(--accent); color: #ddd; }
-  }
-
-  .panel-overlay { position: fixed; inset: 0; display: none; z-index: 2000; justify-content: flex-end; align-items: flex-start; background: rgba(0,0,0,0.4); }
-  .panel-overlay.open { display: flex; }
-  .panel { width: 420px; max-width: 95%; height: 100vh; background: #fff; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.22s ease; position: relative; padding: 20px; }
-  .panel.open { transform: translateX(0); }
-  .panel .close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; font-size: 22px; cursor: pointer; }
-  .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
-  .panel h2 { margin: 0 0 8px 0; font-size: 1.25rem; }
-  .panel .content { font-size: 0.75rem; line-height: 1.5; color: #222; white-space: pre-wrap; }
-  @media (max-width: 520px) { .panel { width: 100%; } }
-</style>
+    .panel-overlay { position: fixed; inset: 0; display: none; z-index: 2000; justify-content: flex-end; align-items: flex-start; background: rgba(0,0,0,0.4); }
+    .panel-overlay.open { display: flex; }
+    .panel { width: 420px; max-width: 95%; height: 100vh; background: #fff; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.22s ease; position: relative; padding: 20px; }
+    .panel.open { transform: translateX(0); }
+    .panel .close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; cursor: pointer; }
+    .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Marynergy</h1>
@@ -355,18 +307,14 @@ h1, h2, h3, h4, h5, h6 {
 <span class="clickable" data-info="Fasten und bewusste Pausen stärken die natürliche Regenerationsfähigkeit des Körpers, während Unterbrechungen von Medien, ständigem Denken und Überstimulation geistige Klarheit, emotionales Gleichgewicht und innere Stärke wiederherstellen. Diese bewussten Momente der Erneuerung schaffen den Raum für Reflexion, Lernen und die kontinuierliche Ausrichtung von Körper, Geist und Herz — eine Erinnerung daran, dass ganzheitliche Heilung lebenslang ist und sich immer entfaltet." data-img="">🌱 Raum für Erneuerung</span>
 <br>
 <br>
-<span class="clickable" data-info="Die höchste Form des Seins ist die Einheit von Aktion, Substanz und Himmel &amp; Erde. Ihre reinste Ausdrucksform ist einfaches Atmen und unmittelbares Erleben im gegenwärtigen Moment—was immer du tust oder fühlst.<br><br><strong>Aktion</strong> umfasst Atmen, Denken, Tun und so weiter, sei es aktiv oder passiv, bewusst oder unbewusst.<br><br><strong>Substanz</strong> ist das, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken und Informationen.<br><br><strong>Himmel &amp; Erde</strong> umfassen Orte in der physischen Welt, Menschen, Beziehungen und die digitale Welt, die Vergangenheit, Gegenwart und Zukunft verbinden." data-img="">🌱 Aktion · Substanz · Himmel &amp; Erde</span>
-<br>
-<br>
-<br>
-         <p class="fine-text">
-    <p class="fine-text">
-  <em>
-    Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — die Grundlage meiner Philosophie:<br>
-    <span class="highlight">Aktion · Substanz · Himmel &amp; Erde</span>.<br>
+<span class="clickable" data-info="Die höchste Form des Seins ist die Einheit von Aktion, Substanz und Himmel &amp; Erde. Ihre reinste Ausdrucksform ist einfaches Atmen und unmittelbares Erleben im gegenwärtigen Moment—was immer du tust oder fühlst.<br><br><strong>Aktion</strong> umfasst Atmen, Denken, Tun und so weiter, sei es aktiv oder passiv, bewusst oder unbewusst.<br><br><strong>Substanz</strong> ist das, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken und Informationen.<br><br><strong>Himmel &amp; Erde</strong> umfassen Orte in der physischen Welt, Menschen, Beziehungen und die digitale Welt, die Vergangenheit, Gegenwart und Zukunft verbinden.<br><br><em>
+    Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — die Grundlage meiner Philosophie:<br><strong>Aktion · Substanz · Himmel &amp; Erde</strong><br>
     Der digitalen Welt begegne ich bewusst — um zu teilen, um inspiriert zu werden —<br>
     doch die physische Welt schätze ich über — alles als Mensch.
-  </em>
+  </em>" data-img="">🌱 Aktion · Substanz · Himmel &amp; Erde</span>
+<br>
+<br>
+<br>
       <img src="Lisboa.jpg" alt="Bild von Lissabon" style="display:block; margin-top:20px; max-width:100%;">
    </div>
       </section>
@@ -375,7 +323,8 @@ h1, h2, h3, h4, h5, h6 {
         <div class="tab-inner">
           <h2>Bildung und Wachstum</h2>
            <blockquote>
-            „Du magst denken, dass du in der Gegenwart lebst, aber tatsächlich lebst du in der Vergangenheit, solange Gedanken wirken… Wenn dies dir nicht erzählt, wiederholt oder gezeigt wird, kannst du endlos über Bücher reden. Dies kommt zuerst. Danach kannst du die Bücher lesen.“ – J. Krishnamurti
+            „Du magst denken, dass du in der Gegenwart lebst, aber tatsächlich lebst du in der Vergangenheit, solange Gedanken wirken… Wenn dies dir nicht erzählt, wiederholt oder gezeigt wird, kannst du endlos über Bücher reden. Dies kommt zuerst. Danach kannst du die Bücher lesen.“
+            <br>– J. Krishnamurti
           </blockquote>
 <br>
 <br>
@@ -397,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
 </span>
 <br>
 <br>
-  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><em>Wie geschrieben steht: „Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott“ (Johannes 1,1).</em>" data-img="">🌱 Kommunikation
+  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><em>Wie geschrieben steht: „Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“ (Johannes 1,1).</em>" data-img="">🌱 Kommunikation
 </span>
 <br>
 <br>
@@ -406,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
 <span class="clickable" 
       data-info="Bücher öffnen den Geist, eröffnen neue Perspektiven und führen uns zu tieferem Verständnis.<br><br>Sie fördern Reflexion, persönliches Wachstum und Klarheit des Handelns. Oft kann eine einzige Passage oder Geschichte Einsicht, Motivation oder eine transformative Idee auslösen.<br><br>Titel wie <em>Das Buch der fünf Ringe</em>, <em>Meditationen</em>, <em>Denke nach und werde reich</em>, <em>Die Kunst des Krieges</em>, <em>Der Fürst</em>, <em>Der reichste Mann Babylons</em>, <em>1984</em>, <em>Die Bibel</em>, <em>Eine neue Erde</em> haben mein Denken geprägt und bieten Lektionen in Strategie, Weisheit, Resilienz und dem menschlichen Geist.<br><br>Lesen ist ein Tor zum Wachstum und bietet sowohl Inspiration als auch praktische Orientierung für das Leben."
       data-img=""><em>🌸 Inspirierende Bücher:</span>
-    <span class="clickable" data-info="<em>Das Buch der fünf Ringe</em>: Miyamoto Musashi war ein legendärer Samurai, Stratege und Philosoph, der mehr als 60 Duelle ohne Niederlage gewann.<br><br>Als Gründer von Niten Ichi-Ryū perfektionierte er die Zwei-Schwert-Technik und einen unverwechselbaren Kampfansatz.<br><br>In <em>Das Buch der fünf Ringe</em> verdichtete Musashi seine Erfahrungen zu einer Philosophie der Strategie, die über den Kampf hinausgeht — sie betont Klarheit des Geistes, Anpassungsfähigkeit und Meisterschaft durch Disziplin.<br><br>Nur wenige Persönlichkeiten haben mich so tief beeinflusst wie <strong>Miyamoto Musashi</strong> und sein <em>Buch der fünf Ringe</em>.<br><br><em>„Das Herz sollte wie Wasser werden: formlos, es verändert seine Form je nach Gefäß, in dem es ist. Manchmal erscheint Wasser als ein einzelner Tropfen, manchmal als ein ganzer Ozean.“</em> – Das Buch der fünf Ringe" data-img="">Das Buch der fünf Ringe</span>, 
+    <span class="clickable" data-info="<em>Das Buch der fünf Ringe</em>: Miyamoto Musashi war ein legendärer Samurai, Stratege und Philosoph, der mehr als 60 Duelle ohne Niederlage gewann.<br><br>Als Gründer von Niten Ichi-Ryū perfektionierte er die Zwei-Schwert-Technik und einen unverwechselbaren Kampfansatz.<br><br>In <em>Das Buch der fünf Ringe</em> verdichtete Musashi seine Erfahrungen zu einer Philosophie der Strategie, die über den Kampf hinausgeht — sie betont Klarheit des Geistes, Anpassungsfähigkeit und Meisterschaft durch Disziplin.<br><br>Nur wenige Persönlichkeiten haben mich so tief beeinflusst wie <strong>Miyamoto Musashi</strong> und sein <em>Buch der fünf Ringe</em>.<br><br><em>„Das Herz sollte wie Wasser werden: formlos, es verändert seine Form je nach Gefäß, in dem es ist. Manchmal erscheint Wasser als ein einzelner Tropfen, manchmal als ein ganzer Ozean.“<br>– Das Buch der fünf Ringe, Miyamoto Musashi</em>" data-img="">Das Buch der fünf Ringe</span>, 
 
 
     <span class="clickable" data-info="<em>Selbstbetrachtungen</em>: Der römische Kaiser und Philosoph <strong>Mark Aurel</strong> formuliert die Kernprinzipien des Stoizismus — Selbstreflexion, ethische Integrität und Verantwortung für das eigene Handeln.<br><br>Seine Schriften betonen die Kultivierung innerer Ruhe, Charakterstärke und die Suche nach Weisheit angesichts der Herausforderungen des Lebens.<br><br>Wie ein zeitloser Leitfaden für ein überlegtes Leben ist es ein Buch, das immer wieder gelesen werden sollte." data-img="">Selbstbetrachtungen</span>,
@@ -451,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <span class="clickable" data-info="Epiktet, ein griechischer stoischer Philosoph des 1. Jahrhunderts n. Chr., lehrte, dass wahres Glück nicht von äußeren Umständen abhängt, sondern von der eigenen Einstellung und inneren Freiheit.<br><br>Er betonte, die eigenen Gedanken und Reaktionen zu meistern und gleichzeitig das zu akzeptieren, was außerhalb der eigenen Kontrolle liegt.<br><br>Überwiegend durch die Schriften seines Schülers Arrian überliefert, inspirieren seine Lehren weiterhin zu Resilienz, Selbstdisziplin und einer achtsamen Lebensweise." data-img="">Epiktet</span>,
 
-    <span class="clickable" data-info="Franz von Assisi steht für ein Leben radikaler Einfachheit und Demut, geprägt von Mitgefühl für Arme und Benachteiligte.<br><br>Er betont die Verbundenheit aller Wesen mit Gott, das Leben in Harmonie mit der Natur und die Förderung von Frieden, Liebe und selbstlosem Dienst als Weg zu spiritueller Erfüllung.<br><br>Sein Beispiel inspiriert weiterhin zu einem Leben, das in Freundlichkeit, Großzügigkeit und achtsamer Fürsorge für Menschen und die Welt verwurzelt ist.<br><br><em>„Gib mir Armut, gib mir Demut, gib mir Torheit um Christi Willen.“</em> – Franz von Assisi" data-img="">Franz von Assisi</span>,
+    <span class="clickable" data-info="Franz von Assisi steht für ein Leben radikaler Einfachheit und Demut, geprägt von Mitgefühl für Arme und Benachteiligte.<br><br>Er betont die Verbundenheit aller Wesen mit Gott, das Leben in Harmonie mit der Natur und die Förderung von Frieden, Liebe und selbstlosem Dienst als Weg zu spiritueller Erfüllung.<br><br>Sein Beispiel inspiriert weiterhin zu einem Leben, das in Freundlichkeit, Großzügigkeit und achtsamer Fürsorge für Menschen und die Welt verwurzelt ist.<br><br><em>„Gib mir Armut, gib mir Demut, gib mir Torheit um Christi Willen.“<br>– Franz von Assisi</em>" data-img="">Franz von Assisi</span>,
 
 
     <span class="clickable" data-info="Rumi steht für tiefes spirituelles Verlangen nach Einheit mit dem Göttlichen, Liebe, Toleranz und die transformative Kraft der inneren Reflexion.<br><br>Seine Lehren betonen, dass wahrer Frieden und Erfüllung aus der Verbindung mit dem eigenen Inneren und göttlicher Liebe entstehen.<br><br>Sie inspirieren weiterhin zu Achtsamkeit, Mitgefühl und einem herzlichen Lebensansatz, der zu Harmonie mit sich selbst und der Welt führt.<br><br><em>„Jenseits von richtig und falsch gibt es einen Ort. Dort werden wir uns treffen.“</em> – Rumi" data-img="">Rumi</span>,
@@ -465,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <span class="clickable" data-info="Baruch Spinoza steht für rationales Denken, das Streben nach ethischer Klarheit und Einsicht in die Einheit von Natur und Gott — wie er es ausdrückte, <em>„Deus sive Natura“</em> („Gott oder Natur“).<br><br>Seine Philosophie ermutigt dazu, die Welt durch Vernunft zu verstehen, die Verbundenheit aller Dinge zu erkennen und in Harmonie sowohl mit der Natur als auch mit ethischen Prinzipien zu leben.<br><br>Sein Beispiel inspiriert weiterhin zu nachdenklicher Reflexion, moralischer Integrität und einem vernunftgeleiteten Lebensansatz." data-img="">Spinoza</span>,
 
-    <span class="clickable" data-info="Isaac Newton steht für bahnbrechende Entdeckungen in Physik und Mathematik, die die Ordnung und Gesetze des Universums aufzeigen.<br><br>Er erkannte, dass Naturgesetze — wie <em>„Für jede Handlung gibt es eine gleiche und entgegengesetzte Reaktion“</em> — die Bewegung und Harmonie der Welt bestimmen.<br><br>In diesem eleganten System von Sonne, Planeten und Kometen sah Newton den Beweis für die Existenz und Weisheit Gottes. Sein Beispiel inspiriert weiterhin Neugier, disziplinierte Forschung und eine tiefgehende Wertschätzung für die Harmonie der Natur.<br><br><em>„Wer halbherzig denkt, wird nicht an Gott glauben, aber wer wirklich denkt, muss an Gott glauben.“</em> – Isaac Newton" data-img="">Newton</span>,
+    <span class="clickable" data-info="Isaac Newton steht für bahnbrechende Entdeckungen in Physik und Mathematik, die die Ordnung und Gesetze des Universums aufzeigen.<br><br>Er erkannte, dass Naturgesetze — wie <em>„Für jede Handlung gibt es eine gleiche und entgegengesetzte Reaktion“</em> — die Bewegung und Harmonie der Welt bestimmen.<br><br>In diesem eleganten System von Sonne, Planeten und Kometen sah Newton den Beweis für die Existenz und Weisheit Gottes. Sein Beispiel inspiriert weiterhin Neugier, disziplinierte Forschung und eine tiefgehende Wertschätzung für die Harmonie der Natur.<br><br><em>„Wer halbherzig denkt, wird nicht an Gott glauben, aber wer wirklich denkt, muss an Gott glauben.“<br>– Isaac Newton</em> " data-img="">Newton</span>,
 
     <span class="clickable" data-info="Gottfried Wilhelm Leibniz steht für Rationalismus, Logik und Mathematik.<br><br>Er entwickelte das Binärsystem, das die Grundlage moderner Computer bildet, und seine Philosophie verbindet Vernunft, Ordnung und die Vision einer universellen Sprache der Zahlen.<br><br>Sein Beispiel inspiriert weiterhin analytisches Denken, Innovation und die Suche nach Wissen durch strukturiertes Denken.<br><br><em>„Gott hätte die Welt nicht erschaffen, wenn sie nicht die beste aller möglichen Welten wäre.“</em> – Gottfried Wilhelm Leibniz" data-img="">Leibniz</span>,
 
@@ -477,7 +426,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <span class="clickable" data-info="Nikola Tesla, Erfinder, Elektroingenieur und Visionär, revolutionierte Wissenschaft und Technologie durch seine Pionierarbeit mit Wechselstrom und das Verständnis von Energie.<br><br>Seine Kombination aus Innovation, technischem Genie und zukunftsweisender Vision macht ihn bis heute zu einer legendären Persönlichkeit.<br><br>Teslas Philosophie — <em>„Wenn du die Geheimnisse des Universums entdecken willst, denke in Begriffen von Energie, Frequenz und Schwingung“</em> — inspiriert weiterhin Neugier, Kreativität und das Streben nach Wissen jenseits konventioneller Grenzen." data-img="">Tesla</span>,
 
-    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das radikale Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“</em> – Friedrich Nietzsche" data-img="">Nietzsche</span>,
+    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das radikale Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“<br>– Friedrich Nietzsche</em>" data-img="">Nietzsche</span>,
 
     <span class="clickable" data-info="Mahatma Gandhi, indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands, wurde von Werken wie Tolstois <em>Das Reich Gottes ist in euch</em> inspiriert.<br><br>Er befürwortete Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie durch passiven Widerstand im Kampf um Indiens Unabhängigkeit und soziale Gerechtigkeit um.<br><br>Sein Beispiel inspiriert weiterhin friedlichen Aktivismus, ethische Führung und die transformative Kraft prinzipientreuen Handelns.<br><br><em>„Es gibt keinen Weg zum Frieden. Frieden ist der Weg.“</em> – Mahatma Gandhi" data-img="">Gandhi</span>,
 
@@ -487,14 +436,14 @@ h1, h2, h3, h4, h5, h6 {
 
     <span class="clickable" data-info="Jim Rohn, einer meiner größten Mentoren und entscheidend für mein persönliches Wachstum, steht für Selbstdisziplin, die Kraft der Gewohnheiten und zielgerichtetes Handeln.<br><br>Er zeigte, dass Erfolg und Erfüllung aus kontinuierlichem Lernen, persönlicher Verantwortung und konsequentem Einsatz entstehen.<br><br>Seine Anleitung prägt weiterhin meine Denkweise, inspiriert Durchhaltevermögen, bewusstes Leben und das Streben nach sinnvoller persönlicher und beruflicher Entwicklung." data-img="">Jim Rohn</span>,
 
-    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser. Jetzt gibst du Wasser in eine Tasse – es wird die Tasse. Gibst du es in eine Flasche – es wird die Flasche. Gibst du es in eine Teekanne – es wird die Teekanne. Wasser kann fließen, oder es kann zerschmettern… Sei Wasser, mein Freund.“</em> – Bruce Lee" data-img="">Bruce Lee</span>,
+    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser. Jetzt gibst du Wasser in eine Tasse – es wird die Tasse. Gibst du es in eine Flasche – es wird die Flasche. Gibst du es in eine Teekanne – es wird die Teekanne. Wasser kann fließen, oder es kann zerschmettern… Sei Wasser, mein Freund.“<br>– Bruce Lee</em>" data-img="">Bruce Lee</span>,
 
-    <span class="clickable" data-info="Thich Nhat Hanh lehrt Achtsamkeit, Mitgefühl und das bewusste Leben im gegenwärtigen Moment.<br><br>Er betont, dass wahres Glück und innerer Frieden nur entstehen, wenn wir uns selbst und anderen mit Freundlichkeit begegnen und jede Handlung bewusst ausführen.<br><br>Seine Lehren inspirieren dazu, Alltag und Spiritualität zu verbinden, kleine Handlungen bewusst zu erleben und Harmonie in sich und in der Welt zu fördern.<br><br>Seine Botschaft erinnert uns daran, dass innerer Frieden ein kontinuierlicher Prozess ist, der durch Aufmerksamkeit und Liebe kultiviert werden kann.<br><br><em>„Wenn du einatmest, weißt du, dass du einatmest.“</em> – Thich Nhat Hanh" data-img="">Thich Nhat Hanh</span>,
+    <span class="clickable" data-info="Thich Nhat Hanh lehrt Achtsamkeit, Mitgefühl und das bewusste Leben im gegenwärtigen Moment.<br><br>Er betont, dass wahres Glück und innerer Frieden nur entstehen, wenn wir uns selbst und anderen mit Freundlichkeit begegnen und jede Handlung bewusst ausführen.<br><br>Seine Lehren inspirieren dazu, Alltag und Spiritualität zu verbinden, kleine Handlungen bewusst zu erleben und Harmonie in sich und in der Welt zu fördern.<br><br>Seine Botschaft erinnert uns daran, dass innerer Frieden ein kontinuierlicher Prozess ist, der durch Aufmerksamkeit und Liebe kultiviert werden kann.<br><br><em>„Wenn du einatmest, weißt du, dass du einatmest.“<br>– Thich Nhat Hanh</em>" data-img="">Thich Nhat Hanh</span>
 </em></p>
     <br>
     <br>
     <br>
-   <span class="clickable" data-info="Kunst und Kultur öffnen den Geist, berühren das Herz und verankern uns im gegenwärtigen Moment.<br><br>Sie fördern Verbindung, persönliches Wachstum und emotionale Heilung. Manchmal reicht ein einziges Musikstück, ein Gedicht oder eine Filmszene aus, um eine entscheidende Einsicht oder Inspiration zu entfachen.<br><br>Filme wie <em>Der Pate I & II</em>, <em>The Matrix</em>, <em>Fight Club</em>, <em>Braveheart</em>, <em>Die Verurteilten</em>, <em>GoodFellas</em>, <em>A Bronx Tale</em>, <em>Blow</em> und <em>Pulp Fiction</em> haben mich tief beeinflusst.<br><br>Musik und Tanz gehören zu meinen größten Leidenschaften, sie schenken Freude, Ausdruck und ein direktes Erleben des Rhythmus des Lebens. Sie dienen als kraftvolles Ventil für Heilung, als Weg, Emotionen freizusetzen, Erfahrungen zu verarbeiten und die Verbindung zu mir selbst wiederherzustellen. Der folgende Link enthält eine Playlist einiger meiner Lieblingssongs aus verschiedenen Genres und Jahrzehnten mit dem Titel <strong>„Zeitlose Songs“</strong>.<br><br><em>„Information ist nicht Wissen. Wissen ist nicht Weisheit. Weisheit ist nicht Wahrheit. Wahrheit ist nicht Schönheit. Schönheit ist nicht Liebe. Liebe ist nicht Musik. Musik ist das Beste.“</em> – Frank Zappa" data-img="">🎬 Kunst Bewegt</span>
+   <span class="clickable" data-info="Kunst und Kultur öffnen den Geist, berühren das Herz und verankern uns im gegenwärtigen Moment.<br><br>Sie fördern Verbindung, persönliches Wachstum und emotionale Heilung. Manchmal reicht ein einziges Musikstück, ein Gedicht oder eine Filmszene aus, um eine entscheidende Einsicht oder Inspiration zu entfachen.<br><br>Filme wie <em>Der Pate I & II</em>, <em>The Matrix</em>, <em>Fight Club</em>, <em>Braveheart</em>, <em>Die Verurteilten</em>, <em>GoodFellas</em>, <em>A Bronx Tale</em>, <em>Blow</em> und <em>Pulp Fiction</em> haben mich tief beeinflusst.<br><br>Musik und Tanz gehören zu meinen größten Leidenschaften, sie schenken Freude, Ausdruck und ein direktes Erleben des Rhythmus des Lebens. Sie dienen als kraftvolles Ventil für Heilung, als Weg, Emotionen freizusetzen, Erfahrungen zu verarbeiten und die Verbindung zu mir selbst wiederherzustellen. Der folgende Link enthält eine Playlist einiger meiner Lieblingssongs aus verschiedenen Genres und Jahrzehnten mit dem Titel <strong>„Zeitlose Songs“</strong>.<br><br><em>„Information ist nicht Wissen. Wissen ist nicht Weisheit. Weisheit ist nicht Wahrheit. Wahrheit ist nicht Schönheit. Schönheit ist nicht Liebe. Liebe ist nicht Musik. Musik ist das Beste.“<br>– Frank Zappa</em>" data-img="">🎬 Kunst Bewegt</span>
 
 </p>
 <a href="https://music.youtube.com/playlist?list=PL9Q7n3WnviCGvxWg0hhNt9_-0yiqF-P9t" target="_blank" rel="noopener noreferrer">🎶 Zeitlose Songs</a>
