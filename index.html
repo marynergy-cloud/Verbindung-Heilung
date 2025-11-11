@@ -27,7 +27,7 @@
 
 /* 1) Stelle sicher, dass überall Alegreya verwendet wird */
 html, body, header, footer, main, nav, .tab-content, .tab-inner, .panel, .panel * {
-  font-family: 'Alegreya', Georgia, "Times New Roman", serif !important;
+  font-family: 'Alegreya', serif !important;
 }
 
 /* 2) Einheitliche Basis-Größe (bei Bedarf anpassen). Damit erben alle Elemente dieselbe Größe. */
@@ -41,33 +41,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
   margin-right: 0;
   font-family: 'Alegreya', serif;
-  font-weight: 700; /* Überschriften etwas schwerer */
+  font-weight: 600; /* Überschriften etwas schwerer */
   line-height: 1.2;
   /* optional: leicht größere Schrift für Überschriften — passe an oder entferne, wenn du gleiche Größe willst */
-  font-size: 1.125rem;
-}
-
-/* 4) Sicherstellen, dass kursive Schrift im Panel dieselbe Größe hat wie normaler Text */
-.panel, .panel * {
-  font-size: inherit;   /* alle Elemente im Panel erben die Basisgröße */
-  font-family: inherit;
-}
-.panel i, .panel em {
-  font-style: italic;
-  font-size: inherit;   /* explizit: gleiche Größe wie normaler Text */
-  font-weight: inherit;
-}
-
-/* 5) Generell: i / em überall nicht verkleinern (falls irgendwo spezifische Regeln vorhanden sind) */
-i, em {
-  font-size: inherit !important;
-  font-style: italic;
-}
-
-/* 6) Optional: Falls bestimmte Komponenten (z. B. blockquote) vorher andere Größen hatten, normalisieren */
-blockquote, p, li, a, button, nav button {
-  font-size: inherit;
-  font-family: inherit;
+  font-size: 1.5rem;
 }
 
 /* Hinweis: Falls du möchtest, dass Überschriften NICHT in Schriftart, sondern nur in Ausrichtung abweichen,
@@ -78,7 +55,7 @@ blockquote, p, li, a, button, nav button {
       font-family: 'Alegreya';
       src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
            url('fonts/Alegreya-Regular.woff') format('woff');
-      font-weight: 400;
+      font-weight: 300;
       font-style: normal;
       font-display: swap;
     }
@@ -101,7 +78,7 @@ blockquote, p, li, a, button, nav button {
 
     /* Base font family and size */
     body {
-      font-family: 'Alegreya', Georgia, "Times New Roman", serif;
+      font-family: 'Alegreya', serif;
       font-size: 1rem; /* Uniform size */
     }
 
@@ -193,7 +170,7 @@ blockquote, p, li, a, button, nav button {
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      background-image: url('healing-bg.jpg');
+      background-image: url('healing-bg.jpg'); 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -207,7 +184,7 @@ blockquote, p, li, a, button, nav button {
       text-align: center;
       padding: 1rem;
       color: var(--text);
-      background-color: rgba(245, 243, 231, 0.85);
+      background-color: rgba(255, 253, 245, 0.85);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -231,27 +208,32 @@ blockquote, p, li, a, button, nav button {
     main { max-width: var(--max-width); margin: 1.25rem auto 3rem; padding: 0 1rem; }
     .tabs { position: relative; }
 
-    .tab-content {
-      display: none;
-      position: relative;
-      margin: 0 auto;
-      min-height: 340px;
-      padding: var(--tab-padding);
-      border-radius: var(--radius);
-      overflow: visible;
-      background-size: cover;
-      background-position: center;
-      color: var(--text);
-      --overlay-local: var(--overlay);
-      --text-local: var(--text);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(8px);
-      transition:
-        opacity 0.28s ease,
-        transform 0.28s ease,
-        background-image 0.6s ease-in-out;
-    }
+  .tab-content {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  min-height: 340px;
+  padding: var(--tab-padding);
+  border-radius: var(--radius);
+  overflow: visible;
+  background-image:
+  url('path/to/your-image.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  --overlay-local: var(--overlay);
+  --text-local: var(--text);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px); /* Unschärfe für den Hintergrund */
+  -webkit-backdrop-filter: blur(6px); /* Safari-Support */
+  opacity: 0.8;
+  transform: translateY(8px);
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    background-image 0.6s ease-in-out;
+}
+
     .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
 
     .tab-inner {
@@ -268,20 +250,23 @@ blockquote, p, li, a, button, nav button {
       line-height: 1.65;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
 
-    .bg-connect, .bg-education { background-color: #f7fbf9; }
-    .subtle-text { color: #666; margin: 0 0 0.25rem 0; text-align: center; }
-    p { margin: 0.6rem 0; }
+    .bg-connect, .bg-education, .bg-inspiration { background-color: #FFFDF5; }
+    .subtle-text { color: #666; margin: 0 0 0rem 0; text-align: center; }
+    p { margin: 0.5rem 0; }
     .section { margin: 1rem 0; }
+    
 
     blockquote {
-      margin: 1rem 0;
+      margin: 0.8rem 0;
       padding: 0.7rem 1rem;
       border-left: 4px solid var(--accent);
       border-radius: 6px;
-      background-color: rgba(255,255,255,0.85);
+      background-color: rgba(255, 255, 255, 0.85);
       font-style: italic;
+      font-size: 0.9rem;
       color: inherit;
     }
 
@@ -320,174 +305,174 @@ blockquote, p, li, a, button, nav button {
   
 <body>
   <header>
+     <p class="subtle-text">愛 LIEBE</p>
     <h1>Marynergy</h1>
-    <p>Verbinden · Wachsen · Kreieren</p>
+    <p>Connect · Grow · Create</p>
     <nav aria-label="Haupttabs" role="tablist">
       <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true">Verbindung &amp; Heilung</button>
       <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false">Bildung &amp; Wachstum</button>
+       <button type="button" id="tab-btn-inspiration" role="tab" aria-controls="inspiration" aria-selected="false">Inspiration &amp; Kreation</button>
     </nav>
   </header>
 
   <main>
-  <div class="tabs-intro tab-inner" style="margin-bottom: 2rem; text-align: center; background-color: white;">
-  <p>
-    Willkommen bei Marynergy – ein Raum für Verbindung, Heilung und Wachstum. Entdecke Praktiken für Körper, Geist und Herz und lass dich zu einem bewussten, erfüllten Leben inspirieren.
-  </p>
-</div>
 
     <div class="tabs" id="tabs">
       <section id="connect" class="tab-content bg-connect active" role="tabpanel" aria-labelledby="tab-btn-connect" aria-hidden="false" data-bg="healing-bg.jpg">
         <div class="tab-inner">
-          <p class="subtle-text">愛 LIEBE</p>
-          <h2>Verbindung und Heilung</h2>
            <blockquote>
-            „In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenztes-Sein.“ – Miyamoto Musashi, <em>Das Buch der fünf Ringe</em>
+            <em>„In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenztes-Sein.</em>“ <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em>
           </blockquote>
 <br>
 <br>    
-<span class="clickable" data-info="Die Einheit von Körper, Geist und Herz entfaltet sich als eine fortlaufende, sich entwickelnde Reise – ein Heilungsprozess, der niemals wirklich endet. Durch Achtsamkeit, bewusstes Präsenzsein, spirituelle Praxis und körperliches Training kultivieren wir innere Harmonie: Der Körper wird gestärkt, der Geist geklärt, das Herz genährt. Diese lebendige Verbindung zum größeren Ganzen kann im Dao, im Zen, im Chi – oder einfach durch das Eintauchen in die Natur – erfahren werden, wo jeder Moment zu neuer Bewusstheit, Integration und Transformation einlädt." data-img="">🌱 Kernlehre</span>
+<span class="clickable" data-info="Ein fortlaufender Heilungsprozess, der Körper, Geist und Herz verbindet.<br><br>Er wird durch Achtsamkeit, körperliches Training und spirituelle Praxis gefördert.<br><br>Neben der inneren Heilung entsteht eine Verbindung zum Großen Ganzen, unter anderem erfahrbar in der Natur oder im Dao, Zen und Chi.
+" data-img="">🌱 Kernlehre</span>
 <br>
 <br>
-<span class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden. Heilung beginnt mit dem Mut, der Wahrheit ins Gesicht zu sehen, Veränderungen anzunehmen, das ganze Wesen auszurichten und einen Raum jenseits des Egos zu öffnen, in dem das Bewusstsein klarer wird. Diese dynamische Energie fließt durch Körper, Geist und Herz, nährt Resilienz und Vitalität und fördert ein tieferes, ehrlicheres Verständnis von sich selbst und der Welt." data-img="">🌱 Energie & Wahrheit</span>
+<span class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden.<br><br>Heilung entsteht aus dem Mut, persönliche und universelle Wahrheit zu erkennen, Körper, Geist und Herz auszurichten und einen Raum jenseits des Egos zu öffnen, in dem Bewusstsein erfahrbar wird." data-img="">🌱 Energie & Wahrheit</span>
 <br>
 <br>
-<span class="clickable" data-info="Praktiken wie Qigong, Meditation, Yoga, Laufen, Calisthenics, achtsames Essen, Fasten, Kälteexposition, Sauna, Musik, Tanz, Journaling und Lesen fördern nicht nur körperliche Stärke, sondern auch geistige Klarheit und emotionale Balance. Wenn sie regelmäßig praktiziert werden, integrieren sie Körper, Geist und Herz, fördern Verbindung, Präsenz, Vitalität und nachhaltiges spirituelles Wachstum — und unterstreichen, dass Heilung ein fortlaufender, prozessorientierter Weg ist und kein festes Ziel." data-img="">🌱 Ganzheitliche Heilung & Routinen</span>
+<span class="clickable" data-info="<br>
+<ul>
+    <em><li>Qigong · Yoga · Meditation · Atemübungen
+    <li>Laufen · Calisthenics · Bodenübungen
+    <li>Naturverbundenheit · Fasten · Ernährung
+    <li>Kälteeinwirkung · Sauna
+    <li>Musik · Tanz · Kreativität</li></em><br>
+   
+<p>’Repetition is the mother of skill’ – Routinen und Disziplin sind der Schlüssel für langfristigen Erfolg.<br><br>Regelmäßige Praxis stärkt Körper, Geist und Herz, fördert Flexibilität, Ausdauer, geistige Klarheit und innere Gelassenheit und unterstützt Heilung, Vitalität sowie spirituelles Wachstum." data-img="">🌱 Ganzheitliche Heilung</span>
 <br>
 <br>
-<span class="clickable" data-info="Fasten und bewusste Pausen stärken die natürliche Regenerationsfähigkeit des Körpers, während Unterbrechungen von Medien, ständigem Denken und Überstimulation geistige Klarheit, emotionales Gleichgewicht und innere Stärke wiederherstellen. Diese bewussten Momente der Erneuerung schaffen den Raum für Reflexion, Lernen und die kontinuierliche Ausrichtung von Körper, Geist und Herz — eine Erinnerung daran, dass ganzheitliche Heilung lebenslang ist und sich immer entfaltet." data-img="">🌱 Raum für Erneuerung</span>
+<span class="clickable" data-info="Fasten und bewusste Pausen stärken die natürliche Regeneration des Körpers.<br><br>Abstand von Medien, Gedankenflut und Überstimulation bringt Klarheit, inneres Gleichgewicht und Stärke.<br><br>Diese Momente der Erneuerung öffnen Raum für die Ausrichtung von Körper, Geist und Herz und zeigen, dass ganzheitliche Heilung ein fortlaufender Prozess ist." data-img="">🌱 Raum für Erneuerung</span>
 <br>
 <br>
-<span class="clickable" data-info="Die höchste Form des Seins ist die Einheit von Aktion, Substanz und Himmel &amp; Erde. Ihre reinste Ausdrucksform ist einfaches Atmen und unmittelbares Erleben im gegenwärtigen Moment—was immer du tust oder fühlst.<br><br><strong>Aktion</strong> umfasst Atmen, Denken, Tun und so weiter, sei es aktiv oder passiv, bewusst oder unbewusst.<br><br><strong>Substanz</strong> ist das, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken und Informationen.<br><br><strong>Himmel &amp; Erde</strong> umfassen Orte in der physischen Welt, Menschen, Beziehungen und die digitale Welt, die Vergangenheit, Gegenwart und Zukunft verbinden.<br><br><em>
-    Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — das Fundament meiner Philosophie.<br><br>
-    Der digitalen Welt begegne ich bewusst — um zu teilen und inspiriert zu werden.</em> " data-img="">🌱 Aktion · Substanz · Himmel &amp; Erde</span>
+<span class="clickable" data-info="Die höchste Form des Seins ist die Einheit von Aktion, Substanz und Himmel &amp; Erde. Ihre reinste Ausdrucksform ist einfaches Atmen und unmittelbares Erleben im gegenwärtigen Moment—was immer du tust oder fühlst.<br><br><strong>Aktion</strong> kann Atmen, Denken und Handeln umfassen – aktiv oder passiv, bewusst oder unbewusst.<br><br><strong>Substanz</strong>  ist alles, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken und Informationen.<br><br><strong>Himmel &amp; Erde</strong> uumfassen Orte der physischen Welt, Menschen, Beziehungen und die digitale Welt sowie Vergangenheit, Gegenwart und Zukunft.<br><br><br><em>
+    Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — das Fundament meiner Philosophie." data-img="">🌱 Aktion · Substanz · Himmel &amp; Erde</span>
 <br>
 <br>
 <br>
-      <img src="Lisboa.jpg" alt="Bild von Lissabon" style="display:block; margin-top:20px; max-width:100%;">
+      
    </div>
       </section>
 
       <section id="education" class="tab-content bg-education" role="tabpanel" aria-labelledby="tab-btn-education" aria-hidden="true" data-bg="healing-bg.jpg">
         <div class="tab-inner">
-          <h2>Bildung und Wachstum</h2>
            <blockquote>
-            „Du magst denken, dass du in der Gegenwart lebst, aber tatsächlich lebst du in der Vergangenheit, solange Gedanken wirken… Wenn dies dir nicht erzählt, wiederholt oder gezeigt wird, kannst du endlos über Bücher reden. Dies kommt zuerst. Danach kannst du die Bücher lesen.“
-            <br>– J. Krishnamurti
+            „Du magst denken, dass du in der Gegenwart lebst, aber tatsächlich lebst du in der Vergangenheit, solange Gedanken wirken… Wenn dies dir nicht erzählt, wiederholt oder gezeigt wird, kannst du endlos über Bücher reden. Dies kommt zuerst. Danach kannst du die Bücher lesen.“ <strong>– J. Krishnamurti</strong>
           </blockquote>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
     <span class="clickable" data-info="Das Wort <strong>educate</strong> stammt vom Lateinischen <strong>educo</strong> ab, was <em>„herausziehen“, „von innen entwickeln“</em> bedeutet.<br><br>Wahre Bildung entfaltet unser angeborenes Potenzial und legt die Grundlage für Wohlstand, Gesundheit, Prosperität und Freiheit.<br><br>Sie fördert Werte und Tugenden, die sowohl persönliches Wachstum als auch das Wohl des Kollektivs unterstützen.<br><br>Bildung ist eine gelebte Präsenz, die Körper, Geist und Herz vereint und Lernen zu einer ganzheitlichen Erfahrung macht — eine, die über reines Wissen hinausgeht, um Neugier, Inspiration und nachhaltiges Wachstum für Einzelne und die Gesellschaft zu fördern." data-img="">🌱 Wesen der Bildung
 </span>
 
 <br>
 <br>
-<span class="clickable" data-info="Der Schlüssel zu Wachstum und Erfolg liegt nicht in äußeren Umständen, sondern in persönlicher <strong>Philosophie</strong> — darin, wie wir denken, fühlen und Entscheidungen treffen. Kleine, bewusste Gewohnheiten, konsequent ausgeführt, schaffen dauerhaften Erfolg, während wiederholte schlechte Entscheidungen Barrieren aufbauen.<br><br>Unsere <strong>Einstellung</strong> bestimmt, wie wir Leben, Vergangenheit, Zukunft, andere und uns selbst erleben. Eine positive Haltung, Selbstbewusstsein, klare Ziele und die Fähigkeit zu lernen bilden die Grundlage für persönlichen Fortschritt und gesellschaftlichen Wandel.<br><br>Wahres Wachstum entsteht durch konkrete <strong>Handlungen</strong>: bewusste, disziplinierte Schritte, die konsequent umgesetzt werden, unter Einsatz von Planung, Beharrlichkeit und Anpassungsfähigkeit. Jede Handlung, egal wie klein, summiert sich über die Zeit und schafft bedeutenden Fortschritt und Transformation.<br><br><strong>Ergebnisse</strong> zeigen, wo Philosophie, Einstellung oder Handlungen verfeinert werden müssen. Wie es heißt: 'Ergebnisse sind das A und O. Erfolg ist ein Zahlenspiel.' Regelmäßige Bewertung und Anpassung ermöglichen messbaren Fortschritt und kontinuierliche Verbesserung.<br><br><strong>Lebensstil</strong> bedeutet, Wohlstand, Erfolge und Glück bewusst zu gestalten durch Lernen, Reflexion und die Kultivierung guter Gewohnheiten; selbst kleine Entscheidungen, wie mehr zu geben als erwartet, tragen zu einem reicheren und erfüllteren Leben bei." data-img="">🌱 Die fünf Säulen des Wachstums
+<span class="clickable" data-info="<strong>Philosophie</strong>:
+Wachstum und Erfolg hängen von persönlicher Philosophie ab, nicht von äußeren Umständen.<br><br><strong>Einstellung</strong>:
+Unsere Einstellung bestimmt, wie wir Leben, andere und uns selbst wahrnehmen.<br><br><strong>Handlungen</strong>:
+Wahres Wachstum entsteht durch bewusste, konsequente Handlungen.<br><br><strong>Ergebnisse</strong>:
+Ergebnisse zeigen, wo Philosophie, Einstellung oder Handeln angepasst werden müssen. <em>'Erfolg ist ein Zahlenspiel.'</em><br><br><strong>Lebensstil</strong>:
+Lebensstil bedeutet, Wohlstand, Erfolg und Glück bewusst durch Lernen und gute Gewohnheiten zu gestalten." data-img="">🌱 Die fünf Säulen des Wachstums
 </span>
 
 <br>       
 <br>
-   <span class="clickable" data-info="Das Leben spiegelt die Zyklen der Jahreszeiten wider.<br><br><strong>Winter</strong>: Wir begegnen Herausforderungen, die uns prüfen und uns helfen, stärker zu werden.<br><br><strong>Frühling</strong>: lädt uns ein, neue Möglichkeiten zu erkennen und aktiv zu ergreifen, um Wachstum und Potenzial zu fördern.<br><br><strong>Sommer</strong>: ermutigt dazu, die positiven Aspekte unseres Lebens zu pflegen, während wir lernen, Negativität abzuwehren und gesunde Grenzen zu setzen.<br><br><strong>Herbst, zur Ernte</strong>: Wir übernehmen die volle Verantwortung für unsere Leistungen und Ergebnisse, reflektieren über unsere Erfahrungen und schätzen bewusst die Früchte unserer Bemühungen.<br><br>Das Beste menschlicher Reife ist: <strong>keine Entschuldigung, wenn man gut gehandelt hat, und keine Beschwerde, wenn nicht</strong>." data-img="">🌱 Das Leben ist wie die Jahreszeiten
+   <span class="clickable" data-info="Das Leben spiegelt die Zyklen der Jahreszeiten wider.<br><br><strong>Winter</strong>: Wir begegnen Herausforderungen, die uns prüfen und uns helfen, stärker zu werden.<br><br><strong>Frühling</strong>: lädt uns ein, neue Möglichkeiten zu erkennen und aktiv zu ergreifen, um Wachstum und Potenzial zu fördern.<br><br><strong>Sommer</strong>: ermutigt dazu, die positiven Aspekte unseres Lebens zu pflegen, während wir lernen, Negativität abzuwehren und gesunde Grenzen zu setzen.<br><br><strong>Herbst, zur Ernte</strong>: Wir übernehmen die volle Verantwortung für unsere Leistungen und Ergebnisse, reflektieren über unsere Erfahrungen und schätzen bewusst die Früchte unserer Bemühungen.<br><br><br>Das Beste menschlicher Reife ist: Keine Entschuldigung, wenn du es gut gemacht hast, und keine Beschwerde, wenn nicht." data-img="">🌱 Das Leben ist wie die Jahreszeiten
 </span>
 <br>
 <br>
-<span class="clickable" data-info="Persönliche Entwicklung umfasst die Förderung von körperlicher, geistiger und seelischer Entwicklung in Harmonie.<br><br>Behandle deinen Körper wie einen Tempel, indem du dich auf gesunde Ernährung, regelmäßige Bewegung und regenerierende Praktiken konzentrierst, die Gesundheit und Vitalität erhalten.<br><br>Gleichzeitig kultiviere täglich Tugenden und innere Werte — wie Geduld, Integrität und Mitgefühl — um innere Balance und Charakter zu stärken.<br><br>Schärfe deinen Geist durch sorgfältige Beobachtung, Lesen, Reflexion und bewusstes Handeln, während du kontinuierliches Lernen und Selbstbewusstsein praktizierst.<br><br>Indem körperliches Wohlbefinden, ethisches Wachstum und geistige Klarheit integriert werden, wird persönliche Entwicklung zu einer ganzheitlichen Reise hin zu Erfüllung, Resilienz und einem sinnvollen Leben." data-img="">🌱 Persönliche Entwicklung
+<span class="clickable" data-info="<strong>Körper</strong>: Behandle deinen Körper wie einen Tempel, pflege ihn durch Ernährung, Bewegung und Vitalität, denn ohne Gesundheit kannst du dein Potenzial nicht entfalten.<br><br>
+<strong>Geist</strong>: Kultiviere deine Werte, Tugenden und spirituellen Praktiken, damit Charakter und Integrität gestärkt werden und du innerlich ausgewogen bist.<br><br>
+<strong>Mental</strong>: Entwickle deinen Verstand durch Lernen, Reflexion und kritisches Denken, um deine Überzeugungen zu formen und verteidigen zu können." data-img="">🌱 Persönliche Entwicklung
 </span>
 <br>
 <br>
-  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><em>Wie geschrieben steht: „Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“ (Johannes 1,1).</em>" data-img="">🌱 Kommunikation
+  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><br><em>„Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“<br>(Johannes 1,1)</em>" data-img="">🌱 Kommunikation
 </span>
 <br>
 <br>
 <br>
 <br>
-<span class="clickable" 
-      data-info="Bücher öffnen den Geist, eröffnen neue Perspektiven und führen uns zu tieferem Verständnis.<br><br>Sie fördern Reflexion, persönliches Wachstum und Klarheit des Handelns. Oft kann eine einzige Passage oder Geschichte Einsicht, Motivation oder eine transformative Idee auslösen.<br><br>Titel wie <em>Das Buch der fünf Ringe</em>, <em>Meditationen</em>, <em>Denke nach und werde reich</em>, <em>Die Kunst des Krieges</em>, <em>Der Fürst</em>, <em>Der reichste Mann Babylons</em>, <em>1984</em>, <em>Die Bibel</em>, <em>Eine neue Erde</em> haben mein Denken geprägt und bieten Lektionen in Strategie, Weisheit, Resilienz und dem menschlichen Geist.<br><br>Lesen ist ein Tor zum Wachstum und bietet sowohl Inspiration als auch praktische Orientierung für das Leben."
-      data-img=""><em>🌸 Inspirierende Bücher:</span>
-    <span class="clickable" data-info="<em>Das Buch der fünf Ringe</em>: Miyamoto Musashi war ein legendärer Samurai, Stratege und Philosoph, der mehr als 60 Duelle ohne Niederlage gewann.<br><br>Als Gründer von Niten Ichi-Ryū perfektionierte er die Zwei-Schwert-Technik und einen unverwechselbaren Kampfansatz.<br><br>In <em>Das Buch der fünf Ringe</em> verdichtete Musashi seine Erfahrungen zu einer Philosophie der Strategie, die über den Kampf hinausgeht — sie betont Klarheit des Geistes, Anpassungsfähigkeit und Meisterschaft durch Disziplin.<br><br>Nur wenige Persönlichkeiten haben mich so tief beeinflusst wie <strong>Miyamoto Musashi</strong> und sein <em>Buch der fünf Ringe</em>.<br><br><em>„Das Herz sollte wie Wasser werden: formlos, es verändert seine Form je nach Gefäß, in dem es ist. Manchmal erscheint Wasser als ein einzelner Tropfen, manchmal als ein ganzer Ozean.“<br>– Das Buch der fünf Ringe, Miyamoto Musashi</em>" data-img="">Das Buch der fünf Ringe</span>, 
+  <em>🌸 Eine kleine Auswahl inspirierender Bücher und Persönlichkeiten:
+    <br>
+<br>
+    <span class="clickable" data-info="<strong>Miyamoto Musashi</strong>, legendärer Samurai, Schwertkämpfer und Philosoph: <em>„Das Buch der fünf Ringe“</em> lehrt, wie Meisterschaft und Selbstdisziplin durch klare Prinzipien und innere Gelassenheit erreicht werden; es inspiriert, Konflikte mit klarem Geist zu meistern. Kaum ein Werk hat mich so tief geprägt wie dieses.</em>" data-img=""><em>The Book of Five Rings</em></span><br>
 
 
-    <span class="clickable" data-info="<em>Selbstbetrachtungen</em>: Der römische Kaiser und Philosoph <strong>Mark Aurel</strong> formuliert die Kernprinzipien des Stoizismus — Selbstreflexion, ethische Integrität und Verantwortung für das eigene Handeln.<br><br>Seine Schriften betonen die Kultivierung innerer Ruhe, Charakterstärke und die Suche nach Weisheit angesichts der Herausforderungen des Lebens.<br><br>Wie ein zeitloser Leitfaden für ein überlegtes Leben ist es ein Buch, das immer wieder gelesen werden sollte." data-img="">Selbstbetrachtungen</span>,
+    <span class="clickable" data-info="<em>„Selbstbetrachtungen“</em>: Der römische Kaiser und Philosoph <strong>Marcus Aurelius</strong> formuliert die Kernprinzipien des Stoizismus — Selbstreflexion, ethische Integrität und Verantwortung für das eigene Handeln.<br><br>Seine Schriften betonen die Kultivierung innerer Ruhe, Charakterstärke und die Suche nach Weisheit angesichts der Herausforderungen des Lebens.<br><br>Wie ein zeitloser Leitfaden für ein überlegtes Leben ist es ein Buch, das immer wieder gelesen werden sollte." data-img=""><em>Meditations</em></span><br>
 
-    <span class="clickable" data-info="<strong>Napoleon Hill</strong>’s <em>Denke nach und werde reich</em> ist ein grundlegender Leitfaden für Erfolg und persönliche Entwicklung.<br><br>Es vermittelt Prinzipien wie Zielsetzung, Selbstdisziplin, positives Denken und konsequentes Handeln — Werkzeuge, die sowohl Wohlstand als auch persönliche Erfüllung fördern.<br><br>Wie eine Landkarte zum Erfolg zeigt das Buch, dass die Anwendung dieser zeitlosen Lektionen das Leben verändern kann, wobei die volle Wirkung seiner Prinzipien nur von wenigen erreicht wird." data-img="">Think and Grow Rich</span>,
+    <span class="clickable" data-info="<strong>Napoleon Hill</strong>’s <em>„Denke nach und werde reich“</em> ist ein grundlegender Leitfaden für Erfolg und persönliche Entwicklung.<br><br>Es vermittelt Prinzipien wie Zielsetzung, Selbstdisziplin, positives Denken und konsequentes Handeln — Werkzeuge, die sowohl Wohlstand als auch persönliche Erfüllung fördern.<br><br>Wie eine Landkarte zum Erfolg zeigt das Buch, dass die Anwendung dieser zeitlosen Lektionen das Leben verändern kann, wobei die volle Wirkung seiner Prinzipien nur von wenigen erreicht wird." data-img=""><em>Think and Grow Rich</em></span><br>
 
-   <span class="clickable" data-info="<em>Die Kunst des Krieges</em> von Sunzi ist ein klassisches Werk über Strategie, Taktik und Führung.<br><br>Es lehrt, Herausforderungen klug zu analysieren, Gegner zu verstehen und mit Klarheit und Flexibilität zu handeln.<br><br>Wie ein zeitloser Leitfaden zur Navigation von Konflikten und Konkurrenz gelten seine Prinzipien nicht nur für den Krieg, sondern auch für Wirtschaft und Leben und bieten Einblicke in Strategie, Entscheidungsfindung und das Gleichgewicht zwischen Vorbereitung und Anpassungsfähigkeit." data-img="">Die Kunst des Krieges</span>,
-
-    <span class="clickable" data-info="<em>Der Fürst</em> von Niccolò Machiavelli ist ein klassisches Werk der politischen Philosophie und bietet pragmatische Strategien für Macht, Führung und Einfluss.<br><br>Es zeigt, dass das Erreichen politischer Ziele oft Weisheit, Flexibilität und Realismus erfordert — und dass Effektivität manchmal Vorrang vor Idealen haben kann, ohne die langfristige Stabilität zu gefährden.<br><br>Wie ein Leitfaden zum Navigieren menschlicher Ambitionen bleibt es eine unverzichtbare Studie für jeden, der Macht, Gesellschaft und die Komplexität menschlichen Verhaltens verstehen möchte." data-img="">Der Fürst</span>,
-
-    <span class="clickable" data-info="<em>Der reichste Mann von Babylon</em> von George S. Clason ist ein zeitloser Leitfaden für finanzielle Weisheit, erzählt durch spannende Geschichten aus dem alten Babylon.<br><br>Es vermittelt dauerhafte Prinzipien zu Sparen, Investieren und Vermögensaufbau und zeigt, dass finanzieller Erfolg nicht vom Glück abhängt, sondern von Disziplin, sorgfältiger Entscheidungsfindung und langfristiger Planung.<br><br>Wie eine Lebenslandkarte zeigt es, wie die Anwendung dieser zeitlosen Lektionen die finanzielle Zukunft verändern und dauerhafte Sicherheit schaffen kann." data-img="">Der reichste Mann von Babylon</span>,
+   <span class="clickable" data-info="<em>„Die Kunst des Krieges“</em> von <strong>Sun Tzu</strong> ist ein klassisches Werk über Strategie, Taktik und Führung.<br><br>Es lehrt, Herausforderungen klug zu analysieren, Gegner zu verstehen und mit Klarheit und Flexibilität zu handeln.<br><br>Wie ein zeitloser Leitfaden zur Navigation von Konflikten und Konkurrenz gelten seine Prinzipien nicht nur für den Krieg, sondern auch für Wirtschaft und Leben und bieten Einblicke in Strategie, Entscheidungsfindung und das Gleichgewicht zwischen Vorbereitung und Anpassungsfähigkeit." data-img=""><em>The Art of War</em></span><br>
 
 
-    <span class="clickable" data-info="<em>1984 – George Orwell</em>: 1984 ist ein kraftvoller dystopischer Roman über Überwachung, Totalitarismus und Propaganda.<br><br>Er zeigt eine Welt, in der Freiheit, Wahrheit und Individualität unter absoluter Kontrolle erstickt werden — wo sogar Gedanken überwacht und die Realität selbst umgeschrieben werden kann.<br><br>Wie ein der Gesellschaft vorgehaltener Spiegel warnt er vor den Gefahren von Manipulation, blindem Gehorsam und dem Verlust persönlicher Freiheit.<br><br>Orwells Geschichte erinnert uns daran, Autorität zu hinterfragen, kritisch zu denken und die Wahrheit um jeden Preis zu schützen.<br><br>Seine Botschaft — über Macht, Kontrolle und menschliche Integrität — bleibt heute ebenso dringend und relevant wie eh und je." data-img="">1984</span>,
-
-    <span class="clickable" data-info="Die Bibel ist ein zeitloser Klassiker — zentral für das Christentum und tief einflussreich in der Prägung von Kultur, Ethik und Moral.<br><br>Sie vermittelt Weisheit, spirituelle Orientierung und dauerhafte Werte wie Mitgefühl, Gerechtigkeit und Nächstenliebe — Werte, die Menschen weltweit weiterhin inspirieren.<br><br>Wie Biografien und Autobiografien bietet sie sowohl Vorbilder zum Nachahmen als auch Warnungen zum Lernen.<br><br>Die Bibel ist einzigartig, weil sie zwei Arten von menschlichen Geschichten präsentiert: auf der einen Seite Beispiele, auf der anderen Seite Warnungen.<br><br>In Lebensgeschichten finden wir beides — beides ist wesentlich: Beispiele und Warnungen.<br><br>In der Bibel sagen die Beispiele: „Schaut euch das Leben dieser Menschen an. Folgt ihnen. Folgt ihrer Philosophie. Folgt ihrem Rat.“<br><br>Und dann gibt es die Warnungen: „Tut nicht, was diese Menschen getan haben.“ Sie machten Fehler, verschwendeten ihr Potenzial und verloren ihren Weg.<br><br>Beide Seiten der Geschichte sind von entscheidender Bedeutung." data-img="">Die Bibel</span>,
-
-    <span class="clickable" data-info="In <em>Eine neue Erde</em> untersucht Eckhart Tolle, wie Menschen ihr Bewusstsein erweitern können, um ein erfüllteres und friedlicheres Leben zu führen.<br><br>Er identifiziert das Ego als Wurzel von Leiden, Konflikten und Unzufriedenheit und zeigt, wie man sich von ego-gesteuerten Denkmustern befreien kann.<br><br>Wie ein Leitfaden für achtsames Leben demonstriert das Buch, wie das Kultivieren von Bewusstheit und Präsenz nicht nur inneren Frieden bringt, sondern auch zu einer positiven Transformation in der Welt beiträgt." data-img="">Eine neue Erde</span></em>
-
+    <span class="clickable" data-info="<em>Die Bibel</em> ist einzigartig, weil sie zwei Arten von menschlichen Geschichten präsentiert: auf der einen Seite Beispiele, auf der anderen Seite Warnungen.<br><br>In Lebensgeschichten finden wir beides — beides ist wesentlich: Beispiele und Warnungen.<br><br>In der Bibel sagen die Beispiele: „Schaut euch das Leben dieser Menschen an. Folgt ihnen. Folgt ihrer Philosophie. Folgt ihrem Rat.“<br><br>Und dann gibt es die Warnungen: „Tut nicht, was diese Menschen getan haben.“ Sie machten Fehler, verschwendeten ihr Potenzial und verloren ihren Weg.<br><br>Beide Seiten der Geschichte sind von entscheidender Bedeutung." data-img=""><em>Die Bibel</em></span>
     <br>
     <br>
-   <span class="clickable" 
-      data-info="Hinweis: Persönlichkeiten, die bereits als Autoren der zuvor genannten Bücher genannt wurden, werden der Übersicht halber nicht noch einmal vorgestellt. Dies ist nur eine kleine Auswahl inspirierender Persönlichkeiten, da ich nicht alle auflisten kann, die Gedanken und Weisheit geprägt haben.<br><br>Figuren wie <em>Buddha</em>, <em>Jesus</em>, <em>Konfuzius</em>, <em>Laozi</em>, <em>Heraklit</em>, <em>Sokrates</em>, <em>Platon</em>, <em>Epiktet</em>, <em>Franz von Assisi</em>, <em>Rumi</em>, <em>Leonardo da Vinci</em>, <em>Giordano Bruno</em>, <em>Galileo</em>, <em>Spinoza</em>, <em>Newton</em>, <em>Leibniz</em>, <em>Kant</em>, <em>Lincoln</em>, <em>Tolstoi</em>, <em>Tesla</em>, <em>Nietzsche</em>, <em>Gandhi</em>, <em>Einstein</em>, <em>Alan Watts</em>, <em>Jim Rohn</em> haben mich inspiriert und Lektionen in Weisheit, Kreativität, Mut und der Suche nach Wahrheit vermittelt.<br><br>Wie bei Büchern oder Persönlichkeiten gilt das Prinzip: Sei kein Nachfolger, sei ein Lernender. Letztlich ist es entscheidend, das zu extrahieren, was mit dir resoniert, und deinen eigenen Weg zu gehen."
-      data-img="">
-  <em>🌸 Inspirierende Persönlichkeiten:</span>
+    <br>
 
-        
-    <span class="clickable" data-info="Siddhartha Gautama faszinierte mich bereits in meiner Jugend, als ich erkannte, dass der Buddhismus einen Weg bietet, das eigene Leben zu meistern.<br><br>Am meisten beeindruckte mich diese Idee: Beim Überqueren eines Flusses lässt man das Floß zurück — so sollte auch der Buddhismus verstanden werden.<br><br>Die Lehre ist ein Werkzeug, kein Besitz. Sie ermutigt dazu, den Buddhismus nicht als Last oder starren Dogma zu sehen, sondern als Leitfaden, den man letztlich loslassen kann." data-img="">Buddha</span>,
+    <em><span class="clickable" data-info="Siddhartha Gautama faszinierte mich bereits in meiner Jugend, als ich erkannte, dass der Buddhismus einen Weg bietet, das eigene Leben zu meistern.<br><br>Am meisten beeindruckte mich diese Idee: Beim Überqueren eines Flusses lässt man das Floß zurück — so sollte auch der Buddhismus verstanden werden.<br><br>Die Lehre ist ein Werkzeug, kein Besitz. Sie ermutigt dazu, den Buddhismus nicht als Last oder starren Dogma zu sehen, sondern als Leitfaden, den man letztlich loslassen kann." data-img="">Buddha</span> · 
 
-    <span class="clickable" data-info="Jesus verkörpert Mitgefühl, Vergebung und bedingungslose Liebe.<br><br>Sein Leben und seine Lehren inspirieren dazu, anderen mit Empathie, Geduld und Achtsamkeit zu begegnen.<br><br>Er forderte die Menschen auf, über sich selbst hinauszusehen, demütig zu handeln und eine Liebe zu leben, die Urteil und Angst übersteigt.<br><br>Die Energie von Liebe und Selbstlosigkeit, die durch ihn floss, wirkt weiterhin nach und bietet Orientierung und Kraft, ein Leben in Freundlichkeit und moralischem Mut zu führen — heute und für alle Zeiten." data-img="">Jesus</span>,
+    <span class="clickable" data-info="Jesus verkörpert Mitgefühl, Vergebung und bedingungslose Liebe.<br><br>Sein Leben und seine Lehren inspirieren dazu, anderen mit Empathie, Geduld und Achtsamkeit zu begegnen.<br><br>Er forderte die Menschen auf, über sich selbst hinauszusehen, demütig zu handeln und eine Liebe zu leben, die Urteil und Angst übersteigt.<br><br>Die Energie von Liebe und Selbstlosigkeit, die durch ihn floss, wirkt weiterhin nach — heute und für alle Zeiten." data-img="">Jesus</span> · 
 
-    <span class="clickable" data-info="Für mich steht Konfuzius für Ethik, Weisheit und die Bedeutung von Bildung und Selbstreflexion.<br><br>Einer seiner Aphorismen, den ich in einer lebensbedrohlichen Situation begegnete, gab mir Halt und half mir, Ruhe und Klarheit zu bewahren.<br><br>Seine Lehren inspirieren weiterhin zu überlegtem Handeln, moralischer Integrität und der Suche nach Wissen im Alltag." data-img="">Konfuzius</span>,
+    <span class="clickable" data-info="Für mich steht Konfuzius für Ethik, Weisheit und die Bedeutung von Bildung und Selbstreflexion.<br><br>Einer seiner Aphorismen, den ich in einer lebensbedrohlichen Situation begegnete, gab mir Halt und half mir, Ruhe und Klarheit zu bewahren.<br><br>Seine Lehren inspirieren weiterhin zu überlegtem Handeln, moralischer Integrität und der Suche nach Wissen im Alltag." data-img="">Konfuzius</span> · 
 
-    <span class="clickable" data-info="Laozi steht für Dao, Natürlichkeit, Wu Wei (Handeln durch Nicht-Handeln) und Harmonie mit der Natur.<br><br>Viele seiner Einsichten spiegeln sich in meinem eigenen Lebensansatz wider und leiten mich dazu, mit Einfachheit, Geduld und Balance zu handeln.<br><br>Seine Lehren ermutigen dazu, im Einklang mit dem natürlichen Fluss zu leben, inneren Frieden zu fördern und in jedem Moment achtsam präsent zu sein." data-img="">Laozi</span>,
+    <span class="clickable" data-info="Laozi steht für Dao, Natürlichkeit, Wu Wei (Handeln durch Nicht-Handeln) und Harmonie mit der Natur.<br><br>Viele seiner Einsichten spiegeln sich in meinem eigenen Lebensansatz wider und leiten mich dazu, mit Einfachheit, Geduld und Balance zu handeln.<br><br>Seine Lehren ermutigen dazu, im Einklang mit dem natürlichen Fluss zu leben, inneren Frieden zu fördern und in jedem Moment achtsam präsent zu sein." data-img="">Laozi</span> · 
 
-    <span class="clickable" data-info="Heraklit steht für Wandel, Transformation und das Prinzip Panta Rhei (Alles fließt).<br><br>Er lehrt die Einheit der Gegensätze, das Wirken des Logos und die Kraft des Feuers als Urprinzip.<br><br>Viele seiner Einsichten über Vergänglichkeit, die Beständigkeit im Wandel und die Natur der kontinuierlichen Bewegung resonieren tief mit meinen eigenen Überzeugungen und prägen, wie ich den Fluss des Lebens und die Unvermeidbarkeit von Transformation wahrnehme." data-img="">Heraklit</span>,
+    <span class="clickable" data-info="Heraklit steht für Wandel, Transformation und das Prinzip Panta Rhei (Alles fließt).<br><br>Er lehrt die Einheit der Gegensätze, das Wirken des Logos und die Kraft des Feuers als Urprinzip.<br><br>Viele seiner Einsichten über Vergänglichkeit, die Beständigkeit im Wandel und die Natur der kontinuierlichen Bewegung resonieren tief mit meinen eigenen Überzeugungen und prägen, wie ich den Fluss des Lebens und die Unvermeidbarkeit von Transformation wahrnehme." data-img="">Heraklit</span> · 
 
-    <span class="clickable" data-info="Sokrates hat mich seit meiner Jugend als kritischer Denker und Wahrheitssucher geprägt.<br><br>Seine sokratische Methode, sein Studium der Tugend und das Symbol des Schierlingsbechers stehen für tiefe Hingabe an die Wahrheit und die Spannung zwischen Gesetz und Gerechtigkeit.<br><br>Sein Beispiel inspiriert weiterhin zu sorgfältigem Hinterfragen, intellektueller Ehrlichkeit und dem Mut, Prinzipien auch angesichts von Widrigkeiten zu wahren." data-img="">Sokrates</span>,
+    <span class="clickable" data-info="Sokrates hat mich seit meiner Jugend als kritischer Denker und Wahrheitssucher geprägt.<br><br>Seine sokratische Methode, sein Studium der Tugend und das Symbol des Schierlingsbechers stehen für tiefe Hingabe an die Wahrheit und die Spannung zwischen Gesetz und Gerechtigkeit.<br><br>Sein Beispiel inspiriert weiterhin zu sorgfältigem Hinterfragen, intellektueller Ehrlichkeit und dem Mut, Prinzipien auch angesichts von Widrigkeiten zu wahren." data-img="">Sokrates</span> · 
 
 
-    <span class="clickable" data-info="Platon, Philosoph, Schüler des Sokrates und Gründer der Akademie, erforschte Ideen zu Wissen, Realität, Tugend, Gerechtigkeit und dem idealen Staat.<br><br>Seine Allegorie der Höhle veranschaulicht, wie Wahrnehmung die Wahrheit verschleiern kann — ein Konzept, das heute oft mit der Illusion einer simulierten Welt, wie in <em>The Matrix</em>, verglichen wird.<br><br>Seine Einsichten prägen weiterhin Philosophie und Denken und inspirieren zur Reflexion über Realität, Moral und die Suche nach Weisheit." data-img="">Platon</span>,
+    <span class="clickable" data-info="Epiktet, ein griechischer stoischer Philosoph des 1. Jahrhunderts n. Chr., lehrte, dass wahres Glück nicht von äußeren Umständen abhängt, sondern von der eigenen Einstellung und inneren Freiheit.<br><br>Er betonte, die eigenen Gedanken und Reaktionen zu meistern und gleichzeitig das zu akzeptieren, was außerhalb der eigenen Kontrolle liegt.<br><br>Überwiegend durch die Schriften seines Schülers Arrian überliefert, inspirieren seine Lehren weiterhin zu Resilienz, Selbstdisziplin und einer achtsamen Lebensweise." data-img="">Epiktet</span><br>
 
-    <span class="clickable" data-info="Epiktet, ein griechischer stoischer Philosoph des 1. Jahrhunderts n. Chr., lehrte, dass wahres Glück nicht von äußeren Umständen abhängt, sondern von der eigenen Einstellung und inneren Freiheit.<br><br>Er betonte, die eigenen Gedanken und Reaktionen zu meistern und gleichzeitig das zu akzeptieren, was außerhalb der eigenen Kontrolle liegt.<br><br>Überwiegend durch die Schriften seines Schülers Arrian überliefert, inspirieren seine Lehren weiterhin zu Resilienz, Selbstdisziplin und einer achtsamen Lebensweise." data-img="">Epiktet</span>,
-
-    <span class="clickable" data-info="Franz von Assisi steht für ein Leben radikaler Einfachheit und Demut, geprägt von Mitgefühl für Arme und Benachteiligte.<br><br>Er betont die Verbundenheit aller Wesen mit Gott, das Leben in Harmonie mit der Natur und die Förderung von Frieden, Liebe und selbstlosem Dienst als Weg zu spiritueller Erfüllung.<br><br>Sein Beispiel inspiriert weiterhin zu einem Leben, das in Freundlichkeit, Großzügigkeit und achtsamer Fürsorge für Menschen und die Welt verwurzelt ist.<br><br><em>„Gib mir Armut, gib mir Demut, gib mir Torheit um Christi Willen.“<br>– Franz von Assisi</em>" data-img="">Franz von Assisi</span>,
+    <span class="clickable" data-info="Hildegard von Bingen steht für visionäre Intuition, tiefgründige spirituelle Einsicht und die Verbindung von Wissen, Kunst und Heilkunst in einer Zeit, in der Frauen kaum Gehör fanden.<br><br>Sie verkörpert die Fähigkeit, göttliche Inspiration, Naturbeobachtung und intellektuelle Schärfe zu vereinen, um ganzheitliches Wissen zu schaffen, das weit über ihre Epoche hinausstrahlt.<br><br>Ihr Beispiel inspiriert weiterhin kreative Schöpfungskraft, spirituelle Tiefe und den Mut, eigene Einsichten gegen Widerstände zu verteidigen und zu teilen." data-img="">Hildegard von Bingen</span> ·
 
 
-    <span class="clickable" data-info="Rumi steht für tiefes spirituelles Verlangen nach Einheit mit dem Göttlichen, Liebe, Toleranz und die transformative Kraft der inneren Reflexion.<br><br>Seine Lehren betonen, dass wahrer Frieden und Erfüllung aus der Verbindung mit dem eigenen Inneren und göttlicher Liebe entstehen.<br><br>Sie inspirieren weiterhin zu Achtsamkeit, Mitgefühl und einem herzlichen Lebensansatz, der zu Harmonie mit sich selbst und der Welt führt.<br><br><em>„Jenseits von richtig und falsch gibt es einen Ort. Dort werden wir uns treffen.“</em> – Rumi" data-img="">Rumi</span>,
-
-    <span class="clickable" data-info="Leonardo da Vinci steht für grenzenlose Neugier, kreatives Genie und die Vereinigung von Kunst und Wissenschaft.<br><br>Er verkörpert die Suche nach Wissen, sorgfältige Beobachtung der Natur und die Fähigkeit, komplexe Konzepte mit künstlerischer Meisterschaft zu verbinden.<br><br>Sein Beispiel inspiriert weiterhin Innovation, interdisziplinäres Denken und den Mut, das Unbekannte mit sowohl Genauigkeit als auch Vorstellungskraft zu erkunden." data-img="">Leonardo da Vinci</span>,
-
-    <span class="clickable" data-info="Giordano Bruno steht für unbeirrbaren Mut bei der Suche nach Wahrheit, intellektuelle Freiheit und die Erweiterung des menschlichen Denkens über traditionelle Grenzen hinaus.<br><br>Er verkörpert die Vision eines unendlichen Universums und die Überzeugung, dass Wissen und Glauben hinterfragt und eigenständig erforscht werden müssen.<br><br>Sein Beispiel inspiriert weiterhin furchtlose Neugier, Offenheit und den Mut, Konventionen bei der Suche nach Erkenntnis herauszufordern." data-img="">Giordano Bruno</span>,
+    <span class="clickable" data-info="Franz von Assisi steht für ein Leben radikaler Einfachheit und Demut, geprägt von Mitgefühl für Arme und Benachteiligte.<br><br>Er betont die Verbundenheit aller Wesen mit Gott, das Leben in Harmonie mit der Natur und die Förderung von Frieden, Liebe und selbstlosem Dienst als Weg zu spiritueller Erfüllung.<br><br>Sein Beispiel inspiriert weiterhin zu einem Leben, das in Freundlichkeit, Großzügigkeit und achtsamer Fürsorge für Menschen und die Welt verwurzelt ist.<br><br><em>„Gib mir Armut, gib mir Demut, gib mir Torheit um Christi Willen.“ – Franz von Assisi</em>" data-img="">Franz von Assisi</span> ·
 
 
-    <span class="clickable" data-info="Galileo Galilei steht für den mutigen Einsatz von Vernunft und empirischer Beobachtung, die Verteidigung der Wissenschaft gegen Dogmen und die bahnbrechende Entdeckung der Naturgesetze.<br><br>Er verkörpert die Kombination aus Neugier, Präzision und einem unbeirrbaren Engagement für Wahrheit durch Erfahrung und Beweise.<br><br>Sein Beispiel inspiriert weiterhin kritisches Denken, wissenschaftliche Forschung und den Mut, akzeptierte Überzeugungen im Streben nach Wissen herauszufordern." data-img="">Galileo</span>,
+    <span class="clickable" data-info="Jalāl al-Dīn Muḥammad Rūmī steht für tiefes spirituelles Verlangen nach Einheit mit dem Göttlichen, Liebe, Toleranz und die transformative Kraft der inneren Reflexion.<br><br>Seine Lehren betonen, dass wahrer Frieden und Erfüllung aus der Verbindung mit dem eigenen Inneren und göttlicher Liebe entstehen.<br><br>Sie inspirieren weiterhin zu Achtsamkeit, Mitgefühl und einem herzlichen Lebensansatz, der zu Harmonie mit sich selbst und der Welt führt.<br><br><em>„Jenseits von richtig und falsch gibt es einen Ort. Dort werden wir uns treffen.“</em> – Rumi" data-img="">Rumi</span> ·
 
-    <span class="clickable" data-info="Baruch Spinoza steht für rationales Denken, das Streben nach ethischer Klarheit und Einsicht in die Einheit von Natur und Gott — wie er es ausdrückte, <em>„Deus sive Natura“</em> („Gott oder Natur“).<br><br>Seine Philosophie ermutigt dazu, die Welt durch Vernunft zu verstehen, die Verbundenheit aller Dinge zu erkennen und in Harmonie sowohl mit der Natur als auch mit ethischen Prinzipien zu leben.<br><br>Sein Beispiel inspiriert weiterhin zu nachdenklicher Reflexion, moralischer Integrität und einem vernunftgeleiteten Lebensansatz." data-img="">Spinoza</span>,
 
-    <span class="clickable" data-info="Isaac Newton steht für bahnbrechende Entdeckungen in Physik und Mathematik, die die Ordnung und Gesetze des Universums aufzeigen.<br><br>Er erkannte, dass Naturgesetze — wie <em>„Für jede Handlung gibt es eine gleiche und entgegengesetzte Reaktion“</em> — die Bewegung und Harmonie der Welt bestimmen.<br><br>In diesem eleganten System von Sonne, Planeten und Kometen sah Newton den Beweis für die Existenz und Weisheit Gottes. Sein Beispiel inspiriert weiterhin Neugier, disziplinierte Forschung und eine tiefgehende Wertschätzung für die Harmonie der Natur.<br><br><em>„Wer halbherzig denkt, wird nicht an Gott glauben, aber wer wirklich denkt, muss an Gott glauben.“<br>– Isaac Newton</em> " data-img="">Newton</span>,
+    <span class="clickable" data-info="Giordano Bruno steht für unbeirrbaren Mut bei der Suche nach Wahrheit, intellektuelle Freiheit und die Erweiterung des menschlichen Denkens über traditionelle Grenzen hinaus.<br><br>Er verkörpert die Vision eines unendlichen Universums und die Überzeugung, dass Wissen und Glauben hinterfragt und eigenständig erforscht werden müssen.<br><br>Sein Beispiel inspiriert weiterhin furchtlose Neugier, Offenheit und den Mut, Konventionen bei der Suche nach Erkenntnis herauszufordern." data-img="">Bruno</span> ·
 
-    <span class="clickable" data-info="Gottfried Wilhelm Leibniz steht für Rationalismus, Logik und Mathematik.<br><br>Er entwickelte das Binärsystem, das die Grundlage moderner Computer bildet, und seine Philosophie verbindet Vernunft, Ordnung und die Vision einer universellen Sprache der Zahlen.<br><br>Sein Beispiel inspiriert weiterhin analytisches Denken, Innovation und die Suche nach Wissen durch strukturiertes Denken.<br><br><em>„Gott hätte die Welt nicht erschaffen, wenn sie nicht die beste aller möglichen Welten wäre.“</em> – Gottfried Wilhelm Leibniz" data-img="">Leibniz</span>,
 
-    <span class="clickable" data-info="Immanuel Kant, ein bedeutender deutscher Philosoph, prägte Erkenntnistheorie, Ethik und Metaphysik durch Werke wie <em>Kritik der reinen Vernunft</em> und <em>Kritik der praktischen Vernunft</em>.<br><br>Sein Konzept des kategorischen Imperativs und seine transzendentale Philosophie beeinflussen bis heute das moderne Denken und inspirieren zu rigoroser Vernunft, moralischer Reflexion und dem Streben nach Verständnis der Bedingungen von Wissen und ethischem Handeln.<br><br><em>„Die Maxime, jederzeit selbst zu denken, ist die Aufklärung.“</em> – Immanuel Kant" data-img="">Kant</span>,
+    <span class="clickable" data-info="Isaac Newton steht für bahnbrechende Entdeckungen in Physik und Mathematik, die die Ordnung und Gesetze des Universums aufzeigen.<br><br>Er erkannte, dass Naturgesetze — wie <em>„Für jede Handlung gibt es eine gleiche und entgegengesetzte Reaktion“</em> — die Bewegung und Harmonie der Welt bestimmen.<br><br>In diesem eleganten System von Sonne, Planeten und Kometen sah Newton den Beweis für die Existenz und Weisheit Gottes. Sein Beispiel inspiriert weiterhin Neugier, disziplinierte Forschung und eine tiefgehende Wertschätzung für die Harmonie der Natur.<br><br><em>„Wer halbherzig denkt, wird nicht an Gott glauben, aber wer wirklich denkt, muss an Gott glauben.“<br>– Isaac Newton</em> " data-img="">Newton</span> · 
 
-    <span class="clickable" data-info="Abraham Lincoln, bedeutender amerikanischer Politiker und 16. Präsident der Vereinigten Staaten, führte die Nation durch den Bürgerkrieg, bewahrte die Union und leitete die Abschaffung der Sklaverei ein.<br><br>Sein unbeirrbares Engagement für Freiheit, Gleichheit und nationale Einheit prägt weiterhin das politische Denken und inspiriert gesellschaftliche Werte weltweit." data-img="">Lincoln</span>,
+    <span class="clickable" data-info="Gottfried Wilhelm Leibniz steht für Rationalismus, Logik und Mathematik.<br><br>Er entwickelte das Binärsystem, das die Grundlage moderner Computer bildet, und seine Philosophie verbindet Vernunft, Ordnung und die Vision einer universellen Sprache der Zahlen.<br><br>Sein Beispiel inspiriert weiterhin analytisches Denken, Innovation und die Suche nach Wissen durch strukturiertes Denken.<br><br><em>„Gott hätte die Welt nicht erschaffen, wenn sie nicht die beste aller möglichen Welten wäre.“</em><br>– Gottfried Wilhelm Leibniz" data-img="">Leibniz</span><br> 
 
-    <span class="clickable" data-info="Leo Tolstoi, russischer Schriftsteller und Philosoph, wurde stark vom Bergpredigt Jesu inspiriert.<br><br>In <em>Das Reich Gottes ist in euch</em> betont er, dass Gottes Reich in jedem Menschen beginnt.<br><br>Tolstoi setzt sich für Gewaltlosigkeit, innere Selbstprüfung, ein Leben in Mitgefühl und Wahrheit ein und praktiziert Vegetarismus.<br><br>Für ihn ist persönliche Transformation die Grundlage für gesellschaftlichen Frieden und Gerechtigkeit, und sein Beispiel inspiriert weiterhin Reflexion, ethisches Leben und das Streben nach moralischer Integrität." data-img="">Tolstoy</span>,
+    <span class="clickable" data-info="Leo Tolstoi, russischer Schriftsteller und Philosoph, wurde stark vom Bergpredigt Jesu inspiriert.<br><br>In <em>Das Reich Gottes ist in euch</em> betont er, dass Gottes Reich in jedem Menschen beginnt.<br><br>Tolstoi setzt sich für Gewaltlosigkeit, innere Selbstprüfung, ein Leben in Mitgefühl und Wahrheit ein und praktiziert Vegetarismus.<br><br>Für ihn ist persönliche Transformation die Grundlage für gesellschaftlichen Frieden und Gerechtigkeit, und sein Beispiel inspiriert weiterhin Reflexion, ethisches Leben und das Streben nach moralischer Integrität." data-img="">Tolstoy</span> · 
 
-    <span class="clickable" data-info="Nikola Tesla, Erfinder, Elektroingenieur und Visionär, revolutionierte Wissenschaft und Technologie durch seine Pionierarbeit mit Wechselstrom und das Verständnis von Energie.<br><br>Seine Kombination aus Innovation, technischem Genie und zukunftsweisender Vision macht ihn bis heute zu einer legendären Persönlichkeit.<br><br>Teslas Philosophie — <em>„Wenn du die Geheimnisse des Universums entdecken willst, denke in Begriffen von Energie, Frequenz und Schwingung“</em> — inspiriert weiterhin Neugier, Kreativität und das Streben nach Wissen jenseits konventioneller Grenzen." data-img="">Tesla</span>,
+    <span class="clickable" data-info="Nikola Tesla, Erfinder, Elektroingenieur und Visionär, revolutionierte Wissenschaft und Technologie durch seine Pionierarbeit mit Wechselstrom und das Verständnis von Energie.<br><br>Seine Kombination aus Innovation, technischem Genie und zukunftsweisender Vision macht ihn bis heute zu einer legendären Persönlichkeit.<br><br>Teslas Philosophie — <em>„Wenn du die Geheimnisse des Universums entdecken willst, denke in Begriffen von Energie, Frequenz und Schwingung.“</em> – Nikola Tesla" data-img="">Tesla</span> · 
 
-    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das radikale Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“<br>– Friedrich Nietzsche</em>" data-img="">Nietzsche</span>,
+    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das radikale Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“<br>– Friedrich Nietzsche</em>" data-img="">Nietzsche</span> ·
 
-    <span class="clickable" data-info="Mahatma Gandhi, indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands, wurde von Werken wie Tolstois <em>Das Reich Gottes ist in euch</em> inspiriert.<br><br>Er befürwortete Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie durch passiven Widerstand im Kampf um Indiens Unabhängigkeit und soziale Gerechtigkeit um.<br><br>Sein Beispiel inspiriert weiterhin friedlichen Aktivismus, ethische Führung und die transformative Kraft prinzipientreuen Handelns.<br><br><em>„Es gibt keinen Weg zum Frieden. Frieden ist der Weg.“</em> – Mahatma Gandhi" data-img="">Gandhi</span>,
+    <span class="clickable" data-info="Marie Curie** steht für unermüdlichen Forschergeist, außergewöhnliche wissenschaftliche Neugier und den Mut, in bislang unerforschte Gebiete der Physik und Chemie vorzudringen.<br><br>Sie verkörpert die Entschlossenheit, Grenzen des Wissens zu überschreiten, Hindernisse – sowohl gesellschaftlicher als auch wissenschaftlicher Art – zu überwinden und bahnbrechende Entdeckungen für die Menschheit zu leisten.<br><br>Ihr Beispiel inspiriert weiterhin Ausdauer, Leidenschaft für Forschung und den Glauben daran, dass wissenschaftliche Wahrheit durch Hingabe, Mut und unermüdliche Neugier ans Licht gebracht werden kann." data-img="">Marie Curie</span> · 
 
-    <span class="clickable" data-info="Albert Einstein, visionärer Physiker und Mathematiker, revolutionierte unser Verständnis von Raum, Zeit und Energie.<br><br>Er verkörpert Neugier, Kreativität und die Fähigkeit, die Gesetze des Universums sowohl mit Staunen als auch mit kritischer Reflexion zu erforschen, stets verbunden mit humanistischer Verantwortung.<br><br>Seine Einsicht — <em>„Der intuitive Geist ist ein heiliges Geschenk, und der rationale Geist ist ein treuer Diener. Wir haben eine Gesellschaft geschaffen, die den Diener ehrt und das Geschenk vergessen hat“</em> — inspiriert weiterhin Vorstellungskraft, nachdenkliches Forschen und die Suche nach Wissen, verbunden mit ethischem Bewusstsein." data-img="">Einstein</span>,
+    <span class="clickable" data-info="Mahatma Gandhi, indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands, wurde von Werken wie Tolstois <em>Das Reich Gottes ist in euch</em> inspiriert.<br><br>Er befürwortete Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie durch passiven Widerstand im Kampf um Indiens Unabhängigkeit und soziale Gerechtigkeit um.<br><br>Sein Beispiel inspiriert weiterhin friedlichen Aktivismus, ethische Führung und die transformative Kraft prinzipientreuen Handelns.<br><br><em>„Es gibt keinen Weg zum Frieden. Frieden ist der Weg.“<br>– Mahatma Gandhi</em>" data-img="">Gandhi</span> ·
 
-    <span class="clickable" data-info="Alan Watts, Philosoph und Vermittler östlicher Weisheit im Westen, insbesondere Zen-Buddhismus und Taoismus, betont die Verbundenheit allen Lebens, die Illusion eines separaten Selbst und die Bedeutung, den gegenwärtigen Moment vollständig zu leben, frei von Angst und starren Vorstellungen.<br><br>Seine Einsicht — <em>„Ein Mann, der die ganze Zeit denkt, hat nichts zu bedenken außer Gedanken. Er verliert den Bezug zur Realität und lebt in einer Welt der Illusion“</em> — ermutigt weiterhin, geistige Starrheit loszulassen, den Fluss des Lebens zu akzeptieren und Freiheit sowie Klarheit durch direkte Erfahrung zu entdecken." data-img="">Alan Watts</span>,
+    <span class="clickable" data-info="Albert Einstein, visionärer Physiker und Mathematiker, revolutionierte unser Verständnis von Raum, Zeit und Energie.<br><br>Er verkörpert Neugier, Kreativität und die Fähigkeit, die Gesetze des Universums sowohl mit Staunen als auch mit kritischer Reflexion zu erforschen, stets verbunden mit humanistischer Verantwortung.<br><br><em>„Der intuitive Geist ist ein heiliges Geschenk, und der rationale Geist ist ein treuer Diener. Wir haben eine Gesellschaft geschaffen, die den Diener ehrt und das Geschenk vergessen hat.“– Albert Einstein</em> " data-img="">Einstein</span><br>
 
-    <span class="clickable" data-info="Jim Rohn, einer meiner größten Mentoren und entscheidend für mein persönliches Wachstum, steht für Selbstdisziplin, die Kraft der Gewohnheiten und zielgerichtetes Handeln.<br><br>Er zeigte, dass Erfolg und Erfüllung aus kontinuierlichem Lernen, persönlicher Verantwortung und konsequentem Einsatz entstehen.<br><br>Seine Anleitung prägt weiterhin meine Denkweise, inspiriert Durchhaltevermögen, bewusstes Leben und das Streben nach sinnvoller persönlicher und beruflicher Entwicklung." data-img="">Jim Rohn</span>,
 
-    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser. Jetzt gibst du Wasser in eine Tasse – es wird die Tasse. Gibst du es in eine Flasche – es wird die Flasche. Gibst du es in eine Teekanne – es wird die Teekanne. Wasser kann fließen, oder es kann zerschmettern… Sei Wasser, mein Freund.“<br>– Bruce Lee</em>" data-img="">Bruce Lee</span>,
+    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser… Sei Wasser, mein Freund.“– Bruce Lee</em>" data-img="">Bruce Lee</span> ·
 
-    <span class="clickable" data-info="Thich Nhat Hanh lehrt Achtsamkeit, Mitgefühl und das bewusste Leben im gegenwärtigen Moment.<br><br>Er betont, dass wahres Glück und innerer Frieden nur entstehen, wenn wir uns selbst und anderen mit Freundlichkeit begegnen und jede Handlung bewusst ausführen.<br><br>Seine Lehren inspirieren dazu, Alltag und Spiritualität zu verbinden, kleine Handlungen bewusst zu erleben und Harmonie in sich und in der Welt zu fördern.<br><br>Seine Botschaft erinnert uns daran, dass innerer Frieden ein kontinuierlicher Prozess ist, der durch Aufmerksamkeit und Liebe kultiviert werden kann.<br><br><em>„Wenn du einatmest, weißt du, dass du einatmest.“<br>– Thich Nhat Hanh</em>" data-img="">Thich Nhat Hanh</span>
+    <span class="clickable" data-info="Thich Nhat Hanh lehrt Achtsamkeit, Mitgefühl und das bewusste Leben im gegenwärtigen Moment.<br><br>Er betont, dass wahres Glück und innerer Frieden nur entstehen, wenn wir uns selbst und anderen mit Freundlichkeit begegnen und jede Handlung bewusst ausführen.<br><br>Seine Lehren inspirieren dazu, Alltag und Spiritualität zu verbinden, kleine Handlungen bewusst zu erleben und Harmonie in sich und in der Welt zu fördern.<br><br>Seine Botschaft erinnert uns daran, dass innerer Frieden ein kontinuierlicher Prozess ist, der durch Aufmerksamkeit und Liebe kultiviert werden kann.<br><br><em>„Wenn du einatmest, weißt du, dass du einatmest.“<br>– Thich Nhat Hanh</em>" data-img="">Thich Nhat Hanh</span> ·
+
+    <span class="clickable" data-info="Jim Rohn, einer meiner größten Mentoren und entscheidend für mein persönliches Wachstum, steht für Selbstdisziplin, die Kraft der Gewohnheiten und zielgerichtetes Handeln.<br><br>Er zeigte, dass Erfolg und Erfüllung aus kontinuierlichem Lernen, persönlicher Verantwortung und konsequentem Einsatz entstehen.<br><br>Seine Anleitung prägt weiterhin meine Denkweise, inspiriert Durchhaltevermögen, bewusstes Leben und das Streben nach sinnvoller persönlicher und beruflicher Entwicklung." data-img="">Jim Rohn</span> 
 </em></p>
+</section>
+</div>
+
+ <section id="inspiration" class="tab-content bg-inspiration" role="tabpanel" aria-labelledby="tab-btn-inspiration" aria-hidden="true" data-bg="art-bg.jpg">
+        <div class="tab-inner">
+           <blockquote>
+            „Du magst denken, dass du in der Gegenwart lebst, aber tatsächlich lebst du in der Vergangenheit, solange Gedanken wirken… Wenn dies dir nicht erzählt, wiederholt oder gezeigt wird, kannst du endlos über Bücher reden. Dies kommt zuerst. Danach kannst du die Bücher lesen.“ – J. Krishnamurti
+          </blockquote>
+    <br>
+    <br>
+      
     <br>
     <br>
     <br>
@@ -495,10 +480,11 @@ blockquote, p, li, a, button, nav button {
 
 </p>
 <a href="https://music.youtube.com/playlist?list=PL9Q7n3WnviCGvxWg0hhNt9_-0yiqF-P9t" target="_blank" rel="noopener noreferrer">🎶 Zeitlose Songs</a>
-</div>
+
 </section>
 </div>
 </main>
+
 
 <footer>
 <p>Dankbarkeit 🙏</p>
