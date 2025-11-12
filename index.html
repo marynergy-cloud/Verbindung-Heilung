@@ -165,16 +165,16 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     html::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background-image: url('healing-bg.jpg'); 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: none; /* vorher: url('healing-bg.jpg') */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 
     @media (max-width: 1024px) {
       body { background-attachment: scroll; }
@@ -216,8 +216,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--tab-padding);
   border-radius: var(--radius);
   overflow: visible;
-  background-image:
-  url('path/to/your-image.jpg'); 
+ background-repeat: no-repeat; 
   background-size: cover;
   background-position: center;
   color: var(--text);
@@ -233,7 +232,9 @@ h1, h2, h3, h4, h5, h6 {
     transform 0.28s ease,
     background-image 0.6s ease-in-out;
 }
-
+.bg-connect     { background-image: url('healing-bg.jpg'); }
+.bg-education   { background-image: url('education-bg.jpg'); } /* dein neues Bild */
+.bg-inspiration { background-image: url('art-bg.jpg'); }       /* dein neues Bild */
     .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
 
     .tab-inner {
@@ -321,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
       <section id="connect" class="tab-content bg-connect active" role="tabpanel" aria-labelledby="tab-btn-connect" aria-hidden="false" data-bg="healing-bg.jpg">
         <div class="tab-inner">
            <blockquote>
-            <em>„In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenzt-Sein.</em>“ <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em>
+            <em>„In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenztes-Sein.</em>“ <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em>
           </blockquote>
 <br>
 <br>    
@@ -329,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
 " data-img="">🌱 Kernlehre</span>
 <br>
 <br>
-<span class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden.<br><br>Heilung entsteht aus dem Mut, persönliche und universelle Wahrheit zu erkennen, Körper, Geist und Herz auszurichten und einen Raum jenseits des Egos zu öffnen, in dem reines Bewusstsein erfahrbar wird." data-img="">🌱 Energie & Wahrheit</span>
+<span class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden.<br><br>Heilung entsteht aus dem Mut, persönliche und universelle Wahrheit zu erkennen, Körper, Geist und Herz auszurichten und einen Raum jenseits des Egos zu öffnen, in dem Bewusstsein erfahrbar wird." data-img="">🌱 Energie & Wahrheit</span>
 <br>
 <br>
 <span class="clickable" data-info="<br>
@@ -391,7 +392,7 @@ Lebensstil bedeutet, Wohlstand, Erfolg und Glück bewusst durch Lernen und gute 
 </span>
 <br>
 <br>
-  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton mit Bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><br><em>„Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“<br>(Johannes 1,1)</em>" data-img="">🌱 Kommunikation
+  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><br><em>„Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“<br>(Johannes 1,1)</em>" data-img="">🌱 Kommunikation
 </span>
 <br>
 <br>
@@ -406,7 +407,7 @@ Nicht das zu tun, was jemand anderes sagt. Nimm, was jemand anderes sagt, verarb
 Und wenn du dann handelst, stelle sicher, dass die Handlung nicht das ist, was dir jemand gesagt hat zu tun. Stelle sicher, dass die Handlung das Produkt deiner eigenen Schlussfolgerung ist.</em>"data-img="">🌸 Eine kleine Auswahl inspirierender Bücher und Persönlichkeiten:</span>
 <br>
 <br>
-    <span class="clickable" data-info="<strong>Miyamoto Musashi</strong>, legendärer Samurai, Schwertkämpfer und Philosoph: <em>„Das Buch der fünf Ringe“</em> lehrt, wie Meisterschaft und Selbstdisziplin durch klare Prinzipien und innere Gelassenheit erreicht werden; es inspiriert, Konflikte mit klarem Geist zu meistern.<br><br>Kaum ein Werk hat mich so tief geprägt wie dieses.</em>" data-img=""><em>The Book of Five Rings</em></span><br>
+    <span class="clickable" data-info="<strong>Miyamoto Musashi</strong>, legendärer Samurai, Schwertkämpfer und Philosoph: <em>„Das Buch der fünf Ringe“</em> lehrt, wie Meisterschaft und Selbstdisziplin durch klare Prinzipien und innere Gelassenheit erreicht werden; es inspiriert, Konflikte mit klarem Geist zu meistern. Kaum ein Werk hat mich so tief geprägt wie dieses.</em>" data-img=""><em>The Book of Five Rings</em></span><br>
 
 
     <span class="clickable" data-info="<em>„Selbstbetrachtungen“</em>: Der römische Kaiser und Philosoph <strong>Marcus Aurelius</strong> formuliert die Kernprinzipien des Stoizismus — Selbstreflexion, ethische Integrität und Verantwortung für das eigene Handeln.<br><br>Seine Schriften betonen die Kultivierung innerer Ruhe, Charakterstärke und die Suche nach Weisheit angesichts der Herausforderungen des Lebens.<br><br>Wie ein zeitloser Leitfaden für ein überlegtes Leben ist es ein Buch, das immer wieder gelesen werden sollte." data-img=""><em>Meditations</em></span><br>
@@ -453,15 +454,15 @@ Und wenn du dann handelst, stelle sicher, dass die Handlung nicht das ist, was d
 
     <span class="clickable" data-info="Nikola Tesla, Erfinder, Elektroingenieur und Visionär, revolutionierte Wissenschaft und Technologie durch seine Pionierarbeit mit Wechselstrom und das Verständnis von Energie.<br><br>Seine Kombination aus Innovation, technischem Genie und zukunftsweisender Vision macht ihn bis heute zu einer legendären Persönlichkeit.<br><br>Teslas Philosophie — <em>„Wenn du die Geheimnisse des Universums entdecken willst, denke in Begriffen von Energie, Frequenz und Schwingung.“</em> – Nikola Tesla" data-img="">Tesla</span>
 
-    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“ – Friedrich Nietzsche</em>" data-img="">Nietzsche</span>
+    <span class="clickable" data-info="Friedrich Nietzsche verkörpert das Infragestellen von Moral, Religion und traditionellen Werten.<br><br>Er betont Selbstverwirklichung, den Willen zur Macht und die bewusste Gestaltung des eigenen Lebens jenseits äußerlich auferlegter Normen, und inspiriert damit das Streben nach Größe und Authentizität.<br><br>Seine Philosophie fordert weiterhin konventionelles Denken heraus, fördert persönliche Verantwortung, kritische Reflexion und den Mut, den eigenen Weg zu definieren.<br><br><em>„Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet! Wie sollen wir uns trösten, die Mörder aller Mörder?“<br>– Friedrich Nietzsche</em>" data-img="">Nietzsche</span>
 
-    <span class="clickable" data-info="Mahatma Gandhi, indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands, wurde von Werken wie Tolstois <em>Das Reich Gottes ist in euch</em> inspiriert.<br><br>Er befürwortete Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie durch passiven Widerstand im Kampf um Indiens Unabhängigkeit und soziale Gerechtigkeit um.<br><br>Sein Beispiel inspiriert weiterhin friedlichen Aktivismus, ethische Führung und die transformative Kraft prinzipientreuen Handelns.<br><br><em>„Es gibt keinen Weg zum Frieden. Frieden ist der Weg.“ – Mahatma Gandhi</em>" data-img="">Gandhi</span>
+    <span class="clickable" data-info="Mahatma Gandhi, indischer Philosoph, Freiheitskämpfer und Verfechter gewaltlosen Widerstands, wurde von Werken wie Tolstois <em>Das Reich Gottes ist in euch</em> inspiriert.<br><br>Er befürwortete Prinzipien von Gewaltlosigkeit, moralischer Verantwortung und einfachem Leben und setzte sie durch passiven Widerstand im Kampf um Indiens Unabhängigkeit und soziale Gerechtigkeit um.<br><br>Sein Beispiel inspiriert weiterhin friedlichen Aktivismus, ethische Führung und die transformative Kraft prinzipientreuen Handelns.<br><br><em>„Es gibt keinen Weg zum Frieden. Frieden ist der Weg.“<br>– Mahatma Gandhi</em>" data-img="">Gandhi</span>
 
 
     <span class="clickable" data-info="Albert Einstein, visionärer Physiker und Mathematiker, revolutionierte unser Verständnis von Raum, Zeit und Energie.<br><br>Er verkörpert Neugier, Kreativität und die Fähigkeit, die Gesetze des Universums sowohl mit Staunen als auch mit kritischer Reflexion zu erforschen, stets verbunden mit humanistischer Verantwortung.<br><br><em>„Der intuitive Geist ist ein heiliges Geschenk, und der rationale Geist ist ein treuer Diener. Wir haben eine Gesellschaft geschaffen, die den Diener ehrt und das Geschenk vergessen hat.“– Albert Einstein</em> " data-img="">Einstein</span>
 
 
-    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser… Sei Wasser, mein Freund.“ – Bruce Lee</em>" data-img="">Bruce Lee</span>
+    <span class="clickable" data-info="Bruce Lee zeigt, dass wahre Meisterschaft nicht nur aus Instinkt oder Kontrolle entsteht, sondern aus der Harmonie von beidem.<br><br>Für ihn bedeutet Kampfkunst, sich selbst ehrlich auszudrücken, ohne sich selbst zu belügen, und jede Bewegung mit voller Entschlossenheit auszuführen.<br><br>Diese Philosophie inspiriert, weil sie mehr ist als Kampfkunst: Sie ist eine Lebenshaltung, die Disziplin, Kreativität und Authentizität miteinander verbindet.<br><br><em>„Leere deinen Geist, sei formlos, gestaltlos, wie Wasser… Sei Wasser, mein Freund.“– Bruce Lee</em>" data-img="">Bruce Lee</span>
 
     <span class="clickable" data-info="Thich Nhat Hanh lehrt Achtsamkeit, Mitgefühl und das bewusste Leben im gegenwärtigen Moment.<br><br>Er betont, dass wahres Glück und innerer Frieden nur entstehen, wenn wir uns selbst und anderen mit Freundlichkeit begegnen und jede Handlung bewusst ausführen.<br><br>Seine Lehren inspirieren dazu, Alltag und Spiritualität zu verbinden, kleine Handlungen bewusst zu erleben und Harmonie in sich und in der Welt zu fördern.<br><br>Seine Botschaft erinnert uns daran, dass innerer Frieden ein kontinuierlicher Prozess ist, der durch Aufmerksamkeit und Liebe kultiviert werden kann.<br><br><em>„Wenn du einatmest, weißt du, dass du einatmest.“<br>– Thich Nhat Hanh</em>" data-img="">Thich Nhat Hanh</span>
 
