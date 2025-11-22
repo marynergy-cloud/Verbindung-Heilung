@@ -306,6 +306,13 @@ h1, h2, h3, h4, h5, h6 {
     .panel.open { transform: translateX(0); }
     .panel .close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; cursor: pointer; }
     .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
+    .angebote-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+
   </style>
 </head>
   
@@ -317,7 +324,9 @@ h1, h2, h3, h4, h5, h6 {
     <nav aria-label="Haupttabs" role="tablist">
       <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true">Verbindung &amp; Heilung</button>
       <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false">Bildung &amp; Wachstum</button>
-      <button type="button" id="tab-btn-praxis" role="tab" aria-controls="praxis" aria-selected="false">Praxis</button>
+      <button type="button" id="tab-btn-praxis" role="tab" aria-controls="praxis" 
+      aria-selected="false">Praxis</button>
+      <button type="button" id="tab-btn-angebot" role="tab" aria-controls="angebot" aria-selected="false">Angebot</button>
     </nav>
   </header>
 
@@ -436,7 +445,7 @@ Neben der bewussten Wahrnehmung des Atems ist die nasale Atmung in der Regel die
   <strong>1. Füße:</strong> Unsere Füße tragen uns, verbinden uns mit dem Boden und sind Resonanzleiter sowie das Fundament unseres Körpers. Starke, flexible Füße sind entscheidend für die Verletzungsprävention und eine ganzheitliche Gesundheit. Sie beeinflussen unsere Beweglichkeit und unsere Verbindung zum „Großen Ganzen“ (Erdung).<br> <strong>Mein Tipp:</strong> Laufe so oft wie möglich barfuß und vermeide hohe Absätze oder Sneaker mit künstlich hohen Fersen.<br><br>
   <strong>2. Hüfte:</strong> Eine bewegliche und flexible Hüfte ist für viele Lebensbereiche unverzichtbar. Sie hilft, Verletzungen vorzubeugen und fördert die allgemeine Flexibilität. Eine gut funktionierende Hüfte ist von unschätzbarem Wert. <strong><br>Mein Tipp:</strong> Gehe regelmäßig in den Deep Squat und versuche, täglich immer mal wieder in dieser Position zu sein.<br><br>
   <strong>3. Bauch</strong> Der Bauch ist entscheidend für unser Wohlbefinden und wird oft unterschätzt. Er ist der Sitz unserer Verdauung und als „zweites Gehirn“ bekannt. Wenn wir im Einklang mit unserem Bauch sind, wirkt sich das positiv auf den Organismus aus. <strong><br>Mein Tipp:</strong> Gönne deinem Bauch regelmäßige Entlastungsphasen – sei es durch bewusstes Fasten oder achtsamen Umgang mit dem Essen.<br><br>
-<strong>Das ist lediglich ein kleiner Ausschnitt. Fange an mit den ersten Schritten, indem du bewusste Routinen in deinen Alltag integrierst.</strong>" data-img="">🌱 Der Körper</span>
+<strong>Das ist lediglich ein kleiner Ausschnitt. Fange an mit kleinen Schritten, indem du kleine Routinen in deinen Alltag integrierst.</strong>" data-img="">🌱 Der Körper</span>
 <br>
 <br>
 <br>
@@ -457,6 +466,43 @@ darüber hinausgehen, indem man sich selbst von diesem Prinzip löst.“</em> <b
   </section>
 </div>
 
+<section id="angebot" class="tab-content bg-angebot" role="tabpanel" aria-labelledby="tab-btn-Angebot">
+  <div class="tab-inner">
+
+    <!-- Angebot G1 -->
+    <div class="angebot-block">
+     <h2>🌸 Gehe den ersten Schritt</h2>
+    <p><em>Zwei Angebote – ein ganzheitlicher Ansatz. Wähle den Rahmen, der zu deinen Zielen passt.</em></p><br>
+
+    <!-- Angebot B1 -->
+    <div class="angebot-block">
+      <h4>🌱 B1 – Körper & Gesundheit <span class="preis">75 € / Std.</span></h4>
+      <p><em>Stärke deinen Körper, verbessere deine Gesundheit und entwickle nachhaltige Routinen.</em></p>
+
+      <p><strong>Enthält:</strong><br>
+      Laufen • Gymnastik/Yoga • Calisthenics • Ground-Flow • Ernährungsoptimierung • Fastenbegleitung (Autophagie & Vitalität)</p>
+
+      <p><strong>Ziele:</strong><br>
+      Mehr Ausdauer, Kraft & Flexibilität, gesteigerte Vitalität, Anti-Aging & langfristiges Wohlbefinden.</p>
+    </div><br>
+
+    <!-- Angebot G1 -->
+    <div class="angebot-block">
+      <h4>🌱 G1 – Ganzheitliche Transformation <span class="preis">100 € / Std.</span></h4>
+      <p><em>Für Menschen, die Körper, Geist und persönliche Entwicklung bewusst verbinden möchten.</em></p>
+
+      <p><strong>Enthält:</strong><br>
+      Alles aus B1 • Qigong • Atemarbeit • Meditation • Naturpraxis • Coaching • Reflexion • Bildungsimpulse</p>
+
+      <p><strong>Ziele:</strong><br>
+      Innere Ruhe, Klarheit, Stressreduktion, Resilienz sowie eine tiefere Verbindung zur Innen - und Außenwelt.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
 </main>
 
 
@@ -464,7 +510,7 @@ darüber hinausgehen, indem man sich selbst von diesem Prinzip löst.“</em> <b
 <p>Dankbarkeit 🙏</p>
 <p><small>Quelle der Inspiration.</small></p>
 <p><a href="mailto:marynergy@gmail.com">marynergy@gmail.com</a></p>
- <p><a href="https://marynergy-cloud.github.io/KulturBewegt/" target="_blank" rel="noopener noreferrer">Inspiration & Kultur</a></p>
+ <p><a href="https://marynergy-cloud.github.io/KulturBewegt/" target="_blank" rel="noopener noreferrer">Inspiration & Culture/a></p><br>
 </footer>
 
 
