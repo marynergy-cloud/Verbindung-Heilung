@@ -1,580 +1,560 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marynergy — Connect · Grow · Create</title>
-  <meta name="description" content="Marynergy — Verbindung, Wachstum und Heilung. Inspiration für Körper, Geist und Herz.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marynergy – Verbindung · Wachstum · Schöpfung</title>
+    <meta name="description" content="Marynergy: Inspiration für Körper, Geist und Herz. Praktiken, Bildung und Einblicke für ganzheitliches persönliches Wachstum.">
 
+    <!-- Optimierter Preload für self-hosted fonts -->
+    <link rel="preload" href="fonts/Alegreya-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Google Fonts -->
-  <link rel="preconnecthref=https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico">
+    <!-- Open Graph (SEO und Social Media Sharing) -->
+    <meta property="og:site_name" content="Marynergy">
+    <meta property="og:title" content="Marynergy – Verbindung · Wachstum · Heilung">
+    <meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung, und Einblicke für ganzheitliches persönliches Wachstum.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ihre-domain.de/og-image-4x3.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="Marynergy">
-  <meta property="og:title" content="Marynergy — Verbindung · Wachstum · Heilung">
-  <meta property="og:description" content="Inspiration für Körper, Geist und Herz. Praktiken, Bildung, und Einblicke für ganzheitliches persönliches Wachstum.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+    <style>
+        /* ===================================================================
+           1. BASIS, RESET & FARBSCHEMA
+           =================================================================== */
+        :root {
+            /* Layout & Sizing */
+            --max-width: 760px;
+            --radius: 16px;
+            
+            /* Color Palette */
+            --accent: #5A7F74;      /* Weiches, erdiges Grün (Hauptfarbe) */
+            --accent-light: #C0D8D0; /* Heller Akzent für Hover/Focus */
+            --text: #1C2826;        /* Dunkles, sanftes Schwarz */
+            --text-muted: #5E6966;  /* Dezentes Grau für Nebeninfos */
+            
+            /* Backgrounds & Effects */
+            --overlay: rgba(255, 255, 255, 0.85); /* Weniger transparentes Overlay */
+            --background: #F7F5F2;  /* Helles, weiches Off-White */
+            --shadow: 0 12px 40px rgba(0, 0, 0, 0.08); /* Tieferer, weicherer Schatten */
 
-  <style>
-    /* --- Ergänzungen / Anpassungen für Alegreya, zentrierte Überschriften und Panel-Italics --- */
+            /* Links */
+            --link-default: var(--accent);
+        }
+        
+        /* Global Reset */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; padding: 0; }
 
-/* 1) Stelle sicher, dass überall Alegreya verwendet wird */
-html, body, header, footer, main, nav, .tab-content, .tab-inner, .panel, .panel * {
-  font-family: 'Alegreya', serif !important;
-}
+        /* Body & Base Typography */
+        body {
+            font-family: 'Alegreya', serif;
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            color: var(--text);
+            background-color: var(--background);
+            min-height: 100vh;
+            color-scheme: light dark;
+            -webkit-font-smoothing: antialiased;
+            font-synthesis: none;
+        }
 
-/* 2) Einheitliche Basis-Größe (bei Bedarf anpassen). Damit erben alle Elemente dieselbe Größe. */
-html, body {
-  font-size: 0.9rem; /* Basisgröße: 1rem = normale Textgröße */
-}
+        /* Hintergrund Overlay */
+        html::before {
+            content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+            background-image: url('minimalist-bg.jpg'); 
+            background-repeat: no-repeat; background-size: cover; background-position: center center;
+        }
 
-/* 3) Überschriften zentrieren (nicht linksbündig) — Überschriften bleiben erkennbar anders (Größe/Gewicht) */
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  font-family: 'Alegreya', serif;
-  font-weight: 600; /* Überschriften etwas schwerer */
-  line-height: 1.2;
-  /* optional: leicht größere Schrift für Überschriften — passe an oder entferne, wenn du gleiche Größe willst */
-  font-size: 1.5rem;
-}
+        /* --- Fonts (Self-hosted Alegreya) --- */
+        @font-face {
+            font-family: 'Alegreya'; src: url('fonts/Alegreya-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Alegreya'; src: url('fonts/Alegreya-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Alegreya'; src: url('fonts/Alegreya-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap;
+        }
+        i, em { font-style: italic; }
 
-/* Hinweis: Falls du möchtest, dass Überschriften NICHT in Schriftart, sondern nur in Ausrichtung abweichen,
-   entferne font-family/font-weight/font-size in der Überschriftenregel und lasse nur text-align:center; */
+        /* --- Headings --- */
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            font-family: 'Alegreya', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { margin: 0.5rem 0; }
+        ul { margin: 0.5rem 0 1rem 1.2rem; padding-left: 1.2rem; }
+        
+        /* ===================================================================
+           2. LAYOUT & MODULES
+           =================================================================== */
 
-    /* Fonts */
-    @font-face {
-      font-family: 'Alegreya';
-      src: url('fonts/Alegreya-Regular.woff2') format('woff2'),
-           url('fonts/Alegreya-Regular.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Alegreya';
-      src: url('fonts/Alegreya-Italic.woff2') format('woff2'),
-           url('fonts/Alegreya-Italic.woff') format('woff');
-      font-weight: 400;
-      font-style: italic;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Alegreya';
-      src: url('fonts/Alegreya-Bold.woff2') format('woff2'),
-           url('fonts/Alegreya-Bold.woff') format('woff');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
+        /* Header & Footer (Frosted Glass Effect) */
+        header, footer {
+            text-align: center; padding: 1.5rem 1rem; color: var(--text);
+            background-color: var(--overlay); 
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .tagline {
+            font-size: 0.9rem; color: var(--text-muted); margin: 0.2rem 0; line-height: 1.2;
+        }
+        .tagline-korean { margin-bottom: 0.5rem; }
 
-    /* Base font family and size */
-    body {
-      font-family: 'Alegreya', serif;
-      font-size: 1rem; /* Uniform size */
-    }
+        /* Main Content Wrapper */
+        main { max-width: var(--max-width); margin: 2rem auto 3rem; padding: 0 1rem; }
 
-    /* Keep italics */
-    i, em {
-      font-style: italic;
-    }
+        /* Navigation Buttons (Underline Style) */
+        nav { text-align: center; margin-top: 0.8rem; }
+        nav button {
+            margin: 0 0.5rem; padding: 0.4rem 1.2rem 0.6rem; border: none; background: transparent; cursor: pointer;
+            border-radius: 6px; font: inherit; color: var(--text-muted); border-bottom: 2px solid transparent; 
+            transition: all 0.2s ease; outline: none;
+        }
+        nav button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+        nav button:hover { color: var(--accent); border-bottom-color: var(--accent-light); }
+        nav button.active { 
+            background-color: transparent; color: var(--accent); 
+            border-bottom: 2px solid var(--accent); font-weight: 700; 
+        }
 
-    :root {
-      --max-width: 700px;
-      --radius: 12px;
-      --tab-padding: 1.5rem;
-      --accent: #007b5e;
-      --text: #111;
-      --overlay: rgba(255, 255, 255, 0.78);
-      --background: #ffffff;
-      --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-      --link-default: #007b5e;
-      --link-hover: #1e90ff;
-      --link-focus: #2bd19b;
-      --link-muted: #555;
-      --link-accent: #1e90ff;
-      --link-accent-weak: rgba(30,144,255,0.3);
-    }
+        /* --- Tab Content Containers --- */
+        .tab-content {
+            display: none; position: relative; margin: 0 auto; min-height: 380px; padding: 0;
+            border-radius: var(--radius); overflow: visible; background-color: transparent;
+            opacity: 0; transform: translateY(12px); transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
+        .tab-inner {
+            position: relative; max-width: 100%; margin: 0 auto; background-color: var(--overlay); 
+            color: var(--text); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); 
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); line-height: 1.6;
+            border: 1px solid rgba(0, 0, 0, 0.05); 
+        }
+        .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
 
-    .clickable {
-      color: #000;
-      cursor: pointer;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding: 0 1px;
-      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .clickable:hover,
-    .clickable:active {
-      color: #1e90ff;
-      border-bottom-color: rgba(30,144,255,0.3);
-    }
-    .clickable:focus-visible {
-      outline: none;
-      color: #2bd19b;
-      box-shadow: 0 0 0 4px rgba(43,209,155,0.4);
-      border-radius: 3px;
-    }
+        /* --- Blockquotes (Zitate) --- */
+        blockquote {
+            margin: 1.5rem auto; padding: 1.2rem 1.8rem; border-left: 6px solid var(--accent); 
+            border-radius: var(--radius); background-color: rgba(255, 255, 255, 0.85);
+            font-style: italic; font-size: 1rem; color: var(--text); max-width: 80%; 
+        }
+        blockquote footer {
+            margin-top: 0.8rem; text-align: right; font-size: 0.85rem; font-style: normal;
+        }
+        blockquote cite { font-style: normal; font-weight: 500; }
 
-    .visually-hidden {
-      position: absolute !important;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border: 0;
-    }
-    .visually-hidden.focusable:focus,
-    .visually-hidden.focusable:active {
-      position: static !important;
-      width: auto;
-      height: auto;
-      margin: 0;
-      overflow: visible;
-      clip: auto;
-      clip-path: none;
-      white-space: normal;
-    }
+        /* --- Clickable Buttons (.clickable) --- */
+        .clickable {
+            border: none; background: none; font: inherit; 
+            display: block; text-align: center; padding: 0.8rem 0; 
+            margin: 1.2rem auto; cursor: pointer; font-size: 1.1rem;
+            font-weight: 600; color: var(--accent); text-decoration: none; 
+            border-bottom: 1px dashed var(--accent-light); transition: all 0.2s ease;
+            max-width: 400px; 
+        }
+        .clickable:hover {
+            color: var(--text); background-color: var(--accent-light);
+            border-bottom-color: var(--accent); border-radius: 4px;
+        }
+        .clickable:focus-visible {
+            outline: 3px solid var(--accent-light); outline-offset: 4px; border-radius: 6px;
+        }
 
-    *, *::before, *::after { box-sizing: border-box; }
+        /* --- Utility & Accessibility --- */
+        .visually-hidden {
+            position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+        }
+        a, button { transition: outline 0.1s ease; } 
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
 
-    html, body { height: 100%; margin: 0; }
+        /* --- Background Images (Fallbacks) --- */
+        .bg-connect, .bg-education, .bg-praxis { background-image: url('minimalist-bg.jpg'); background-size: cover; background-position: center; }
+        .bg-connect, .bg-education, .bg-inspiration { background-color: #FFFDF5; } 
 
-    body {
-      min-height: 100vh;
-      color: var(--text);
-      line-height: 1.45;
-      color-scheme: light dark;
-      background-color: var(--background);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-synthesis: none;
-      margin: 0;
-    }
+        /* ===================================================================
+           3. PANEL & MODAL
+           =================================================================== */
+        .panel-overlay { 
+            position: fixed; inset: 0; display: none; z-index: 2000; justify-content: flex-end; 
+            align-items: flex-start; background: rgba(0,0,0,0.4); 
+        }
+        .panel-overlay.open { display: flex; }
+        .panel { 
+            width: 420px; max-width: 95%; height: 100vh; background: var(--background); overflow-y: auto; 
+            box-shadow: -12px 0 30px rgba(0,0,0,0.3); 
+            transform: translateX(100%); transition: transform 0.25s ease; 
+            position: relative; padding: 2.5rem; 
+        }
+        .panel.open { transform: translateX(0); }
+        .panel .close { 
+            position: absolute; top: 16px; right: 16px; 
+            background: transparent; border: none; cursor: pointer; 
+            color: var(--text-muted); 
+        }
+        .panel .close svg { 
+            width: 24px; height: 24px; display: block; 
+            stroke: currentColor; 
+        }
+        .panel .hero { 
+            width: 100%; height: 160px; background-size: cover; background-position: center; 
+            border-radius: var(--radius); margin-bottom: 1.5rem; display: none; 
+        }
+        .panel #panelTitle { margin-top: 0; text-align: left; } 
+        .panel #panelContent { margin-top: 1.5rem; line-height: 1.7; }
 
-    html::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background-image: url('minimalist-bg.jpg'); 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
+        /* ===================================================================
+           4. RESPONSIVE & DARK MODE
+           =================================================================== */
+        
+        @media (max-width: 560px) {
+            main { margin-top: 0.8rem; padding: 0 0.8rem; }
+            nav button { padding: 0.4rem 0.6rem; margin: 0 0.2rem; font-size: 0.95rem; }
+            .tab-inner { padding: 1.5rem; max-width: 100%; }
+            .clickable { font-size: 1rem; }
+            blockquote { max-width: 100%; }
+            .panel { padding: 1.5rem; } 
+        }
 
-    @media (max-width: 1024px) {
-      body { background-attachment: scroll; }
-    }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --accent: #A8DDC6; 
+                --text: #F0F0F0;
+                --overlay: rgba(10, 15, 14, 0.9);
+                --background: #0A0D0C;
+                --text-muted: #A3B5B1;
+            }
+            blockquote {
+                background-color: rgba(20, 25, 24, 0.9);
+                border-left-color: var(--accent);
+                color: var(--text);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .tab-content, .panel { transition: none !important; }
+            * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+        }
 
-    header, footer {
-      text-align: center;
-      padding: 1rem;
-      color: var(--text);
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    nav { text-align: center; margin-top: 0.5rem; }
-    nav button {
-      margin: 0 0.35rem;
-      padding: 0.45rem 0.9rem;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      border-radius: 6px;
-      font: inherit;
-      transition: background-color 0.18s ease, color 0.18s ease;
-      outline: none;
-    }
-    nav button:focus { outline: 3px solid rgba(0,123,94,0.3); outline-offset: 3px; }
-    nav button.active { background-color: var(--accent); color: #fff; font-weight: 600; }
-
-    main { max-width: var(--max-width); margin: 1.25rem auto 3rem; padding: 0 1rem; }
-    .tabs { position: relative; }
-
-  .tab-content {
-  display: none;
-  position: relative;
-  margin: 0 auto;
-  min-height: 340px;
-  padding: var(--tab-padding);
-  border-radius: var(--radius);
-  overflow: visible;
-  background-image:
-  background-size: cover;
-  background-position: center;
-  color: var(--text);
-  --overlay-local: var(--overlay);
-  --text-local: var(--text);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(6px); /* Unschärfe für den Hintergrund */
-  -webkit-backdrop-filter: blur(6px); /* Safari-Support */
-  opacity: 0.8;
-  transform: translateY(8px);
-  transition:
-    opacity 0.28s ease,
-    transform 0.28s ease,
-    background-image 0.6s ease-in-out;
-}
-
-    .tab-content.active { display: block; opacity: 1; transform: none; pointer-events: auto; }
-.tab-inner {
-  position: relative;
-  max-width: calc(var(--max-width) - 64px);
-  margin: 0 auto;
-  background-color: var(--overlay-local, var(--overlay));
-  color: var(--text-local, var(--text));
-  border-radius: calc(var(--radius) - 2px);
-  padding: 1.6rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  line-height: 1.65;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Große Hintergrundbilder für jede Sektion */
-.bg-connect { background-image: url('minimalist-bg.jpg'); }
-.bg-education { background-image: url('minimalist-bg.jpg'); }
-.bg-praxis { background-image: url('minimalist-bg.jpg'); }
-
-
-    .tab-inner p { max-width: 58ch; margin-left: auto; margin-right: auto; }
-
-    .bg-connect, .bg-education, .bg-inspiration { background-color: #FFFDF5; }
-    .subtle-text { color: #666; margin: 0 0 0rem 0; text-align: center; }
-    p { margin: 0.5rem 0; }
-    .section { margin: 1rem 0; }
-    
-
-    blockquote {
-      margin: 0.8rem 0;
-      padding: 0.7rem 1rem;
-      border-left: 4px solid var(--accent);
-      border-radius: 6px;
-      background-color: rgba(255, 255, 255, 0.85);
-      font-style: italic;
-      font-size: 0.9rem;
-      color: inherit;
-    }
-
-    ul { margin: 0.5rem 0 1rem 1.2rem; padding-left: 1.2rem; }
-
-    a:focus, button:focus { outline: 3px solid rgba(0,123,94,0.16); outline-offset: 3px; }
-
-    @media (max-width: 560px) {
-      main { margin-top: 0.8rem; padding: 0 0.8rem; }
-      nav button { padding: 0.4rem 0.6rem; }
-      .tab-content { padding: 0.9rem; border-radius: 10px; min-height: 260px; }
-      .tab-inner { padding: 1rem; max-width: calc(100% - 32px); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .tab-content { transition: none !important; }
-      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root { --accent: #2bd19b; --text: #eee; --overlay: rgba(0,0,0,0.6); --background: #071011; }
-      body { background-color: var(--background); color: var(--text); }
-      header, footer { background-color: rgba(6,10,12,0.6); color: #fff; }
-      .tab-inner { color: var(--text); background-color: var(--overlay); }
-      blockquote { background-color: rgba(10,10,10,0.45); border-left-color: var(--accent); color: #ddd; }
-    }
-
-    .panel-overlay { position: fixed; inset: 0; display: none; z-index: 2000; justify-content: flex-end; align-items: flex-start; background: rgba(0,0,0,0.4); }
-    .panel-overlay.open { display: flex; }
-    .panel { width: 420px; max-width: 95%; height: 100vh; background: #fff; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.22s ease; position: relative; padding: 20px; }
-    .panel.open { transform: translateX(0); }
-    .panel .close { position: absolute; top: 12px; right: 12px; background: transparent; border: none; cursor: pointer; }
-    .panel .hero { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 14px; display: none; }
-    .angebote-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-
-  </style>
+    </style>
 </head>
-  
 <body>
-  <header>
-     <p class="subtle-text">愛 LIEBE</p>
-    <h1>Marynergy</h1>
-    <p>Connect · Grow · Create</p>
-    <nav aria-label="Haupttabs" role="tablist">
-      <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true">Verbindung &amp; Heilung</button>
-      <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false">Bildung &amp; Wachstum</button>
-      <button type="button" id="tab-btn-praxis" role="tab" aria-controls="praxis" 
-      aria-selected="false">Praxis</button>
-    </nav>
-  </header>
+    <header>
+        <div class="tagline tagline-korean">愛 LIEBE</div>
+        <h1>Marynergy</h1>
+        <div class="tagline tagline-english">Connect · Grow · Create</div>
+        
+        <nav aria-label="Haupttabs" role="tablist">
+            <button type="button" id="tab-btn-connect" role="tab" aria-controls="connect" aria-selected="true" tabindex="0">Verbindung &amp; Heilung</button>
+            <button type="button" id="tab-btn-education" role="tab" aria-controls="education" aria-selected="false" tabindex="-1">Bildung &amp; Wachstum</button>
+            <button type="button" id="tab-btn-praxis" role="tab" aria-controls="praxis" aria-selected="false" tabindex="-1">Praxis</button>
+        </nav>
+    </header>
 
-  <main>
+    <main>
+        <!-- Semantisch versteckte Überschrift für den Hauptbereich (A11Y) -->
+        <h2 class="visually-hidden">Inhaltsbereiche</h2> 
 
-    <div class="tabs" id="tabs">
-      <section id="connect" class="tab-content bg-connect active" role="tabpanel" aria-labelledby="tab-btn-connect" aria-hidden="false" data-bg="healing-bg.jpg">
-        <div class="tab-inner">
-           <blockquote>
-            <em>„In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenzt-Sein.</em>“ <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em>
-          </blockquote>
-<br>
-<br>    
-<span class="clickable" data-info="<strong>Meine Philosophie:</strong> In Verbindung entsteht der Raum, in dem individuelle und kollektive Heilung wurzelt. Ein fortlaufender Prozess, der Körper, Geist und Herz miteinander vereint.<br><br>Er wird durch Achtsamkeit, körperliches Training und spirituelle Praxis gefördert.<br><br>Neben der inneren Heilung entsteht eine Verbindung zum Großen Ganzen – erfahrbar u.a. in Natur, Dao, Zen, Qi, Prana und Logos.
-" data-img="">🌱 Kernlehre</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden.<br><br>Heilung entsteht aus dem Mut, persönliche und universelle Wahrheit zu erkennen und einen Raum jenseits des Egos zu öffnen, in dem reines Bewusstsein erfahrbar wird." data-img="">🌱 Energie & Wahrheit</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<br>
-<ul>
-    <em><li>Qigong · Yoga · Meditation
-    <li>Laufen · Calisthenics · Boden-Flow
-    <li>Natur · Fasten · Ernährung
-    <li>Kälteeinwirkung · Sauna
-    <li>Musik · Tanz · Kreativität</li></em><br>
-   
-’Wiederholung ist die Mutter der Fertigkeit’ – Routinen und Disziplin sind der Schlüssel für langfristigen Erfolg.<br><br>Regelmäßige Praxis stärkt Körper, Geist und Herz, fördert Flexibilität, Ausdauer, geistige Klarheit und innere Gelassenheit und unterstützt Heilung, Vitalität sowie spirituelles Wachstum." data-img="">🌱 Ganzheitliche Heilung</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="Fasten und bewusste Pausen stärken die natürliche Regeneration des Körpers.<br><br>Abstand von Medien und Gedankenflut sowie bewusste Offline-Zeit fördert Klarheit und inneres Gleichgewicht.<br><br>Diese Pausen und Auszeiten schaffen neuen fruchtbaren Raum." data-img="">🌱 Raum für Entwicklung</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<strong>Aktion</strong> – alle gegenwärtigen Prozesse: Sein, Atmen, Denken, Handeln.<br><br><strong>Substanz</strong> – alles, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken, Informationen.<br><br><strong>Himmel &amp; Erde</strong> – Menschen, Orte, Beziehungen, die digitale Welt sowie Vergangenheit, Gegenwart und Zukunft.<br><br>Wahre Achtsamkeit entsteht, wenn alle drei – Aktion, Substanz und Himmel &amp; Erde – als Einheit erfahren werden.<br><br><em>Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — das Fundament meiner Philosophie.</em>" data-img="">
-🌱 Aktion · Substanz · Himmel &amp; Erde
-</span>
+        <div class="tabs" id="tabs">
+            
+            <!-- 1. Sektion: Verbindung & Heilung -->
+            <section id="connect" class="tab-content bg-connect active" role="tabpanel" aria-labelledby="tab-btn-connect" aria-hidden="false">
+                <div class="tab-inner">
+                    <blockquote>
+                        „In der Welt des 'Nichts' gibt es nichts Böses, nur das Gute besteht. Wissen und Talent stoßen in der Menschenwelt auf Grenzen, das gilt sogar für die Kampfkunst. Darum soll der Geist dem 'Nichts' gehören. Dies bedeutet: Unbegrenzt-Sein.“ 
+                        <footer>
+                            — <cite>Miyamoto Musashi, Das Buch der fünf Ringe</cite>
+                        </footer>
+                    </blockquote>
+                    
+                    <button class="clickable" data-info="<strong>Meine Philosophie:</strong> In Verbindung entsteht der Raum, in dem individuelle und kollektive Heilung wurzelt. Ein fortlaufender Prozess, der Körper, Geist und Herz miteinander vereint.<p>Er wird durch Achtsamkeit, körperliches Training und spirituelle Praxis gefördert.</p><p>Neben der inneren Heilung entsteht eine Verbindung zum Großen Ganzen – erfahrbar u.a. in Natur, Dao, Zen, Qi, Prana und Logos.</p>">
+                        🌱 Kernlehre
+                    </button>
+                    
+                    <button class="clickable" data-info="Alles ist Energie – sichtbar und unsichtbar, materiell und immateriell – und alles ist miteinander verbunden.<p>Heilung entsteht aus dem Mut, persönliche und universelle Wahrheit zu erkennen und einen Raum jenseits des Egos zu öffnen, in dem reines Bewusstsein erfahrbar wird.</p>">
+                        🌱 Energie & Wahrheit
+                    </button>
+                    
+                    <button class="clickable" data-info="<p><ul><li>Qigong · Yoga · Meditation</li><li>Laufen · Calisthenics · Boden-Flow</li><li>Natur · Fasten · Ernährung</li><li>Kälteeinwirkung · Sauna</li><li>Musik · Tanz · Kreativität</li></ul></p><p>’Wiederholung ist die Mutter der Fertigkeit’ – Routinen und Disziplin sind der Schlüssel für langfristigen Erfolg.</p><p>Regelmäßige Praxis stärkt Körper, Geist und Herz, fördert Flexibilität, Ausdauer, geistige Klarheit und innere Gelassenheit und unterstützt Heilung, Vitalität sowie spirituelles Wachstum.</p>">
+                        🌱 Ganzheitliche Heilung
+                    </button>
+                    
+                    <button class="clickable" data-info="Fasten und bewusste Pausen stärken die natürliche Regeneration des Körpers.<p>Abstand von Medien und Gedankenflut sowie bewusste Offline-Zeit fördert Klarheit und inneres Gleichgewicht.</p><p>Diese Pausen und Auszeiten schaffen neuen fruchtbaren Raum.</p>">
+                        🌱 Raum für Entwicklung
+                    </button>
+                    
+                    <button class="clickable" data-info="<strong>Aktion</strong> – alle gegenwärtigen Prozesse: Sein, Atmen, Denken, Handeln.<p><strong>Substanz</strong> – alles, was Körper und Geist aufnehmen: Luft, Wasser, Nahrung, Gedanken, Informationen.</p><p><strong>Himmel &amp; Erde</strong> – Menschen, Orte, Beziehungen, die digitale Welt sowie Vergangenheit, Gegenwart und Zukunft.</p><p>Wahre Achtsamkeit entsteht, wenn alle drei – Aktion, Substanz und Himmel &amp; Erde – als Einheit erfahren werden.</p><em>Die analoge Welt ist mein <strong>Himmel &amp; Erde</strong> — das Fundament meiner Philosophie.</em>">
+                        🌱 Aktion · Substanz · Himmel &amp; Erde
+                    </button>
+                    
+                </div>
+            </section>
+        
+            <!-- 2. Sektion: Bildung & Wachstum -->
+            <section id="education" class="tab-content bg-education" role="tabpanel" aria-labelledby="tab-btn-education" aria-hidden="true">
+                <div class="tab-inner">
+                    <blockquote>
+                        „›Wissen ist Macht‹. Das stimmt nicht! Wissen ist lediglich potenzielle Macht. Zu echter Macht wird es nur dann, wenn es in konkreten Handlungsplänen verwertet und auf ein konkretes Ziel ausgerichtet wird.” 
+                        <footer>
+                            — <cite>Napoleon Hill, Think and Grow Rich</cite>
+                        </footer>
+                    </blockquote>
+                    
+                    <button class="clickable" data-info="Das Wort <strong>educate</strong> stammt vom Lateinischen <strong>educo</strong> ab, was <em>„herausziehen“, „von innen entwickeln“</em> bedeutet.<p>Wahre Bildung entfaltet unser angeborenes Potenzial und legt die Grundlage für Wohlstand, Gesundheit, Prosperität und Freiheit.</p><p>Sie fördert Werte und Tugenden, die sowohl persönliches Wachstum als auch das Wohl des Kollektivs unterstützen.</p><p>Bildung ist eine gelebte Präsenz, die Lernen zu einer ganzheitlichen Erfahrung macht — eine, die über reines Wissen hinausgeht, um Neugier, Inspiration und nachhaltiges Wachstum für Einzelne und die Gesellschaft zu fördern.</p>">
+                        🌱 Wesen der Bildung
+                    </button>
 
+                    <button class="clickable" data-info="<strong>Philosophie</strong>: Wachstum und Erfolg hängen von persönlicher Philosophie ab, nicht von äußeren Umständen.<p><strong>Einstellung</strong>: Unsere Einstellung bestimmt, wie wir Leben, andere und uns selbst wahrnehmen.</p><p><strong>Aktivität</strong>: Wahres Wachstum entsteht durch bewusste, konsequente Aktionen.</p><p><strong>Ergebnisse</strong>: Ergebnisse zeigen, wo Philosophie, Einstellung oder Aktivität angepasst werden müssen. <em>'Erfolg ist ein Zahlenspiel'.</em></p><p><strong>Lebensstil</strong>: Lebensstil bedeutet, Wohlstand, Erfolg und Glück bewusst durch Lernen und gute Gewohnheiten zu gestalten.</p>">
+                        🌱 Die fünf Säulen des Wachstums
+                    </button>
+                    
+                    <button class="clickable" data-info="Das Leben spiegelt die Zyklen der Jahreszeiten wider.<p><strong>Winter</strong>: Wir begegnen Herausforderungen, die uns prüfen. Wir werden weiser und stärker und besser, um stets vorbereitet zu sein.</p><p><strong>Frühling</strong>: Wir ergreifen unsere Chance, sind mutig und entschlossen, denn der Frühling ist nicht für ewig.</p><p><strong>Sommer</strong>: Wir pflegen die positiven Seiten des Lebens, während wir lernen, Negativität abzuwehren und gesunde Grenzen zu setzen.</p><p><strong>Herbst, zur Ernte</strong>: Wir übernehmen die volle Verantwortung für unsere Leistungen und Ergebnisse, reflektieren über unsere Erfahrungen und schätzen bewusst die Früchte unserer Bemühungen.</p><p>Das Beste menschlicher Reife ist: Keine Entschuldigung, wenn du es gut gemacht hast, und keine Beschwerde, wenn nicht.</p>">
+                        🌱 Das Leben ist wie die Jahreszeiten
+                    </button>
 
-<br>
-<br>
-<br>
-      
-   </div>
-      </section>
+                    <button class="clickable" data-info="<strong>Körper</strong>: Behandle deinen Körper wie einen Tempel, pflege ihn durch Ernährung, Bewegung und Vitalität, denn ohne Gesundheit kannst du dein Potenzial nicht entfalten.<p><strong>Geist</strong>: Kultiviere deine Werte, Tugenden und spirituellen Praktiken, damit Charakter und Integrität gestärkt werden und du innerlich ausgewogen bist.</p><p><strong>Mental</strong>: Entwickle deinen Verstand durch Lernen, Reflexion und kritisches Denken, um deine Überzeugungen zu formen und verteidigen zu können.</p>">
+                        🌱 Persönliche Entwicklung
+                    </button>
+                    
+                    <button class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<p>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton mit Bedacht an und zeige Verständnis.</p><p>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.</p><p><em>„Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“<br>(Johannes 1,1)</em></p>">
+                        🌱 Kommunikation
+                    </button>
+                </div>
+            </section>
 
-      <section id="education" class="tab-content bg-education" role="tabpanel" aria-labelledby="tab-btn-education" aria-hidden="true" data-bg="healing-bg.jpg">
-        <div class="tab-inner">
-           <blockquote>
-            „›Wissen ist Macht‹. Das stimmt nicht! Wissen ist lediglich potenzielle Macht. Zu echter Macht wird es nur dann, wenn es in konkreten Handlungsplänen verwertet und auf ein konkretes Ziel ausgerichtet wird.” <strong>–  Napoleon Hill</strong>, <em>Think and Grow Rich</em>
-          </blockquote>
-    <br>
-    <br>
-    <span class="clickable" data-info="Das Wort <strong>educate</strong> stammt vom Lateinischen <strong>educo</strong> ab, was <em>„herausziehen“, „von innen entwickeln“</em> bedeutet.<br><br>Wahre Bildung entfaltet unser angeborenes Potenzial und legt die Grundlage für Wohlstand, Gesundheit, Prosperität und Freiheit.<br><br>Sie fördert Werte und Tugenden, die sowohl persönliches Wachstum als auch das Wohl des Kollektivs unterstützen.<br><br>Bildung ist eine gelebte Präsenz, die Lernen zu einer ganzheitlichen Erfahrung macht — eine, die über reines Wissen hinausgeht, um Neugier, Inspiration und nachhaltiges Wachstum für Einzelne und die Gesellschaft zu fördern." data-img="">🌱 Wesen der Bildung
-</span>
+            <!-- 3. Sektion: Praxis -->
+            <section id="praxis" class="tab-content bg-praxis" role="tabpanel" aria-labelledby="tab-btn-praxis" aria-hidden="true">
+                <div class="tab-inner">
+                    <blockquote>
+                        „Es genügt nicht, dies zu lesen, man muss vielmehr so hart üben, als würde man diese Lehre selbst entwickeln wollen und nicht einfach nur übertragen bekommen. Man übe so beharrlich, als sei man selbst verantwortlich für die Entdeckung des wahren Weges. Man vermeide bloßes Nachahmen und mittelmäßiges Üben.“ 
+                        <footer>
+                            — <cite>Miyamoto Musashi, Das Buch der fünf Ringe</cite>
+                        </footer>
+                    </blockquote>
+                    
+                    <button class="clickable" data-info="<em>'Es liegt nicht in der Außenwelt, sondern tief innen, und wenn alles verloren geht, so steht es immer noch unerschütterlich'.</em> — <cite>Marcus Aurelius, Meditations</cite><p>Wahre und nachhaltige Veränderung – ob in Gesundheit, Wohlstand oder persönlicher Entwicklung – beginnt immer im Inneren, in der Haltung und der Bereitschaft, Verantwortung für das eigene Leben zu übernehmen.</p><p>Doch Einsicht allein genügt nicht; erst wenn sie in kleine, konsequente Handlungen übersetzt wird, können Wachstum und echte Fortschritte entstehen.</p><p>Frage dich deshalb, welche einfachen Schritte du bisher vernachlässigt hast, obwohl sie leicht umzusetzen wären und viel bewirken könnten. Und dann gilt: Gehe den ersten Schritt – denn erst das Handeln setzt das innere Potenzial in Bewegung.</p><p>Ob es ein Apfel ist oder ein Spaziergang in der Natur, jede kleine Handlung zählt.</p>">
+                        🌱 Das Fundament
+                    </button>
+                    
+                    <button class="clickable" data-info="<em>'Gefühle kommen und gehen wie Wolken in einem windigen Himmel. Bewusstes Atmen ist mein Anker'.</em> — <cite>Thich Nhat Hanh</cite><p>Wenn ich eine Sache als die wichtigste für das Wohl von Körper, Geist und Herz sowie für die Verbindung zu unserem Inneren und der äußeren Welt betrachte, dann ist es die Atmung.</p><p>Ob im Berufsleben, beim physischen Training oder in alltäglichen Situationen – die Atmung spielt eine entscheidende Rolle.</p><p>Neben der bewussten Wahrnehmung des Atems ist die nasale Atmung in der Regel die effektivste und vorteilhafteste Methode. Ausnahmen bilden intensive körperliche Anstrengungen, bei denen es erforderlich sein kann, auch durch den Mund zu atmen, oder spezifische Atemübungen wie die Wim-Hof-Methode.</p><p>Meine persönliche Empfehlung ist das Praktizieren von Qigong, da es zu mehr Bewusstheit und einer tieferen Verbindung zur Atmung und zum Atem führt.</p>">
+                        🌱 Die Basis
+                    </button>
+                    
+                    <button class="clickable" data-info="<strong>Alles ist wichtig, denn alles ist miteinander verbunden. Wenn ich jedoch drei Körperbereiche hervorheben müsste, wären es diese:</strong><p><strong>1. Füße:</strong> Unsere Füße tragen uns, verbinden uns mit dem Boden und sind Resonanzleiter sowie das Fundament unseres Körpers. Starke, flexible Füße sind entscheidend für die Verletzungsprävention und eine ganzheitliche Gesundheit. Sie beeinflussen unsere Beweglichkeit und unsere Verbindung zum „Großen Ganzen“ (Erdung).<br><strong>Mein Tipp:</strong> Laufe so oft wie möglich barfuß und vermeide hohe Absätze oder Sneaker mit künstlich hohen Fersen.</p><p><strong>2. Hüfte:</strong> Eine bewegliche und flexible Hüfte ist für viele Lebensbereiche unverzichtbar. Sie hilft, Verletzungen vorzubeugen und fördert die allgemeine Flexibilität. Eine gut funktionierende Hüfte ist von unschätzbarem Wert.<br><strong>Mein Tipp:</strong> Gehe regelmäßig in den Deep Squat und versuche, täglich immer mal wieder in dieser Position zu sein.</p><p><strong>3. Bauch</strong> Der Bauch ist entscheidend für unser Wohlbefinden und wird oft unterschätzt. Er ist der Sitz unserer Verdauung und als „zweites Gehirn“ bekannt. Wenn wir im Einklang mit unserem Bauch sind, wirkt sich das positiv auf den Organismus aus.<br><strong>Mein Tipp:</strong> Gönne deinem Bauch regelmäßige Entlastungsphasen – sei es durch bewusstes Fasten oder achtsamen Umgang mit dem Essen.</p><p><strong>Das ist lediglich ein kleiner Ausschnitt. Fange an mit kleinen Schritten, indem du kleine Routinen in deinen Alltag integrierst.</strong></p>">
+                        🌱 Der Körper
+                    </button>
+                    
+                    <button class="clickable" data-info="Der Geist ist untrennbar mit dem gesamten Körper verbunden – er ist ein wesentlicher Teil unseres Systems. Bevor wir Entscheidungen treffen, sollte unser Geist klar und bewusst sein.<p>Wo auch immer du bist, sei ganz dort – mit deinem Geist, deinem Körper und deinem Herzen. Diese bewusste Präsenz hilft dem Geist, achtsam zu bleiben, konzentriert zu sein und den Fokus zu wahren.</p><p>Alle körperlichen Tätigkeiten – sei es beim Training, beruflich oder im Alltag – profitieren davon, wenn der Geist sowohl Beobachter als auch Dirigent zugleich ist.</p><p><strong>Mein Tipp:</strong> Verbringe viel Zeit in der Natur und praktiziere regelmäßig Qigong oder Meditation und übe bewusst das unmittelbare Erleben, einschließlich des 'Nichtdenkens'.</p><p>Ebenso wichtig sind bewusste Offlinezeiten und Pausen von Medien und Informationen – achte auf deine psychische Gesundheit und gönne deinem Geist Ruhephasen.</p>">
+                        🌱 Der Geist
+                    </button>
+                    
+                    <button class="clickable" data-info="„In der Leere, also im Nichts gibt es keinen Anfang und keine Tiefe. Hat man das höchste Prinzip meiner Kampfkunst erlangt, soll man darüber hinausgehen, indem man sich selbst von diesem Prinzip löst.“</em> — <cite>Miyamoto Musashi, Das Buch der fünf Ringe</cite><p>Dieses Zitat verdeutlicht, dass selbst das höchste Prinzip – in Kampfkunst oder Leben – nicht zur Begrenzung werden darf.</p><p>Wer es verinnerlicht hat, sollte über das Gelernte hinauswachsen, sich nicht an starre Regeln oder Dogmen binden, sondern frei, flexibel und eigenständig handeln.</p><p>Es geht darum, innere Freiheit zu erreichen, statt sich von selbst erschaffenen Grenzen einschränken zu lassen.</p>">
+                        🌱 Die Leere
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
 
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<strong>Philosophie</strong>:
-Wachstum und Erfolg hängen von persönlicher Philosophie ab, nicht von äußeren Umständen.<br><br><strong>Einstellung</strong>:
-Unsere Einstellung bestimmt, wie wir Leben, andere und uns selbst wahrnehmen.<br><br><strong>Aktivität</strong>:
-Wahres Wachstum entsteht durch bewusste, konsequente Aktionen.<br><br><strong>Ergebnisse</strong>:
-Ergebnisse zeigen, wo Philosophie, Einstellung oder Aktivität angepasst werden müssen. <em>'Erfolg ist ein Zahlenspiel'.</em><br><br><strong>Lebensstil</strong>:
-Lebensstil bedeutet, Wohlstand, Erfolg und Glück bewusst durch Lernen und gute Gewohnheiten zu gestalten." data-img="">🌱 Die fünf Säulen des Wachstums
-</span>
-<br>
-<br>       
-<br>
-   <span class="clickable" data-info="Das Leben spiegelt die Zyklen der Jahreszeiten wider.<br><br><strong>Winter</strong>: Wir begegnen Herausforderungen, die uns prüfen. Wir werden weiser und stärker und besser, um stets vorbereitet zu sein.<br><br><strong>Frühling</strong>: Wir ergreifen unsere Chance, sind mutig und entschlossen, denn der Frühling ist nicht für ewig.<br><br><strong>Sommer</strong>: Wir pflegen die positiven Seiten des Lebens, während wir lernen, Negativität abzuwehren und gesunde Grenzen zu setzen.<br><br><strong>Herbst, zur Ernte</strong>: Wir übernehmen die volle Verantwortung für unsere Leistungen und Ergebnisse, reflektieren über unsere Erfahrungen und schätzen bewusst die Früchte unserer Bemühungen.<br><br><br>Das Beste menschlicher Reife ist: Keine Entschuldigung, wenn du es gut gemacht hast, und keine Beschwerde, wenn nicht." data-img="">🌱 Das Leben ist wie die Jahreszeiten
-</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<strong>Körper</strong>: Behandle deinen Körper wie einen Tempel, pflege ihn durch Ernährung, Bewegung und Vitalität, denn ohne Gesundheit kannst du dein Potenzial nicht entfalten.<br><br>
-<strong>Geist</strong>: Kultiviere deine Werte, Tugenden und spirituellen Praktiken, damit Charakter und Integrität gestärkt werden und du innerlich ausgewogen bist.<br><br>
-<strong>Mental</strong>: Entwickle deinen Verstand durch Lernen, Reflexion und kritisches Denken, um deine Überzeugungen zu formen und verteidigen zu können." data-img="">🌱 Persönliche Entwicklung
-</span>
-<br>
-<br>
-<br>
-  <span class="clickable" data-info="Worte haben die Kraft, Menschen zu erleuchten und zu bewegen.<br><br>Spreche mit Wert, Empathie und echtem Interesse. Achte auf andere, passe deinen Ton mit Bedacht an und zeige Verständnis.<br><br>Beginne immer mit Aufrichtigkeit, lass Authentizität deine Kommunikation leiten und fördere Verbindung, Vertrauen und sinnvollen Austausch.<br><br><br><em>„Im Anfang war das Wort, und das Wort war bei Gott, und das Wort war Gott…“<br>(Johannes 1,1)</em>" data-img="">🌱 Kommunikation
-</span>
-<br>
-<br>
-<br>
-</section>
-</div>
- <div class="tabs" id="tabs">
-      <section id="praxis" class="tab-content bg-praxis active" role="tabpanel" aria-labelledby="tab-btn-praxis" aria-hidden="false" data-bg="healing-bg.jpg">
-        <div class="tab-inner">
-         <blockquote>
-            <em>„Es genügt nicht, dies zu lesen, man muss vielmehr so hart üben, als
-würde man diese Lehre selbst entwickeln wollen und nicht einfach nur
-übertragen bekommen. Man übe so beharrlich, als sei man selbst
-verantwortlich für die Entdeckung des wahren Weges. Man vermeide
-bloßes Nachahmen und mittelmäßiges Üben.</em>“ <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em>
-          </blockquote>
-          <br>
-<br>    
-<span class="clickable" data-info="   <em>'Es liegt nicht in der Außenwelt, sondern tief innen, und wenn alles verloren geht, so steht es immer noch unerschütterlich'.</em> <br><strong>– Marcus Aurelius</strong>, <em>Meditations</em><br><br>Wahre und nachhaltige Veränderung – ob in Gesundheit, Wohlstand oder persönlicher Entwicklung – beginnt immer im Inneren, in der Haltung und der Bereitschaft, Verantwortung für das eigene Leben zu übernehmen.<br><br>Doch Einsicht allein genügt nicht; erst wenn sie in kleine, konsequente Handlungen übersetzt wird, können Wachstum und echte Fortschritte entstehen.<br><br>Frage dich deshalb, welche einfachen Schritte du bisher vernachlässigt hast, obwohl sie leicht umzusetzen wären und viel bewirken könnten. Und dann gilt: Gehe den ersten Schritt – denn erst das Handeln setzt das innere Potenzial in Bewegung.<br><br>Ob es ein Apfel ist oder ein Spaziergang in der Natur, jede kleine Handlung zählt."data-img="">🌱 Das Fundament</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<em>'Gefühle kommen und gehen wie Wolken in einem windigen Himmel. Bewusstes Atmen ist mein Anker'.</em> <br><strong>– Thich Nhat Hanh</strong><br><br>Wenn ich eine Sache als die wichtigste für das Wohl von Körper, Geist und Herz sowie für die Verbindung zu unserem Inneren und der äußeren Welt betrachte, dann ist es die Atmung.<br><br>
-Ob im Berufsleben, beim physischen Training oder in alltäglichen Situationen – die Atmung spielt eine entscheidende Rolle.<br><br>Das Ausmaß ihrer Bedeutung lässt sich kaum in Worte fassen.<br><br>
-Neben der bewussten Wahrnehmung des Atems ist die nasale Atmung in der Regel die effektivste und vorteilhafteste Methode. Ausnahmen bilden intensive körperliche Anstrengungen, bei denen es erforderlich sein kann, auch durch den Mund zu atmen, oder spezifische Atemübungen wie die Wim-Hof-Methode.<br><br>Meine persönliche Empfehlung ist das Praktizieren von Qigong, da es zu mehr Bewusstheit und einer tieferen Verbindung zur Atmung und zum Atem führt." data-img="">🌱 Die Basis</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="<strong>Alles ist wichtig, denn alles ist miteinander verbunden. Wenn ich jedoch drei Körperbereiche hervorheben müsste, wären es diese:</strong><br><br>
-  <strong>1. Füße:</strong> Unsere Füße tragen uns, verbinden uns mit dem Boden und sind Resonanzleiter sowie das Fundament unseres Körpers. Starke, flexible Füße sind entscheidend für die Verletzungsprävention und eine ganzheitliche Gesundheit. Sie beeinflussen unsere Beweglichkeit und unsere Verbindung zum „Großen Ganzen“ (Erdung).<br> <strong>Mein Tipp:</strong> Laufe so oft wie möglich barfuß und vermeide hohe Absätze oder Sneaker mit künstlich hohen Fersen.<br><br>
-  <strong>2. Hüfte:</strong> Eine bewegliche und flexible Hüfte ist für viele Lebensbereiche unverzichtbar. Sie hilft, Verletzungen vorzubeugen und fördert die allgemeine Flexibilität. Eine gut funktionierende Hüfte ist von unschätzbarem Wert. <strong><br>Mein Tipp:</strong> Gehe regelmäßig in den Deep Squat und versuche, täglich immer mal wieder in dieser Position zu sein.<br><br>
-  <strong>3. Bauch</strong> Der Bauch ist entscheidend für unser Wohlbefinden und wird oft unterschätzt. Er ist der Sitz unserer Verdauung und als „zweites Gehirn“ bekannt. Wenn wir im Einklang mit unserem Bauch sind, wirkt sich das positiv auf den Organismus aus. <strong><br>Mein Tipp:</strong> Gönne deinem Bauch regelmäßige Entlastungsphasen – sei es durch bewusstes Fasten oder achtsamen Umgang mit dem Essen.<br><br>
-<strong>Das ist lediglich ein kleiner Ausschnitt. Fange an mit kleinen Schritten, indem du kleine Routinen in deinen Alltag integrierst.</strong>" data-img="">🌱 Der Körper</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="Der Geist ist untrennbar mit dem gesamten Körper verbunden – er ist ein wesentlicher Teil unseres Systems. Bevor wir Entscheidungen treffen, sollte unser Geist klar und bewusst sein.<br><br>Wo auch immer du bist, sei ganz dort – mit deinem Geist, deinem Körper und deinem Herzen. Diese bewusste Präsenz hilft dem Geist, achtsam zu bleiben, konzentriert zu sein und den Fokus zu wahren.<br><br>
-Alle körperlichen Tätigkeiten – sei es beim Training, beruflich oder im Alltag – profitieren davon, wenn der Geist sowohl Beobachter als auch Dirigent zugleich ist.<br><br>
-<strong>Mein Tipp:</strong> Verbringe viel Zeit in der Natur und praktiziere regelmäßig Qigong oder Meditation und übe bewusst das unmittelbare Erleben, einschließlich des 'Nichtdenkens'.<br><br>Ebenso wichtig sind bewusste Offlinezeiten und Pausen von Medien und Informationen – achte auf deine psychische Gesundheit und gönne deinem Geist Ruhephasen." data-img="">🌱 Der Geist</span>
-<br>
-<br>
-<br>
-<span class="clickable" data-info="„In der Leere, also im Nichts gibt es keinen Anfang und keine Tiefe. Hat man das höchste Prinzip meiner Kampfkunst erlangt, soll man
-darüber hinausgehen, indem man sich selbst von diesem Prinzip löst.“</em> <br><strong>– Miyamoto Musashi</strong>, <em>Das Buch der fünf Ringe</em><br><br>Dieses Zitat verdeutlicht, dass selbst das höchste Prinzip – in Kampfkunst oder Leben – nicht zur Begrenzung werden darf.<br><br>Wer es verinnerlicht hat, sollte über das Gelernte hinauswachsen, sich nicht an starre Regeln oder Dogmen binden, sondern frei, flexibel und eigenständig handeln.<br><br>Es geht darum, innere Freiheit zu erreichen, statt sich von selbst erschaffenen Grenzen einschränken zu lassen." data-img="">🌱 Die Leere</span>
+    <footer>
+        <p>Dankbarkeit 🙏</p>
+        <p><small>Quelle der Inspiration.</small></p>
+        <p><a href="mailto:marynergy@gmail.com">marynergy@gmail.com</a></p>
+        <p><a href="https://marynergy-cloud.github.io/KulturBewegt/" target="_blank" rel="noopener noreferrer">Inspiration & Kultur</a></p>
+    </footer>
 
-
-<br>
-<br>
-<br>
-      
-  </section>
-</div>
-
-</main>
-
-
-<footer>
-<p>Dankbarkeit 🙏</p>
-<p><small>Quelle der Inspiration.</small></p>
-<p><a href="mailto:marynergy@gmail.com">marynergy@gmail.com</a></p>
- <p><a href="https://marynergy-cloud.github.io/KulturBewegt/" target="_blank" rel="noopener noreferrer">Inspiration & Kultur</a></p><br>
-</footer>
-
-
-  <script>
+    <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('panelOverlay');
-  const panel = document.getElementById('panel');
-  const hero = document.getElementById('panelHero');
-  const titleEl = document.getElementById('panelTitle');
-  const contentEl = document.getElementById('panelContent');
-  const closeBtn = document.getElementById('panelClose');
-  let savedScrollY = 0;
-  let lastClicked = null;
+    // 1. Panel Elements
+    const overlay = document.getElementById('panelOverlay');
+    const panel = document.getElementById('panel');
+    const hero = document.getElementById('panelHero');
+    const titleEl = document.getElementById('panelTitle');
+    const contentEl = document.getElementById('panelContent');
+    const closeBtn = document.getElementById('panelClose');
+    let savedScrollY = 0;
+    let lastClicked = null;
 
-  function lockBackground(scrollY){
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-  }
-  function unlockBackground(){
-    const scrollY = -parseInt(document.body.style.top || '0', 10);
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
-  }
+    // Function to lock the background scroll when the panel is open (UX improvement)
+    function lockBackground(scrollY) {
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%'; 
+    }
 
-  function openPanel(triggerEl, title, infoHTML, imgUrl){
-    // ARIA
-    if(triggerEl) triggerEl.setAttribute('aria-expanded','true');
-    titleEl.textContent = title || 'Ohne Titel';
-    // contentEl.innerHTML = infoHTML || ''; // falls Input unsicher: sanitizen!
-    contentEl.innerHTML = infoHTML || '';
-    if(imgUrl){ hero.style.backgroundImage = `url("${imgUrl}")`; hero.style.display = 'block'; } 
-    else { hero.style.backgroundImage = ''; hero.style.display = 'none'; }
-    overlay.classList.add('open'); panel.classList.add('open'); overlay.setAttribute('aria-hidden','false');
-    panel.scrollTop = contentEl.scrollTop = 0;
-    lockBackground(savedScrollY);
-    // Fokus ins Panel
-    closeBtn?.focus({preventScroll:true});
-  }
+    // Function to unlock the background scroll
+    function unlockBackground() {
+        const scrollY = -parseInt(document.body.style.top || '0', 10);
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+        savedScrollY = 0;
+    }
 
-  function closePanel(){
-    overlay.classList.remove('open'); panel.classList.remove('open'); overlay.setAttribute('aria-hidden','true');
-    // reset aria-expanded on lastClicked
-    if(lastClicked) lastClicked.setAttribute('aria-expanded','false');
-    setTimeout(() => { unlockBackground(); lastClicked?.focus(); savedScrollY=0; }, 240);
-  }
+    // Opens the side panel (modal dialog)
+    function openPanel(triggerEl, title, infoHTML, imgUrl) {
+        if (triggerEl) {
+            triggerEl.setAttribute('aria-expanded', 'true');
+        }
+        
+        titleEl.textContent = title || 'Information';
+        // HINWEIS: Nutzung von innerHTML für data-info, da der Inhalt HTML-Tags enthält.
+        contentEl.innerHTML = infoHTML || '';
+        
+        if (imgUrl) {
+            hero.style.backgroundImage = `url("${imgUrl}")`;
+            hero.style.display = 'block';
+        } else {
+            hero.style.backgroundImage = '';
+            hero.style.display = 'none';
+        }
+        
+        overlay.classList.add('open');
+        panel.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        
+        panel.scrollTop = contentEl.scrollTop = 0;
+        lockBackground(savedScrollY);
+        closeBtn?.focus({ preventScroll: true });
+    }
 
-  document.querySelectorAll('.clickable').forEach(el=>{
-    if(!el.hasAttribute('role')) el.setAttribute('role','button');
-    if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
-    // ensure aria attributes exist
-    if(!el.hasAttribute('aria-haspopup')) el.setAttribute('aria-haspopup','dialog');
-    if(!el.hasAttribute('aria-expanded')) el.setAttribute('aria-expanded','false');
+    // Closes the side panel
+    function closePanel() {
+        overlay.classList.remove('open');
+        panel.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        
+        if (lastClicked) {
+            lastClicked.setAttribute('aria-expanded', 'false');
+        }
+        
+        setTimeout(() => {
+            unlockBackground();
+            lastClicked?.focus(); 
+        }, 250);
+    }
 
-    el.addEventListener('click', (e)=>{ 
-      e.preventDefault();
-      savedScrollY=window.scrollY;
-      lastClicked=el;
-      openPanel(el, el.textContent.trim(), el.getAttribute('data-info'), el.getAttribute('data-img'));
+    // --- Event Listeners for Clickable Buttons ---
+    document.querySelectorAll('.clickable').forEach(el => {
+        // Obwohl wir Buttons verwenden, lassen wir die ARIA-Attribute zur Sicherheit hier
+        if (!el.hasAttribute('aria-haspopup')) el.setAttribute('aria-haspopup', 'dialog');
+        if (!el.hasAttribute('aria-expanded')) el.setAttribute('aria-expanded', 'false');
+
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            savedScrollY = window.scrollY;
+            lastClicked = el;
+            // Wir verwenden el.textContent.trim(), da der Button keinen <h3> mehr enthält
+            openPanel(el, el.textContent.trim(), el.getAttribute('data-info'), el.getAttribute('data-img'));
+        });
     });
-    el.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.code==='Space'){ e.preventDefault(); el.click(); } });
-  });
 
-  closeBtn?.addEventListener('click', closePanel);
-  overlay.addEventListener('click', (e)=>{ if(e.target===overlay) closePanel(); });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePanel(); });
-
-  // Tabs (Beibehaltung deiner Logik)
-  const nav = document.querySelector('nav[role="tablist"]');
-  const tabs = Array.from(nav.querySelectorAll('[role="tab"]'));
-  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
-  function activateTab(tab){
-    const targetId = tab.getAttribute('aria-controls');
-    tabs.forEach(t=>{ t.classList.remove('active'); t.setAttribute('aria-selected','false'); t.setAttribute('tabindex','-1'); });
-    panels.forEach(p=>{ p.classList.remove('active'); p.setAttribute('aria-hidden','true'); });
-    tab.classList.add('active'); tab.setAttribute('aria-selected','true'); tab.removeAttribute('tabindex');
-    document.getElementById(targetId)?.classList.add('active');
-  }
-  tabs.forEach(tab=>{
-    tab.setAttribute('tabindex', tab.getAttribute('aria-selected')==='true'?'0':'-1');
-    tab.addEventListener('click', ()=>activateTab(tab));
-    tab.addEventListener('keydown', (e)=>{
-      let idx = tabs.indexOf(tab);
-      if(e.key==='ArrowRight'||e.key==='ArrowDown'){ e.preventDefault(); activateTab(tabs[(idx+1)%tabs.length]); tabs[(idx+1)%tabs.length].focus(); }
-      if(e.key==='ArrowLeft'||e.key==='ArrowUp'){ e.preventDefault(); activateTab(tabs[(idx-1+tabs.length)%tabs.length]); tabs[(idx-1+tabs.length)%tabs.length].focus(); }
-      if(e.key==='Home'){ e.preventDefault(); activateTab(tabs[0]); tabs[0].focus(); }
-      if(e.key==='End'){ e.preventDefault(); activateTab(tabs[tabs.length-1]); tabs[tabs.length-1].focus(); }
+    // --- Panel Close Listeners ---
+    closeBtn?.addEventListener('click', closePanel);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePanel();
     });
-  });
-  activateTab(tabs.find(t=>t.getAttribute('aria-selected')==='true')||tabs[0]);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && panel.classList.contains('open')) {
+            closePanel();
+        }
+    });
+
+
+    // --- Tab Logic ---
+    const nav = document.querySelector('nav[role="tablist"]');
+    const tabs = Array.from(nav.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    function activateTab(tab) {
+        const targetId = tab.getAttribute('aria-controls');
+        
+        tabs.forEach(t => { 
+            t.classList.remove('active'); 
+            t.setAttribute('aria-selected', 'false'); 
+            t.setAttribute('tabindex', '-1'); 
+        });
+        panels.forEach(p => { 
+            p.classList.remove('active'); 
+            p.setAttribute('aria-hidden', 'true'); 
+        });
+        
+        tab.classList.add('active'); 
+        tab.setAttribute('aria-selected', 'true'); 
+        tab.removeAttribute('tabindex');
+        document.getElementById(targetId)?.classList.add('active');
+    }
+
+    // Initialize tabs and add listeners
+    tabs.forEach(tab => {
+        tab.setAttribute('tabindex', tab.getAttribute('aria-selected') === 'true' ? '0' : '-1');
+        tab.addEventListener('click', () => activateTab(tab));
+        
+        // Keyboard navigation (Arrow keys)
+        tab.addEventListener('keydown', (e) => {
+            let idx = tabs.indexOf(tab);
+            let newIdx = idx;
+
+            switch (e.key) {
+                case 'ArrowRight': case 'ArrowDown':
+                    e.preventDefault();
+                    newIdx = (idx + 1) % tabs.length;
+                    break;
+                case 'ArrowLeft': case 'ArrowUp':
+                    e.preventDefault();
+                    newIdx = (idx - 1 + tabs.length) % tabs.length;
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    newIdx = 0;
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    newIdx = tabs.length - 1;
+                    break;
+                default:
+                    return; 
+            }
+            
+            activateTab(tabs[newIdx]);
+            tabs[newIdx].focus();
+        });
+    });
+
+    const initialActiveTab = tabs.find(t => t.getAttribute('aria-selected') === 'true');
+    if (initialActiveTab) {
+        activateTab(initialActiveTab);
+    } else if (tabs.length > 0) {
+        activateTab(tabs[0]); 
+    }
 });
-
 </script>
 
-<!-- Off-Canvas Panel -->
-<div id="panelOverlay" class="panel-overlay" aria-hidden="true">
-  <aside id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
-    <button id="panelClose" class="close" aria-label="Schließen">&times;</button>
-    <div id="panelHero" class="hero" aria-hidden="true"></div>
-    <h2 id="panelTitle"></h2>
-    <div id="panelContent" class="content" tabindex="0"></div>
-  </aside>
-</div>
+    <!-- Off-Canvas Panel HTML (Optimiert) -->
+    <div id="panelOverlay" class="panel-overlay" aria-hidden="true">
+        <aside id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+            <button id="panelClose" class="close" aria-label="Schließen">
+                <!-- Professionelles SVG-Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="panelHero" class="hero" aria-hidden="true"></div>
+            <!-- Verwendung von h2 für den Panel-Titel -->
+            <h2 id="panelTitle"></h2>
+            <div id="panelContent" class="content" tabindex="0"></div>
+        </aside>
+    </div>
+
 </body>
 </html>
