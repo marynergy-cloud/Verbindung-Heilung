@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Marynergy vereint Verbindung, Heilung und Wachstum. Löse dich von Dogmen, entdecke deine wahre Natur und finde zur Einheit von Körper, Geist und Herz durch gelebte Praxis.">
     <title>Marynergy 愛 | Das Manifest</title>
     
@@ -17,8 +18,8 @@
             --bg-secondary: #f9f9f9;
             --text-main: #1a1a1a;        
             --text-muted: #666666;
-            --accent-color: #2d5a27;     
-            --accent-hover: #1e3d1a;     
+            --accent-color: #2d5a27;      
+            --accent-hover: #1e3d1a;      
             
             /* Typografie */
             --font-display: 'Playfair Display', serif;
@@ -41,6 +42,8 @@
             line-height: 1.7;
             font-weight: 400;
             -webkit-font-smoothing: antialiased; 
+            /* Verhindert horizontales Scrollen auf Mobile */
+            overflow-x: hidden;
         }
 
         h1, h2, h3 { 
@@ -49,12 +52,16 @@
             line-height: 1.2;
         }
 
+        /* Bilder responsive machen */
+        img { max-width: 100%; height: auto; }
+
         a { text-decoration: none; transition: all 0.3s ease; }
 
         .container { 
             max-width: var(--container-width); 
             margin: 0 auto; 
             padding: 0 24px; 
+            width: 100%; /* Sicherstellen, dass Container responsive ist */
         }
 
         /* --- HEADER (Glassmorphism) --- */
@@ -64,9 +71,9 @@
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.5); 
+            background: rgba(255, 255, 255, 0.85); /* Etwas undurchsichtiger für Mobile */
             backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px); /* Safari Support */
+            -webkit-backdrop-filter: blur(12px); 
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
@@ -90,7 +97,7 @@
                 url('minimalist-bg.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax Effekt auf Desktop */
+            background-attachment: fixed; 
         }
 
         .hero-content {
@@ -128,6 +135,12 @@
             border-radius: var(--radius);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
             cursor: pointer;
+            /* Touch Target Size für Mobile verbessern */
+            min-height: 48px;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .btn:hover { 
@@ -236,14 +249,21 @@
         
         .routine-list li:last-child { border-bottom: none; }
         
+        .routine-list li span:first-child {
+            text-align: left;
+            padding-right: 15px; /* Abstand zum Check-Icon auf Mobile */
+        }
+
         .routine-list strong { color: var(--accent-color); font-weight: 600; margin-right: 5px;}
         
         .check-icon { 
             color: var(--accent-color); 
             font-size: 0.8rem; 
             border: 1px solid var(--accent-color);
-            width: 20px;
-            height: 20px;
+            /* Flex-shrink verhindert, dass Icon gequetscht wird */
+            flex-shrink: 0; 
+            width: 24px; /* Etwas größer für bessere Sichtbarkeit */
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -251,7 +271,6 @@
         }
 
         /* --- FOOTER --- */
-        /* Optimiert: Semantisches Tag für SEO */
         .cta-footer { 
             background-color: #0f110f; 
             color: #fff; 
@@ -284,18 +303,18 @@
             border-color: #fff;
         }
 
-        /* --- NEU: E-Mail Style --- */
         .footer-email {
             display: block;
-            margin-top: 60px; /* Abstand zum Button */
-            margin-bottom: 10px; /* Abstand zum Copyright */
-            color: #666; /* Dezentes Grau */
+            margin-top: 60px; 
+            margin-bottom: 10px; 
+            color: #666; 
             font-size: 1rem;
             letter-spacing: 0.5px;
+            word-wrap: break-word; /* Verhindert Überlauf bei langen Mails */
         }
 
         .footer-email:hover {
-            color: #fff; /* Wird weiß beim Drüberfahren */
+            color: #fff; 
             text-decoration: underline;
         }
         
@@ -314,16 +333,40 @@
             }
         }
 
-        /* --- MOBILE --- */
+        /* --- MOBILE OPTIMIERUNG --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            blockquote { font-size: 1.5rem; }
+            /* Container Padding reduzieren */
+            .container { padding: 0 20px; }
+
+            /* Hero Anpassungen */
             .hero { 
-                padding-top: 160px; 
-                /* WICHTIG: Fixed Background auf Mobile deaktivieren (verhindert iOS Bugs) */
-                background-attachment: scroll; 
+                padding: 140px 0 80px; /* Weniger Padding oben/unten */
+                background-attachment: scroll; /* WICHTIG: Fixed Background auf Mobile deaktivieren (Performance/Bugs) */
+                background-position: center top;
             }
+            .hero h1 { font-size: 2.5rem; line-height: 1.1; }
+            .hero p { font-size: 1.1rem; margin-bottom: 35px; }
+
+            /* Buttons mobil-freundlich */
+            .btn { width: 100%; max-width: 300px; }
+
+            /* Grid Anpassung */
             .grid { gap: 40px; }
+            
+            /* Zitate kleiner */
+            .quote-section { padding: 80px 0; }
+            blockquote { font-size: 1.5rem; }
+
+            /* Praxis Section */
+            .praxis { padding: 60px 0; }
+            .section-header h2 { font-size: 2rem; }
+            .routine-list { padding: 10px; }
+            
+            /* Footer */
+            .cta-footer { padding: 80px 0 40px; }
+            .cta-footer h2 { font-size: 2.2rem; }
+            .cta-footer p { font-size: 1rem; }
+            .footer-email { margin-top: 40px; }
         }
     </style>
 </head>
