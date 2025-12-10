@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marynergy vereint Verbindung, Heilung und Wachstum. Löse dich von Dogmen, entdecke deine wahre Natur und finde zur Einheit von Körper, Geist und Herz durch gelebte Praxis.">
+    <meta name="description" content="Marynergy ist das integrative Betriebssystem für Verbindung, Heilung und Wachstum. Verbinde stoische Struktur mit spiritueller Stille.">
     <title>Marynergy 愛 | Das Manifest</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,8 @@
             --bg-secondary: #f9f9f9;
             --text-main: #1a1a1a;        
             --text-muted: #666666;
-            --accent-color: #2d5a27;      
-            --accent-hover: #1e3d1a;      
+            --accent-color: #2d5a27;       
+            --accent-hover: #1e3d1a;       
             
             /* Typografie */
             --font-display: 'Playfair Display', serif;
@@ -42,8 +42,10 @@
             line-height: 1.7;
             font-weight: 400;
             -webkit-font-smoothing: antialiased; 
-            /* Verhindert horizontales Scrollen auf Mobile */
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3 { 
@@ -52,7 +54,6 @@
             line-height: 1.2;
         }
 
-        /* Bilder responsive machen */
         img { max-width: 100%; height: auto; }
 
         a { text-decoration: none; transition: all 0.3s ease; }
@@ -61,7 +62,7 @@
             max-width: var(--container-width); 
             margin: 0 auto; 
             padding: 0 24px; 
-            width: 100%; /* Sicherstellen, dass Container responsive ist */
+            width: 100%; 
         }
 
         /* --- HEADER (Glassmorphism) --- */
@@ -71,7 +72,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.85); /* Etwas undurchsichtiger für Mobile */
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px); 
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -92,9 +93,10 @@
         .hero {
             padding: 220px 0 140px;
             text-align: center;
+            /* Placeholder Background - Hier idealerweise ein Bild nutzen, das Natur & Struktur vereint */
             background-image: 
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), 
-                url('minimalist-bg.jpg');
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
+                url('minimalist-bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed; 
@@ -116,7 +118,7 @@
             font-size: 1.25rem; 
             color: var(--text-muted); 
             margin-bottom: 48px; 
-            max-width: 650px; 
+            max-width: 700px; 
             margin-left: auto; 
             margin-right: auto; 
             font-weight: 300;
@@ -135,7 +137,6 @@
             border-radius: var(--radius);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
             cursor: pointer;
-            /* Touch Target Size für Mobile verbessern */
             min-height: 48px;
             line-height: 1.2;
             display: inline-flex;
@@ -251,7 +252,7 @@
         
         .routine-list li span:first-child {
             text-align: left;
-            padding-right: 15px; /* Abstand zum Check-Icon auf Mobile */
+            padding-right: 15px;
         }
 
         .routine-list strong { color: var(--accent-color); font-weight: 600; margin-right: 5px;}
@@ -260,9 +261,8 @@
             color: var(--accent-color); 
             font-size: 0.8rem; 
             border: 1px solid var(--accent-color);
-            /* Flex-shrink verhindert, dass Icon gequetscht wird */
             flex-shrink: 0; 
-            width: 24px; /* Etwas größer für bessere Sichtbarkeit */
+            width: 24px; 
             height: 24px;
             border-radius: 50%;
             display: flex;
@@ -276,6 +276,7 @@
             color: #fff; 
             padding: 120px 0 60px; 
             text-align: center; 
+            margin-top: auto;
         }
         
         .cta-footer h2 { 
@@ -293,7 +294,7 @@
         .btn-light { 
             background-color: transparent; 
             color: #fff; 
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.3); 
             transition: all 0.3s ease;
         }
         
@@ -310,7 +311,7 @@
             color: #666; 
             font-size: 1rem;
             letter-spacing: 0.5px;
-            word-wrap: break-word; /* Verhindert Überlauf bei langen Mails */
+            word-wrap: break-word;
         }
 
         .footer-email:hover {
@@ -336,34 +337,27 @@
 
         /* --- MOBILE OPTIMIERUNG --- */
         @media (max-width: 768px) {
-            /* Container Padding reduzieren */
             .container { padding: 0 20px; }
 
-            /* Hero Anpassungen */
             .hero { 
-                padding: 140px 0 80px; /* Weniger Padding oben/unten */
-                background-attachment: scroll; /* WICHTIG: Fixed Background auf Mobile deaktivieren (Performance/Bugs) */
+                padding: 140px 0 80px; 
+                background-attachment: scroll; 
                 background-position: center top;
             }
             .hero h1 { font-size: 2.5rem; line-height: 1.1; }
             .hero p { font-size: 1.1rem; margin-bottom: 35px; }
 
-            /* Buttons mobil-freundlich */
             .btn { width: 100%; max-width: 300px; }
 
-            /* Grid Anpassung */
             .grid { gap: 40px; }
             
-            /* Zitate kleiner */
             .quote-section { padding: 80px 0; }
             blockquote { font-size: 1.5rem; }
 
-            /* Praxis Section */
             .praxis { padding: 60px 0; }
             .section-header h2 { font-size: 2rem; }
             .routine-list { padding: 10px; }
             
-            /* Footer */
             .cta-footer { padding: 80px 0 40px; }
             .cta-footer h2 { font-size: 2.2rem; }
             .cta-footer p { font-size: 1rem; }
@@ -379,88 +373,91 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Verbindung. Heilung.<br>Wachstum.</h1>
-            <p>Es geht nicht um Theorie. Es geht um gelebte Praxis.<br>Löse dich von Dogmen und entdecke deine wahre Natur.</p>
-            
-            <a href="Manifest.pdf" target="_blank" class="btn">Manifest lesen</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Verbindung. Heilung.<br>Wachstum.</h1>
+                <p>Keine Sammlung alter Weisheiten, sondern ein integratives Betriebssystem.<br>
+                Verbinde klare Struktur mit der Kraft der Stille</p>
+                
+                <a href="Manifest-Marynergy.pdf" target="_blank" class="btn">Manifest lesen</a>
+            </div>
+        </section>
 
-    <section class="pillars">
-        <div class="container">
-            <div class="grid">
-                <div class="pillar-card">
-                    <h3>Verbindung</h3>
-                    <p>Die tiefste Verbindung ist unsere Natur: Wir überwinden die Illusion der Trennung und finden zur Einheit von Körper, Geist und Herz zurück.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>Heilung</h3>
-                    <p>Heilung ist der Mut zur Wahrheit: Wir lösen uns durch Stille und Reinigung vom Lärm des Egos und schaffen den Raum, in dem die universelle Urkraft wieder ungehindert fließt.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>Wachstum</h3>
-                    <p>Wahre Bildung ist Entfaltung: Wir verwandeln Wissen durch Charakter und Tat in gelebte Weisheit und gestalten unser Leben souverän im Einklang mit den natürlichen Zyklen.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3>Praxis</h3>
-                    <p>Philosophie ohne Tat ist wertlos: Wahre Meisterschaft entsteht erst, wenn wir durch volle Selbstverantwortung und konsequente Routinen das Wissen in gelebte Freiheit transformieren.</p>
+        <section class="pillars">
+            <div class="container">
+                <div class="grid">
+                    <div class="pillar-card">
+                        <h3>Verbindung</h3>
+                        <p>Die tiefste Verbindung ist unsere Natur: Wir überwinden die Illusion der Trennung und finden zur Einheit von Körper, Geist und Herz zurück.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Heilung</h3>
+                        <p>Heilung ist der Mut zur Wahrheit: Wir lösen uns durch Stille und Reinigung vom Lärm des Egos und schaffen Raum für die Urkraft.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Wachstum</h3>
+                        <p>Wahre Bildung ist Entfaltung: Wir verwandeln Wissen durch Charakter und Tat in gelebte Weisheit und nutzen die natürlichen Zyklen.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Praxis</h3>
+                        <p>Philosophie muss Tat werden: Wir steuern Aktion, Substanz und Umfeld bewusst, um Wissen in gelebte Freiheit zu transformieren.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="quote-section">
-        <div class="container">
-            <blockquote>
-                „Wo auch immer du bist,<br>sei ganz dort.“
-            </blockquote>
-            <cite>— Aus dem Manifest</cite>
-        </div>
-    </section>
-
-    <section class="praxis">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Der Weg der Praxis</h2>
-                <p>Ein Auszug aus den 30 Routinen</p>
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    „Wo auch immer du bist,<br>sei ganz dort.“
+                </blockquote>
+                <cite>— Aus dem Manifest</cite>
             </div>
-            
-            <ul class="routine-list">
-                <li>
-                    <span><strong>Der Anker:</strong> Bewusste Atmung im Alltag</span>
-                    <span class="check-icon" aria-hidden="true">✓</span>
-                </li>
-                <li>
-                    <span><strong>Die Erdung:</strong> Deep Squat & Barfußlaufen</span>
-                    <span class="check-icon" aria-hidden="true">✓</span>
-                </li>
-                <li>
-                    <span><strong>Die Reinigung:</strong> Intervallfasten & Natur</span>
-                    <span class="check-icon" aria-hidden="true">✓</span>
-                </li>
-                <li>
-                    <span><strong>Der Fokus:</strong> Offline-Zeiten & Stille</span>
-                    <span class="check-icon" aria-hidden="true">✓</span>
-                </li>
-            </ul>
-        </div>
-    </section>
+        </section>
+
+        <section class="praxis">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Der Weg der Praxis</h2>
+                    <p>Ein Auszug aus den 30 Routinen</p>
+                </div>
+                
+                <ul class="routine-list">
+                    <li>
+                        <span><strong>Der Anker:</strong> Bewusste Atmung im Alltag</span>
+                        <span class="check-icon" aria-hidden="true">✓</span>
+                    </li>
+                    <li>
+                        <span><strong>Die Erdung:</strong> Deep Squat & Barfußlaufen</span>
+                        <span class="check-icon" aria-hidden="true">✓</span>
+                    </li>
+                    <li>
+                        <span><strong>Die Reinigung:</strong> Intervallfasten & Natur</span>
+                        <span class="check-icon" aria-hidden="true">✓</span>
+                    </li>
+                    <li>
+                        <span><strong>Der Reset:</strong> Nothing but the Keys (Analoge Präsenz)</span>
+                        <span class="check-icon" aria-hidden="true">✓</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
     <footer id="download" class="cta-footer">
         <div class="container">
             <h2>Bereit für mehr Tiefe?</h2>
             <p>5000 Wörter. 30 Routinen. Ein Weg.</p>
             
-            <a href="Manifest.pdf" download class="btn btn-light">
+            <a href="Manifest-Marynergy.pdf" download class="btn btn-light">
                 Manifest herunterladen
             </a>
 
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             
             <div class="footer-note">
-                Fühlen > Denken. Handeln > Reden.<br>
+                Intuition > Kalkül. Herz & Verstand: Eins.<br>
                 &copy; 2025 Marynergy
             </div>
         </div>
