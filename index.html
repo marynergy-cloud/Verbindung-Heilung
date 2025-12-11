@@ -13,28 +13,21 @@
     <style>
         /* --- DESIGN VARIABLES --- */
         :root {
-            /* Farben */
             --bg-color: #ffffff;
             --bg-secondary: #f9f9f9;
             --text-main: #1a1a1a;        
             --text-muted: #666666;
             --accent-color: #2d5a27;        
             --accent-hover: #1e3d1a;        
-            
-            /* Typografie */
             --font-display: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
-            
-            /* Layout */
             --container-width: 1000px;
             --radius: 4px;
         }
 
         /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -48,435 +41,105 @@
             min-height: 100vh;
         }
 
-        h1, h2, h3 { 
-            font-family: var(--font-display); 
-            color: var(--text-main); 
-            line-height: 1.2;
-        }
-
+        h1, h2, h3 { font-family: var(--font-display); color: var(--text-main); line-height: 1.2; }
         img { max-width: 100%; height: auto; }
-
         a, button { text-decoration: none; transition: all 0.3s ease; }
 
-        .container { 
-            max-width: var(--container-width); 
-            margin: 0 auto; 
-            padding: 0 24px; 
-            width: 100%; 
-        }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; width: 100%; }
 
-        /* --- HEADER (Glassmorphism) --- */
+        /* --- HEADER --- */
         header {
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px); 
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 100;
+            background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
-        .logo { 
-            font-family: var(--font-display);
-            font-size: 1.4rem; 
-            letter-spacing: 1px; 
-            font-weight: 600; 
-            text-align: center;
-            color: var(--text-main);
-        }
-        
+        .logo { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 1px; font-weight: 600; text-align: center; color: var(--text-main); }
         .kanji { color: var(--accent-color); font-weight: 400; margin-left: 5px; }
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 220px 0 140px;
-            text-align: center;
-            /* Placeholder Background */
-            background-image: 
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.6)), 
-                url('minimalist-bg.jpg'); /* Hier dein Bild einfügen */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; 
+            padding: 220px 0 140px; text-align: center;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.6)), url('minimalist-bg.jpg'); 
+            background-size: cover; background-position: center; background-attachment: fixed; 
         }
-
-        .hero-content {
-            animation: fadeUp 1s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .hero h1 { 
-            font-size: 4rem; 
-            margin-bottom: 24px; 
-            letter-spacing: -1px;
-        }
-
-        .hero p { 
-            font-size: 1.25rem; 
-            color: var(--text-muted); 
-            margin-bottom: 48px; 
-            max-width: 700px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            font-weight: 300;
-        }
+        .hero-content { animation: fadeUp 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .hero h1 { font-size: 4rem; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 300; }
 
         /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
-            padding: 16px 36px;
-            background-color: var(--accent-color);
-            color: #fff;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            border-radius: var(--radius);
-            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
-            cursor: pointer;
-            min-height: 48px;
-            line-height: 1.2;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            outline: none;
+            display: inline-flex; padding: 16px 36px; background-color: var(--accent-color); color: #fff;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;
+            border-radius: var(--radius); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
+            cursor: pointer; min-height: 48px; line-height: 1.2; align-items: center; justify-content: center;
+            border: none; outline: none;
         }
-        
-        .btn:hover { 
-            background-color: var(--accent-hover); 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3);
-        }
-
-        /* Neue Klasse für Button über volle Breite im Modal */
-        .btn-block {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3); }
+        .btn-block { width: 100%; display: flex; justify-content: center; }
 
         /* --- PILLARS --- */
         .pillars { padding: 100px 0; background-color: var(--bg-color); }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 60px; 
-            text-align: center; 
-        }
-        
-        .pillar-card {
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .pillar-card h3 { 
-            font-size: 1.6rem; 
-            margin-bottom: 20px; 
-            position: relative;
-            display: inline-block;
-        }
-
-        .pillar-card h3::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-color);
-            margin: 15px auto 0;
-        }
-
-        .pillar-card p { 
-            color: var(--text-muted); 
-            font-size: 1rem; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; text-align: center; }
+        .pillar-card { padding: 20px; transition: transform 0.3s ease; }
+        .pillar-card:hover { transform: translateY(-5px); }
+        .pillar-card h3 { font-size: 1.6rem; margin-bottom: 20px; position: relative; display: inline-block; }
+        .pillar-card h3::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--accent-color); margin: 15px auto 0; }
+        .pillar-card p { color: var(--text-muted); font-size: 1rem; }
 
         /* --- QUOTE --- */
-        .quote-section { 
-            padding: 120px 0; 
-            text-align: center; 
-            background-color: var(--bg-secondary);
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-        
-        blockquote { 
-            font-family: var(--font-display); 
-            font-size: 2.2rem; 
-            font-style: italic; 
-            max-width: 800px; 
-            margin: 0 auto 30px; 
-            color: var(--text-main);
-            line-height: 1.4;
-        }
-        
-        cite { 
-            font-size: 0.85rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            color: var(--accent-color); 
-            font-weight: 600; 
-            font-style: normal;
-        }
+        .quote-section { padding: 120px 0; text-align: center; background-color: var(--bg-secondary); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        blockquote { font-family: var(--font-display); font-size: 2.2rem; font-style: italic; max-width: 800px; margin: 0 auto 30px; color: var(--text-main); line-height: 1.4; }
+        cite { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); font-weight: 600; font-style: normal; }
 
         /* --- PRAXIS --- */
         .praxis { padding: 100px 0; }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
+        .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
         .section-header p { color: var(--text-muted); }
-
-        .routine-list { 
-            list-style: none; 
-            max-width: 650px; 
-            margin: 0 auto; 
-            border: 1px solid #eee;
-            border-radius: var(--radius);
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-        
-        .routine-list li { 
-            padding: 20px 10px; 
-            border-bottom: 1px solid #f0f0f0; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            font-weight: 500;
-        }
-        
+        .routine-list { list-style: none; max-width: 650px; margin: 0 auto; border: 1px solid #eee; border-radius: var(--radius); padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .routine-list li { padding: 20px 10px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; font-weight: 500; }
         .routine-list li:last-child { border-bottom: none; }
-        
-        .routine-list li span:first-child {
-            text-align: left;
-            padding-right: 15px;
-        }
-
         .routine-list strong { color: var(--accent-color); font-weight: 600; margin-right: 5px;}
-        
-        .check-icon { 
-            color: var(--accent-color); 
-            font-size: 0.8rem; 
-            border: 1px solid var(--accent-color);
-            flex-shrink: 0; 
-            width: 24px; 
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .check-icon { color: var(--accent-color); font-size: 0.8rem; border: 1px solid var(--accent-color); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
         /* --- FOOTER --- */
-        .cta-footer { 
-            background-color: #0f110f; 
-            color: #fff; 
-            padding: 120px 0 60px; 
-            text-align: center; 
-            margin-top: auto;
-        }
-        
-        .cta-footer h2 { 
-            font-size: 3rem; 
-            margin-bottom: 24px; 
-            color: #fff;
-        }
-        
-        .cta-footer p { 
-            margin-bottom: 50px; 
-            color: #888; 
-            font-size: 1.1rem;
-        }
-        
-        .btn-light { 
-            background-color: transparent; 
-            color: #fff; 
-            border: 1px solid rgba(255,255,255,0.3); 
-            transition: all 0.3s ease;
-        }
-        
-        .btn-light:hover { 
-            background-color: #fff; 
-            color: #000; 
-            border-color: #fff;
-        }
+        .cta-footer { background-color: #0f110f; color: #fff; padding: 120px 0 60px; text-align: center; margin-top: auto; }
+        .cta-footer h2 { font-size: 3rem; margin-bottom: 24px; color: #fff; }
+        .cta-footer p { margin-bottom: 50px; color: #888; font-size: 1.1rem; }
+        .btn-light { background-color: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; }
+        .btn-light:hover { background-color: #fff; color: #000; border-color: #fff; }
+        .footer-email { display: block; margin-top: 60px; margin-bottom: 10px; color: #666; font-size: 1rem; letter-spacing: 0.5px; word-wrap: break-word; }
+        .footer-email:hover { color: #fff; text-decoration: underline; }
+        .footer-note { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; }
 
-        .footer-email {
-            display: block;
-            margin-top: 60px; 
-            margin-bottom: 10px; 
-            color: #666; 
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            word-wrap: break-word;
-        }
-
-        .footer-email:hover {
-            color: #fff; 
-            text-decoration: underline;
-        }
-        
-        .footer-note { 
-            font-size: 0.75rem; 
-            color: #444; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.6;
-        }
-
-        /* --- EMAIL CAPTURE MODAL STYLES --- */
-        .modal-overlay {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 50px 40px;
-            border-radius: 8px;
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
+        /* --- MODAL --- */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-content { background: #fff; padding: 50px 40px; border-radius: 8px; max-width: 480px; width: 90%; text-align: center; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s ease; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #999; cursor: pointer; border: none; background: none; }
         .modal-close:hover { color: #000; }
-
-        .modal-title {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .modal-text {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        
-        /* Macht den Text fett (statt Sternchen) */
-        .modal-text strong {
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
+        .modal-title { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 15px; }
+        .modal-text { color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; }
+        .modal-text strong { font-weight: 600; color: var(--text-main); }
         .form-group { margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: var(--radius); font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color 0.3s; }
+        .form-input:focus { border-color: var(--accent-color); }
+        .form-disclaimer { font-size: 0.75rem; color: #999; margin-top: 15px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-        .form-input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--radius);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-input:focus {
-            border-color: var(--accent-color);
-        }
-
-        .form-disclaimer {
-            font-size: 0.75rem;
-            color: #999;
-            margin-top: 15px;
-        }
-        
-        /* Accessibility Helpers */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* --- ANIMATION --- */
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* --- MOBILE OPTIMIERUNG --- */
+        /* --- ANIMATION & MOBILE --- */
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-
-            .hero { 
-                padding: 140px 0 80px; 
-                background-attachment: scroll; 
-                background-position: center top;
-            }
+            .hero { padding: 140px 0 80px; background-attachment: scroll; background-position: center top; }
             .hero h1 { font-size: 2.5rem; line-height: 1.1; }
             .hero p { font-size: 1.1rem; margin-bottom: 35px; }
-
             .btn { width: 100%; max-width: 300px; }
-
             .grid { gap: 40px; }
-            
-            .quote-section { padding: 80px 0; }
-            blockquote { font-size: 1.5rem; }
-
-            .praxis { padding: 60px 0; }
-            .section-header h2 { font-size: 2rem; }
-            .routine-list { padding: 10px; }
-            
-            .cta-footer { padding: 80px 0 40px; }
-            .cta-footer h2 { font-size: 2.2rem; }
-            .cta-footer p { font-size: 1rem; }
-            .footer-email { margin-top: 40px; }
+            .quote-section { padding: 80px 0; } blockquote { font-size: 1.5rem; }
+            .praxis { padding: 60px 0; } .section-header h2 { font-size: 2rem; } .routine-list { padding: 10px; }
+            .cta-footer { padding: 80px 0 40px; } .cta-footer h2 { font-size: 2.2rem; } .cta-footer p { font-size: 1rem; } .footer-email { margin-top: 40px; }
         }
     </style>
 </head>
@@ -492,13 +155,13 @@
                 Gib deine E-Mail-Adresse ein, um das Manifest <strong>sofort freizuschalten</strong> und <strong>Zugang zu weiterführenden Praxis-Impulsen</strong> zu erhalten.
             </p>
             
-            <form id="manifestForm" onsubmit="handleSubmit(event)">
+            <form id="manifestForm" method="POST">
                 <div class="form-group">
                     <label for="email" class="sr-only">E-Mail-Adresse</label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="Deine E-Mail-Adresse" required autocomplete="email">
                 </div>
                 
-                <button type="submit" class="btn btn-block">
+                <button type="submit" id="submitBtn" class="btn btn-block">
                     Jetzt lesen
                 </button>
                 
@@ -608,17 +271,20 @@
     </footer>
 
     <script>
+        // --------------- KONFIGURATION ---------------
+        const FORMSPREE_ID = "xqargdpr"; // Deine ID ist hier eingetragen
+        // ---------------------------------------------
+
         const modal = document.getElementById('emailModal');
         const emailInput = document.getElementById('email');
+        const form = document.getElementById('manifestForm');
+        const submitBtn = document.getElementById('submitBtn');
         
         // Modal öffnen
         function openModal() {
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
-            // Fokus auf das Email Feld setzen für bessere UX
-            setTimeout(() => {
-                emailInput.focus();
-            }, 100);
+            setTimeout(() => { emailInput.focus(); }, 100);
         }
 
         // Modal schließen
@@ -628,46 +294,53 @@
         }
 
         // Klick außerhalb des Modals schließt es
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+        window.onclick = function(event) { if (event.target == modal) closeModal(); }
         
-        // Escape Taste schließt Modal (Accessibility)
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape" && modal.classList.contains('active')) {
-                closeModal();
+        // Escape Taste
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape" && modal.classList.contains('active')) closeModal(); });
+
+        // LOGIK FÜR LEAD-GENERIERUNG + DOWNLOAD
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); // Kein Neuladen der Seite
+            
+            const data = new FormData(event.target);
+            const originalBtnText = submitBtn.innerText;
+            
+            // Button Status ändern
+            submitBtn.innerText = "Einen Moment...";
+            submitBtn.disabled = true;
+
+            try {
+                // Senden an Formspree im Hintergrund
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // ERFOLG:
+                    closeModal();
+                    form.reset(); // Formular leeren
+
+                    // Download starten
+                    const link = document.createElement('a');
+                    link.href = 'Manifest-Marynergy.pdf'; // DATEINAME PRÜFEN!
+                    link.download = 'Manifest-Marynergy.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    alert("Es gab ein Problem. Bitte versuche es erneut.");
+                }
+            } catch (error) {
+                alert("Verbindungsfehler. Bitte prüfe dein Internet.");
+            } finally {
+                // Button zurücksetzen
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
             }
         });
-
-        // Formular-Handling
-        function handleSubmit(event) {
-            // Verhindert das Standard-Verhalten (Seite neu laden)
-            event.preventDefault(); 
-            
-            const email = emailInput.value;
-            
-            if(email) {
-                // Button Feedback
-                const btn = event.target.querySelector('button[type="submit"]');
-                const originalText = btn.innerText;
-                btn.innerText = "Wird geöffnet...";
-                
-                // Hier SIMULIEREN wir den Datenbank-Eintrag
-                // In echt würdest du hier z.B. einen AJAX Call an deinen Service senden
-                
-                setTimeout(() => {
-                    // Modal schließen
-                    closeModal();
-                    btn.innerText = originalText;
-                    
-                    // PDF öffnen / Download starten
-                    window.location.href = 'Manifest-Marynergy.pdf';
-                    
-                }, 800);
-            }
-        }
     </script>
 
 </body>
