@@ -1,20 +1,69 @@
-<div id="emailModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h3 class="modal-title">Manifest anfordern</h3>
-            <p class="modal-text">Gib deine E-Mail-Adresse ein, um das Manifest **sofort freizuschalten** und **Zugang zu weiterführenden Praxis-Impulsen** zu erhalten.</p>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marynergy ist das integrative Betriebssystem für Verbindung, Heilung und Wachstum. Verbinde stoische Struktur mit spiritueller Stille.">
+    <title>Marynergy 愛 | Das Manifest</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- DESIGN VARIABLES --- */
+        :root {
+            /* Farben */
+            --bg-color: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --text-main: #1a1a1a;        
+            --text-muted: #666666;
+            --accent-color: #2d5a27;        
+            --accent-hover: #1e3d1a;        
             
-            <form id="manifestForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <input type="email" id="email" name="email" class="form-input" placeholder="Deine E-Mail-Adresse" required>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">
-                    Jetzt lesen
-                </button>
-                <p class="form-disclaimer">Kein Spam. Nur Substanz. Jederzeit abmeldbar.</p>
-            </form>
-        </div>
-    </div>        }
+            /* Typografie */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Layout */
+            --container-width: 1000px;
+            --radius: 4px;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 { 
+            font-family: var(--font-display); 
+            color: var(--text-main); 
+            line-height: 1.2;
+        }
+
+        img { max-width: 100%; height: auto; }
+
+        a, button { text-decoration: none; transition: all 0.3s ease; }
+
+        .container { 
+            max-width: var(--container-width); 
+            margin: 0 auto; 
+            padding: 0 24px; 
+            width: 100%; 
+        }
 
         /* --- HEADER (Glassmorphism) --- */
         header {
@@ -44,10 +93,10 @@
         .hero {
             padding: 220px 0 140px;
             text-align: center;
-            /* Placeholder Background - Hier idealerweise ein Bild nutzen, das Natur & Struktur vereint */
+            /* Placeholder Background */
             background-image: 
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.6)), 
-                url('minimalist-bg.jpg'); 
+                url('minimalist-bg.jpg'); /* Hier dein Bild einfügen */
             background-size: cover;
             background-position: center;
             background-attachment: fixed; 
@@ -93,12 +142,21 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            border: none;
+            outline: none;
         }
         
         .btn:hover { 
             background-color: var(--accent-hover); 
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3);
+        }
+
+        /* Neue Klasse für Button über volle Breite im Modal */
+        .btn-block {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         /* --- PILLARS --- */
@@ -278,6 +336,112 @@
             line-height: 1.6;
         }
 
+        /* --- EMAIL CAPTURE MODAL STYLES --- */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 8px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .modal-close:hover { color: #000; }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-text {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        
+        /* Macht den Text fett (statt Sternchen) */
+        .modal-text strong {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 15px;
+        }
+        
+        /* Accessibility Helpers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* --- ANIMATION --- */
         @keyframes fadeUp {
             to {
@@ -318,6 +482,31 @@
 </head>
 <body>
 
+    <div id="emailModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick="closeModal()" aria-label="Schließen">&times;</button>
+            
+            <h3 id="modal-title" class="modal-title">Manifest anfordern</h3>
+            
+            <p class="modal-text">
+                Gib deine E-Mail-Adresse ein, um das Manifest <strong>sofort freizuschalten</strong> und <strong>Zugang zu weiterführenden Praxis-Impulsen</strong> zu erhalten.
+            </p>
+            
+            <form id="manifestForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="email" class="sr-only">E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Deine E-Mail-Adresse" required autocomplete="email">
+                </div>
+                
+                <button type="submit" class="btn btn-block">
+                    Jetzt lesen
+                </button>
+                
+                <p class="form-disclaimer">Kein Spam. Nur Substanz. Jederzeit abmeldbar.</p>
+            </form>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
@@ -331,7 +520,7 @@
                 <p>Mehr als eine Sammlung alter Weisheiten: Es ist ein integratives Betriebssystem.<br>
                 Verbinde klare Struktur mit der Kraft der Stille.</p>
                 
-                <a href="Manifest-Marynergy.pdf" target="_blank" class="btn">Manifest lesen</a>
+                <button onclick="openModal()" class="btn">Manifest lesen</button>
             </div>
         </section>
 
@@ -405,9 +594,9 @@
             <h2>Bereit für mehr Tiefe?</h2>
             <p>5000 Wörter. 30 Routinen. Ein Weg.</p>
             
-            <a href="Manifest-Marynergy.pdf" download class="btn btn-light">
+            <button onclick="openModal()" class="btn btn-light">
                 Manifest herunterladen
-            </a>
+            </button>
 
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             
@@ -417,6 +606,69 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const modal = document.getElementById('emailModal');
+        const emailInput = document.getElementById('email');
+        
+        // Modal öffnen
+        function openModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            // Fokus auf das Email Feld setzen für bessere UX
+            setTimeout(() => {
+                emailInput.focus();
+            }, 100);
+        }
+
+        // Modal schließen
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // Klick außerhalb des Modals schließt es
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Escape Taste schließt Modal (Accessibility)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Formular-Handling
+        function handleSubmit(event) {
+            // Verhindert das Standard-Verhalten (Seite neu laden)
+            event.preventDefault(); 
+            
+            const email = emailInput.value;
+            
+            if(email) {
+                // Button Feedback
+                const btn = event.target.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                btn.innerText = "Wird geöffnet...";
+                
+                // Hier SIMULIEREN wir den Datenbank-Eintrag
+                // In echt würdest du hier z.B. einen AJAX Call an deinen Service senden
+                
+                setTimeout(() => {
+                    // Modal schließen
+                    closeModal();
+                    btn.innerText = originalText;
+                    
+                    // PDF öffnen / Download starten
+                    window.location.href = 'Manifest-Marynergy.pdf';
+                    
+                }, 800);
+            }
+        }
+    </script>
 
 </body>
 </html>
