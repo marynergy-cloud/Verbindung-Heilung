@@ -18,8 +18,8 @@
             --bg-secondary: #f9f9f9;
             --text-main: #1a1a1a;        
             --text-muted: #666666;
-            --accent-color: #2d5a27;       
-            --accent-hover: #1e3d1a;       
+            --accent-color: #2d5a27;        
+            --accent-hover: #1e3d1a;        
             
             /* Typografie */
             --font-display: 'Playfair Display', serif;
@@ -93,9 +93,8 @@
         .hero {
             padding: 220px 0 140px;
             text-align: center;
-            /* Placeholder Background - Hier idealerweise ein Bild nutzen, das Natur & Struktur vereint */
             background-image: 
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.6)), 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), 
                 url('minimalist-bg.jpg'); 
             background-size: cover;
             background-position: center;
@@ -124,6 +123,41 @@
             font-weight: 300;
         }
 
+        /* --- FORMS & INPUTS (NEU) --- */
+        .signup-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap; /* Umbruch auf Mobile */
+        }
+
+        .input-field {
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            width: 320px;
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .success-message {
+            display: none; /* Standardmäßig versteckt */
+            background-color: rgba(45, 90, 39, 0.1);
+            color: var(--accent-color);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
         /* --- BUTTONS --- */
         .btn {
             display: inline-block;
@@ -137,11 +171,12 @@
             border-radius: var(--radius);
             box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
             cursor: pointer;
-            min-height: 48px;
+            min-height: 54px; /* Angepasst an Input-Höhe */
             line-height: 1.2;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            border: none; /* Reset für Button Tag */
         }
         
         .btn:hover { 
@@ -172,7 +207,7 @@
         .pillar-card h3 { 
             font-size: 1.6rem; 
             margin-bottom: 20px; 
-            position: relative;
+            position: relative; 
             display: inline-block;
         }
 
@@ -291,16 +326,32 @@
             font-size: 1.1rem;
         }
         
+        /* Footer Input Anpassung */
+        .footer-form .input-field {
+            background: transparent;
+            border-color: rgba(255,255,255,0.3);
+            color: #fff;
+        }
+        
+        .footer-form .input-field::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .footer-form .input-field:focus {
+            border-color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
         .btn-light { 
-            background-color: transparent; 
-            color: #fff; 
-            border: 1px solid rgba(255,255,255,0.3); 
+            background-color: #fff; 
+            color: #0f110f; 
+            border: 1px solid #fff; 
             transition: all 0.3s ease;
         }
         
         .btn-light:hover { 
-            background-color: #fff; 
-            color: #000; 
+            background-color: transparent; 
+            color: #fff; 
             border-color: #fff;
         }
 
@@ -347,7 +398,9 @@
             .hero h1 { font-size: 2.5rem; line-height: 1.1; }
             .hero p { font-size: 1.1rem; margin-bottom: 35px; }
 
-            .btn { width: 100%; max-width: 300px; }
+            .signup-form { flex-direction: column; align-items: center; gap: 15px; }
+            .input-field { width: 100%; max-width: 350px; text-align: center; }
+            .btn { width: 100%; max-width: 350px; }
 
             .grid { gap: 40px; }
             
@@ -377,10 +430,17 @@
         <section class="hero">
             <div class="container hero-content">
                 <h1>Verbindung. Heilung.<br>Wachstum.</h1>
-                <p>Mehr als eine Sammlung alter Weisheiten: Es ist ein integratives Betriebssystem.<br>
-                Verbinde klare Struktur mit der Kraft der Stille.</p>
+                <p>Mehr als eine Sammlung alter Weisheiten: Es ist ein integratives Betriebssystem. Verbinde klare Struktur mit der Kraft der Stille.<br>
+                Tritt dem inneren Kreis bei und erhalte das Manifest kostenlos.</p>
                 
-                <a href="Manifest-Marynergy.pdf" target="_blank" class="btn">Manifest lesen</a>
+                <form id="hero-form" class="signup-form" onsubmit="handleSignup(event, 'hero')">
+                    <input type="email" placeholder="Deine E-Mail Adresse" required class="input-field">
+                    <button type="submit" class="btn">Manifest erhalten</button>
+                </form>
+                
+                <div id="hero-success" class="success-message">
+                    Willkommen im Kreis. Der Link ist unterwegs zu dir.
+                </div>
             </div>
         </section>
 
@@ -452,11 +512,16 @@
     <footer id="download" class="cta-footer">
         <div class="container">
             <h2>Bereit für mehr Tiefe?</h2>
-            <p>5000 Wörter. 30 Routinen. Ein Weg.</p>
+            <p>5000 Wörter. 30 Routinen. Ein Weg.<br>Sende mir das Manifest.</p>
             
-            <a href="Manifest-Marynergy.pdf" download class="btn btn-light">
-                Manifest herunterladen
-            </a>
+            <form id="footer-form" class="signup-form footer-form" onsubmit="handleSignup(event, 'footer')">
+                <input type="email" placeholder="Deine E-Mail Adresse" required class="input-field">
+                <button type="submit" class="btn btn-light">Jetzt eintragen</button>
+            </form>
+
+            <div id="footer-success" class="success-message" style="background-color: rgba(255,255,255,0.1); color: #fff;">
+                Willkommen im Kreis. Der Link ist unterwegs zu dir.
+            </div>
 
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             
@@ -466,6 +531,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function handleSignup(event, section) {
+            event.preventDefault(); // Verhindert Neuladen der Seite
+            
+            // Simuliert die Verarbeitung
+            const formId = section + '-form';
+            const successId = section + '-success';
+            
+            const form = document.getElementById(formId);
+            const successMsg = document.getElementById(successId);
+            
+            // UI Update: Formular ausblenden, Nachricht einblenden
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+            
+            // HINWEIS: Hier würdest du normalerweise die Daten an deinen E-Mail-Provider senden
+            console.log("Neue E-Mail eingetragen im Bereich: " + section);
+        }
+    </script>
 
 </body>
 </html>
