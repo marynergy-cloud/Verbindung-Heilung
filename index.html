@@ -1,69 +1,20 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marynergy ist das integrative Betriebssystem für Verbindung, Heilung und Wachstum. Verbinde stoische Struktur mit spiritueller Stille.">
-    <title>Marynergy 愛 | Das Manifest</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- DESIGN VARIABLES --- */
-        :root {
-            /* Farben */
-            --bg-color: #ffffff;
-            --bg-secondary: #f9f9f9;
-            --text-main: #1a1a1a;        
-            --text-muted: #666666;
-            --accent-color: #2d5a27;       
-            --accent-hover: #1e3d1a;       
+<div id="emailModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title">Manifest anfordern</h3>
+            <p class="modal-text">Gib deine E-Mail-Adresse ein, um das Manifest **sofort freizuschalten** und **Zugang zu weiterführenden Praxis-Impulsen** zu erhalten.</p>
             
-            /* Typografie */
-            --font-display: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            
-            /* Layout */
-            --container-width: 1000px;
-            --radius: 4px;
-        }
-
-        /* --- RESET & BASE --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.7;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased; 
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        h1, h2, h3 { 
-            font-family: var(--font-display); 
-            color: var(--text-main); 
-            line-height: 1.2;
-        }
-
-        img { max-width: 100%; height: auto; }
-
-        a { text-decoration: none; transition: all 0.3s ease; }
-
-        .container { 
-            max-width: var(--container-width); 
-            margin: 0 auto; 
-            padding: 0 24px; 
-            width: 100%; 
-        }
+            <form id="manifestForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Deine E-Mail-Adresse" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">
+                    Jetzt lesen
+                </button>
+                <p class="form-disclaimer">Kein Spam. Nur Substanz. Jederzeit abmeldbar.</p>
+            </form>
+        </div>
+    </div>        }
 
         /* --- HEADER (Glassmorphism) --- */
         header {
