@@ -431,9 +431,7 @@
             <h2>Bereit für echte Tiefe?</h2>
             <p>Erkenne deine Natur. Lebe deine Essenz. Finde die Einheit.</p>
             
-            <button onclick="openModal('Footer-Download')" class="btn btn-light">
-                Manifest herunterladen
-            </button>
+            <button onclick="openModal('Hero-Manifest')" class="btn">Manifest lesen</button>
 
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             
@@ -509,38 +507,34 @@
                 // Senden an Formspree
                 const response = await fetch(form.action, {
                     method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
 
-                if (response.ok) {
-                    // 1. Modal schließen
-                    closeModal();
-                    
-                    // 2. Formular zurücksetzen
-                    form.reset();
+            if (response.ok) {
+                closeModal();
+                form.reset();
 
-                    // 3. Automatischer Download des Manifests
-                    const link = document.createElement('a');
-                    link.href = 'Manifest-Marynergy.pdf'; 
-                    link.download = 'Manifest-Marynergy.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                // 1. Sofortiges Öffnen zum LESEN (neuer Tab)
+                window.open('Manifest-Marynergy.pdf', '_blank');
 
-                    // 4. Bestätigungsnachricht
-                    alert("Vielen Dank! Das Manifest wird jetzt heruntergeladen.\n\nIch sende dir in Kürze eine persönliche E-Mail mit deinem Status-Quo Check (Fragebogen).");
-                    
-                } else {
-                    alert("Hoppla! Da ist etwas schiefgelaufen. Bitte prüfe deine E-Mail-Adresse.");
-                }
-            } catch (error) {
-                alert("Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.");
+                // 2. Automatischer DOWNLOAD zum SICHERN
+                const link = document.createElement('a');
+                link.href = 'Manifest-Marynergy.pdf'; 
+                link.download = 'Manifest-Marynergy.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                alert("Vielen Dank! Das Manifest öffnet sich jetzt zum Lesen.\n\nIch sende dir in Kürze eine persönliche Nachricht.");
+            } else {
+                alert("Hoppla! Bitte prüfe deine E-Mail-Adresse.");
             }
-        });
-    </script>
+        } catch (error) {
+            alert("Es ist ein Fehler aufgetreten.");
+        }
+    });
+</script>
 
 </body>
 </html>
