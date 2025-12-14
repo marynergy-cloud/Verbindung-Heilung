@@ -56,29 +56,6 @@
             opacity: 0.7; 
         }
 
-        /* SOUND BUTTON STIL */
-        #sound-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid #1a1a1a;
-            color: #1a1a1a;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-        #sound-toggle:hover {
-            background: #1a1a1a;
-            color: #fff;
-        }
-
         h1, h2, h3 { font-family: var(--font-display); color: var(--text-main); line-height: 1.2; }
         img { max-width: 100%; height: auto; }
         a, button { text-decoration: none; transition: all 0.3s ease; }
@@ -148,22 +125,25 @@
         }
         
         .hero p { 
-            font-size: 1.3rem; 
-            color: #333; /* Etwas dunkler für besseren Kontrast */
-            
-            /* HIER IST DIE ÄNDERUNG: Abstand nach oben */
-            margin-top: 200px; 
-            margin-bottom: 48px; 
-            
-            max-width: 720px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            font-weight: 400; 
-            line-height: 1.6; 
-            
-            /* Hintergrund-Blur optional für Lesbarkeit, falls Video sehr unruhig ist */
-            /* background: rgba(255,255,255,0.3); backdrop-filter: blur(5px); padding: 20px; border-radius: 4px; */
-            text-shadow: 0 1px 10px rgba(255,255,255,0.8);
+    font-size: 1.3rem; 
+    color: #1a1a1a; /* Ein satteres Schwarz für die Grundschrift */
+    
+    /* Beibehaltung deiner gewünschten Abstände */
+    margin-top: 200px; 
+    margin-bottom: 48px; 
+    
+    max-width: 720px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    font-weight: 500; /* Etwas dicker für bessere Lesbarkeit */
+    line-height: 1.6; 
+    
+    /* WEISSER GLOW: Erzeugt einen hellen Hof um die dunkle Schrift */
+    text-shadow: 
+        0 0 15px rgba(255, 255, 255, 1), 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 5px rgba(255, 255, 255, 0.9);
+}
         }
 
         /* --- BUTTONS --- */
@@ -294,10 +274,6 @@
     <video autoplay muted loop playsinline id="main-bg-video">
         <source src="nature-bg.mp4" type="video/mp4">
     </video>
-
-    <button id="sound-toggle" onclick="toggleSound()">
-        Sound: Aus
-    </button>
 
     <div id="emailModal" class="modal-overlay" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -486,22 +462,9 @@
         const form = document.getElementById('manifestForm');
         const submitBtn = document.getElementById('submitBtn');
         const clickSourceInput = document.getElementById('clickSource');
-        const video = document.getElementById('main-bg-video'); // Video Element
-        const soundBtn = document.getElementById('sound-toggle'); // Button Element
         
         // Form Action dynamisch setzen
         form.action = `https://formspree.io/f/${FORMSPREE_ID}`;
-
-        // SOUND TOGGLE FUNKTION
-        function toggleSound() {
-            if (video.muted) {
-                video.muted = false;
-                soundBtn.innerHTML = "Sound: An";
-            } else {
-                video.muted = true;
-                soundBtn.innerHTML = "Sound: Aus";
-            }
-        }
 
         // Modal öffnen
         function openModal(source = 'Allgemein') {
