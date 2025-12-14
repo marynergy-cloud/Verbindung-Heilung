@@ -30,7 +30,7 @@
         html { scroll-behavior: smooth; }
         
         body {
-            background-color: transparent; 
+            background-color: #000; /* Hintergrund schwarz setzen, falls Video lädt */
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
@@ -42,7 +42,7 @@
             min-height: 100vh;
         }
 
-        /* --- VIDEO BACKGROUND CSS (Satt & Saftig) --- */
+        /* --- VIDEO BACKGROUND CSS (Dunkel & Natürlich) --- */
         #main-bg-video {
             position: fixed;
             top: 0;
@@ -52,17 +52,17 @@
             object-fit: cover;
             z-index: -1; 
             
-            /* HIER SIND DIE ANPASSUNGEN FÜR SATTE FARBEN: */
-            /* saturate(1.8) = sehr kräftige Farben (Grün/Braun) */
-            /* contrast(1.15) = klare Tiefen */
-            /* brightness(0.9) = leicht abgedunkelt, damit Text lesbar bleibt */
-            filter: saturate(1.8) contrast(1.15) brightness(0.9);
+            /* ANPASSUNGEN FÜR DUNKLEREN LOOK: */
+            /* saturate(0.8) = Nimmt das grelle "Leuchten" raus, wirkt natürlicher */
+            /* brightness(0.6) = Macht das Video deutlich dunkler (Mystik/Wald) */
+            /* contrast(1.1) = Behält leichte Tiefe bei */
+            filter: saturate(0.8) brightness(0.6) contrast(1.1);
             
-            /* Weniger Transparenz (0.9), damit das Video stärker wirkt */
-            opacity: 0.9; 
+            /* Volle Deckkraft, damit es satt wirkt */
+            opacity: 1; 
         }
 
-        /* --- SOUND BUTTON STIL (Wieder eingefügt) --- */
+        /* --- SOUND BUTTON STIL --- */
         #sound-toggle {
             position: fixed;
             bottom: 20px;
@@ -140,8 +140,8 @@
         .hero {
             padding: 200px 0 140px; 
             text-align: center;
-            /* Verlauf angepasst, damit Schrift oben besser lesbar ist */
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.0));
+            /* Verlauf etwas transparenter gemacht, da Video jetzt dunkler ist */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.0));
         }
         .hero-content { animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; transform: translateY(30px); }
         
@@ -163,8 +163,8 @@
             font-weight: 500; 
             line-height: 1.6; 
             
-            /* Text-Shadow für Lesbarkeit auf satten Farben */
-            text-shadow: 0 0 20px rgba(255,255,255,0.9);
+            /* Text-Shadow für Lesbarkeit auf dem nun dunkleren Video */
+            text-shadow: 0 0 20px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,1);
         }
 
         /* --- BUTTONS --- */
