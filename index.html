@@ -42,19 +42,20 @@
             min-height: 100vh;
         }
 
-        /* --- VIDEO BACKGROUND CSS --- */
+        /* --- VIDEO BACKGROUND CSS (Optimiert für saftiges Grün) --- */
         #main-bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; 
-    /* Graustufen entfernt, Sättigung auf 120% für saftiges Grün, Helligkeit leicht angepasst */
-    filter: saturate(1.2) brightness(0.9) contrast(1.1);
-    opacity: 0.6; /* Leicht erhöht von 0.4, damit die Farben besser durchscheinen */
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; 
+            /* Sättigung stark erhöht (1.6) für intensives Grün, Kontrast für Tiefe */
+            filter: saturate(1.6) contrast(1.15) brightness(0.95);
+            /* Deckkraft erhöht, damit der Wald präsent ist */
+            opacity: 0.7; 
+        }
 
         /* SOUND BUTTON STIL */
         #sound-toggle {
@@ -432,7 +433,7 @@
             <h2>Bereit für echte Tiefe?</h2>
             <p>Erkenne deine Natur. Lebe deine Essenz. Finde die Einheit.</p>
             
-            <button onclick="openModal('Hero-Manifest')" class="btn">Manifest lesen</button>
+            <button onclick="openModal('Footer-Download')" class="btn btn-light">Manifest lesen</button>
 
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             
@@ -497,7 +498,7 @@
         // Escape Taste
         document.addEventListener('keydown', function(event) { if (event.key === "Escape" && modal.classList.contains('active')) closeModal(); });
 
-        // LOGIK FÜR LEAD-GENERIERUNG + DOWNLOAD
+        // LOGIK FÜR LEAD-GENERIERUNG + DOWNLOAD (OPTION A)
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -508,34 +509,34 @@
                 // Senden an Formspree
                 const response = await fetch(form.action, {
                     method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            if (response.ok) {
-                closeModal();
-                form.reset();
+                if (response.ok) {
+                    closeModal();
+                    form.reset();
 
-                // 1. Sofortiges Öffnen zum LESEN (neuer Tab)
-                window.open('Manifest-Marynergy.pdf', '_blank');
+                    // 1. Sofortiges Öffnen zum LESEN (neuer Tab)
+                    window.open('Manifest-Marynergy.pdf', '_blank');
 
-                // 2. Automatischer DOWNLOAD zum SICHERN
-                const link = document.createElement('a');
-                link.href = 'Manifest-Marynergy.pdf'; 
-                link.download = 'Manifest-Marynergy.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                    // 2. Automatischer DOWNLOAD zum SICHERN
+                    const link = document.createElement('a');
+                    link.href = 'Manifest-Marynergy.pdf'; 
+                    link.download = 'Manifest-Marynergy.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
 
-                alert("Vielen Dank! Das Manifest öffnet sich jetzt zum Lesen.\n\nIch sende dir in Kürze eine persönliche Nachricht.");
-            } else {
-                alert("Hoppla! Bitte prüfe deine E-Mail-Adresse.");
+                    alert("Vielen Dank! Das Manifest öffnet sich jetzt zum Lesen.\n\nIch sende dir in Kürze eine persönliche Nachricht.");
+                } else {
+                    alert("Hoppla! Bitte prüfe deine E-Mail-Adresse.");
+                }
+            } catch (error) {
+                alert("Es ist ein Fehler aufgetreten.");
             }
-        } catch (error) {
-            alert("Es ist ein Fehler aufgetreten.");
-        }
-    });
-</script>
+        });
+    </script>
 
 </body>
 </html>
