@@ -30,7 +30,7 @@
         html { scroll-behavior: smooth; }
         
         body {
-            background-color: #000; /* Hintergrund schwarz setzen, falls Video lädt */
+            background-color: #000; 
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
@@ -42,7 +42,7 @@
             min-height: 100vh;
         }
 
-        /* --- VIDEO BACKGROUND CSS (Dunkel & Natürlich) --- */
+        /* --- VIDEO BACKGROUND CSS (Hell & Natürlich) --- */
         #main-bg-video {
             position: fixed;
             top: 0;
@@ -52,13 +52,13 @@
             object-fit: cover;
             z-index: -1; 
             
-            /* ANPASSUNGEN FÜR DUNKLEREN LOOK: */
-            /* saturate(0.8) = Nimmt das grelle "Leuchten" raus, wirkt natürlicher */
-            /* brightness(0.6) = Macht das Video deutlich dunkler (Mystik/Wald) */
-            /* contrast(1.1) = Behält leichte Tiefe bei */
-            filter: saturate(0.8) brightness(0.6) contrast(1.1);
+            /* ANPASSUNGEN FÜR HELLEREN LOOK: */
+            /* saturate(0.9) = Natürlich gesättigte Farben */
+            /* brightness(0.95) = Video bleibt hell und klar (vorher 0.6) */
+            /* contrast(1.05) = Leichter Kontrast für Tiefe */
+            filter: saturate(0.9) brightness(0.95) contrast(1.05);
             
-            /* Volle Deckkraft, damit es satt wirkt */
+            /* Volle Deckkraft */
             opacity: 1; 
         }
 
@@ -140,8 +140,8 @@
         .hero {
             padding: 200px 0 140px; 
             text-align: center;
-            /* Verlauf etwas transparenter gemacht, da Video jetzt dunkler ist */
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.0));
+            /* Verlauf noch transparenter gemacht für mehr Video-Sichtbarkeit */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.0));
         }
         .hero-content { animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; transform: translateY(30px); }
         
@@ -149,12 +149,13 @@
             font-size: 4rem; 
             margin-bottom: 24px; 
             letter-spacing: -1px; 
-            text-shadow: 0 2px 20px rgba(255,255,255,0.9);
+            /* Text-Shadow verstärkt, damit Schrift auf hellem Video lesbar bleibt */
+            text-shadow: 0 0 30px rgba(255,255,255,0.95);
         }
         
         .hero p { 
             font-size: 1.3rem; 
-            color: #1a1a1a; /* Klares Schwarz */
+            color: #1a1a1a; 
             margin-top: 200px; 
             margin-bottom: 48px; 
             max-width: 720px; 
@@ -163,8 +164,11 @@
             font-weight: 500; 
             line-height: 1.6; 
             
-            /* Text-Shadow für Lesbarkeit auf dem nun dunkleren Video */
-            text-shadow: 0 0 20px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,1);
+            /* Glow-Effekt verstärkt für bessere Lesbarkeit auf hellem Hintergrund */
+            text-shadow: 
+                0 0 15px rgba(255, 255, 255, 1), 
+                0 0 10px rgba(255, 255, 255, 0.9),
+                0 0 5px rgba(255, 255, 255, 1);
         }
 
         /* --- BUTTONS --- */
@@ -276,6 +280,11 @@
         /* --- ANIMATION & MOBILE --- */
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) {
+            /* Mobile Video Anpassung: Hell & Klar */
+            #main-bg-video {
+                filter: saturate(1.0) brightness(1.0) contrast(1.05); /* Keine Abdunklung auf Mobile */
+            }
+
             .container { padding: 0 20px; }
             .hero { padding: 140px 0 80px; background: rgba(255,255,255,0.0); }
             .hero h1 { font-size: 2.5rem; line-height: 1.1; }
