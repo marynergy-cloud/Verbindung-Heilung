@@ -3,39 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="google-site-verification" content="WKjZZBNpiYnGzF5_m8qn3DOSF0zsJESHYQEs3FEJB2I" />
 
     <title>Marynergy Flow | Artistic Expression • Music, Dance & QiDance</title>
     <meta name="description" content="Marynergy Flow: A sanctuary for artistic expression. Experience the synergy of intuitive music, mindful dance, and QiDance to transform your energy.">
-    <meta name="keywords" content="Artistic Expression, Intuitive Dance, QiDance, Energy Transformation, Conscious Movement, Marynergy Flow">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marynergy.com/flow-en.html">
-    <meta property="og:title" content="Marynergy Flow | Artistic Expression">
-    <meta property="og:description" content="Music. Dance. QiDance. Discover the pure energy of creative movement.">
-    <meta property="og:image" content="preview-flow.jpg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marynergy Flow">
-    <meta name="twitter:description" content="The Pure Artistic Expression of Energy.">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
         /* --- DESIGN VARIABLES: PURE MONOCHROME --- */
         :root {
-            --bg-color: #000000; /* Deep Black */
-            --ink-color: #ffffff; /* Pure White for Text */
-            
-            /* Accent: Pure White */
+            --bg-color: #000000;
+            --ink-color: #ffffff;
             --accent-color: #ffffff; 
-            
-            /* Glass Effect: Light milky veil (8% White) */
             --glass-bg: rgba(255, 255, 255, 0.08); 
             --glass-border: rgba(255, 255, 255, 0.2); 
-            
             --font-main: 'Inter', sans-serif; 
             --font-display: 'Playfair Display', serif;
             --container-width: 800px;
@@ -53,7 +40,7 @@
             overflow-x: hidden;
         }
 
-        /* VIDEO BACKGROUND - Visuals only */
+        /* VIDEO BACKGROUND */
         #bg-video {
             position: fixed;
             top: 0;
@@ -63,11 +50,10 @@
             z-index: -1;
             object-fit: cover;
             opacity: 0.9; 
-            /* High Contrast, Strict Grayscale */
             filter: grayscale(100%) contrast(1.3) brightness(0.9);
         }
 
-        /* SOUND BUTTON - B&W */
+        /* SOUND BUTTON */
         #sound-toggle {
             position: fixed;
             bottom: 20px;
@@ -99,15 +85,10 @@
             z-index: 1;
         }
 
-        /* --- HEADER --- */
-        header { 
-            padding: 40px 0; 
-            margin-bottom: 60px; 
-        }
-        
+        header { padding: 40px 0; margin-bottom: 60px; }
         header .container {
             display: flex;
-            justify-content: flex-end; 
+            justify-content: center;
             align-items: center;
         }
 
@@ -117,30 +98,8 @@
             letter-spacing: 1px; 
             font-weight: 600; 
             color: var(--ink-color);
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
         }
         .logo span { font-weight: 400; font-style: italic; color: #ccc; margin-left: 5px; }
-
-        .nav-link {
-            font-family: var(--font-display);
-            font-size: 0.9rem; 
-            color: var(--ink-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid transparent;
-            font-style: italic;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 10;
-        }
-        .nav-link:hover {
-            border-bottom-color: var(--ink-color);
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
-        }
 
         .hero h1 {
             font-family: var(--font-display);
@@ -159,7 +118,6 @@
             margin-bottom: 80px;
         }
 
-        /* TRIPTYCH - Light Glass Styling */
         .triptych {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -175,20 +133,16 @@
             font-family: var(--font-display);
             font-size: 1.3rem; 
             margin-bottom: 10px; 
-            color: var(--ink-color);
         }
         .triptych-item p { font-size: 0.9rem; max-width: 200px; margin: 0 auto; color: rgba(255, 255, 255, 0.7);}
 
-        .menu-section { margin-bottom: 80px; }
         .menu-title { 
             font-family: var(--font-display);
             font-size: 2.2rem; 
             margin-bottom: 50px; 
-            color: var(--ink-color);
             text-shadow: 0 2px 10px rgba(0,0,0,1);
         }
-        
-        /* SESSION CARDS */
+
         .session-item {
             margin-bottom: 40px;
             padding: 40px; 
@@ -203,24 +157,21 @@
         }
         .session-item:hover { 
             transform: translateY(-3px); 
-            background: rgba(255, 255, 255, 0.12); 
-            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.12);
         }
         
-        .session-name { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 10px; font-weight: 500;}
+        .session-name { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 10px; }
         .session-desc { font-size: 1rem; margin-bottom: 20px; color: rgba(255, 255, 255, 0.8); }
         .session-tags { 
             font-size: 0.7rem; 
             text-transform: uppercase; 
             letter-spacing: 1.5px; 
             color: #ccc; 
-            font-weight: 600;
             border: 1px solid rgba(255,255,255,0.2);
             display: inline-block;
             padding: 4px 10px;
         }
 
-        /* CTA BOX */
         .cta-box {
             border: 1px solid var(--glass-border);
             padding: 50px;
@@ -237,24 +188,23 @@
             text-decoration: none;
             border: 1px solid var(--ink-color);
             padding: 12px 25px;
-            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transition: all 0.3s ease;
         }
         .btn-link:hover {
             background-color: var(--ink-color);
-            color: #000; 
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            color: #000;
         }
         
-        footer { padding-bottom: 40px; font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.4); }
+        footer { padding: 80px 0 40px; font-size: 0.8rem; }
+        .footer-nav { margin-bottom: 20px; }
+        .footer-nav a { color: #fff; text-decoration: none; opacity: 0.6; transition: 0.3s; }
+        .footer-nav a:hover { opacity: 1; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
             .triptych { grid-template-columns: 1fr; }
-            .container { padding: 0 20px; }
-            .session-item { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -264,96 +214,84 @@
         <source src="art-video.mp4" type="video/mp4">
     </video>
 
-    <button id="sound-toggle" onclick="toggleSound()">
-        Sound: Off
-    </button>
+    <button id="sound-toggle" onclick="toggleSound()">Sound: Off</button>
 
     <div class="container">
-        
         <header>
-            <div class="container" style="padding: 0; margin: 0;">
-                <div class="logo">Marynergy 愛<span>Flow</span></div>
-            </div>
+            <div class="logo">Marynergy 愛<span>Flow</span></div>
         </header>
         
-        <section class="hero">
-            <h1>The Expression.</h1>
-            <p>Music. Dance. QiDance.</p>
-        </section>
+        <main>
+            <section class="hero">
+                <h1>The Expression.</h1>
+                <p>Music. Dance. QiDance.</p>
+            </section>
 
-        <section class="triptych">
-            <div class="triptych-item">
-                <h3>Music</h3>
-                <p>Frequency & Resonance.</p>
-            </div>
-            <div class="triptych-item">
-                <h3>Dance</h3>
-                <p>Intuition & Freedom.</p>
-            </div>
-            <div class="triptych-item">
-                <h3>QiDance</h3>
-                <p>Energy & Transformation.</p>
-            </div>
-        </section>
+            <section class="triptych">
+                <div class="triptych-item">
+                    <h3>Music</h3>
+                    <p>Frequency & Resonance.</p>
+                </div>
+                <div class="triptych-item">
+                    <h3>Dance</h3>
+                    <p>Intuition & Freedom.</p>
+                </div>
+                <div class="triptych-item">
+                    <h3>QiDance</h3>
+                    <p>Energy & Transformation.</p>
+                </div>
+            </section>
 
-        <section class="menu-section">
-            <h2 class="menu-title">The Practice</h2>
+            <section class="menu-section">
+                <h2 class="menu-title">The Practice</h2>
+                <div class="session-item">
+                    <div class="session-name">Dance</div>
+                    <p class="session-desc">
+                        We use distinct rhythms and sound currents to liberate the body and open the heart through intuitive dance. No choreography, only expression.
+                    </p>
+                    <div class="session-tags">Unleashing • Release • Intuition</div>
+                </div>
 
-            <div class="session-item">
-                <div class="session-name">Dance</div>
-                <p class="session-desc">
-                    We use distinct rhythms and sound currents to liberate the body and open the heart through intuitive dance. No choreography, only expression.
-                </p>
-                <div class="session-tags">Unleashing • Release • Intuition</div>
+                <div class="session-item">
+                    <div class="session-name">QiDance</div>
+                    <p class="session-desc">
+                        The fusion of intention and movement. Breath and beat lead into the flow state. Blockages dissolve, energy transforms.
+                    </p>
+                    <div class="session-tags">Qigong • Rhythm • Healing</div>
+                </div>
+            </section>
+
+            <div class="cta-box">
+                <p>“Every process begins with resonance.”</p>
+                <a href="mailto:marynergy@gmail.com?subject=Inquiry%20Expression" class="btn-link">Schedule a Conversation</a>
             </div>
+        </main>
 
-            <div class="session-item">
-                <div class="session-name">QiDance</div>
-                <p class="session-desc">
-                    The fusion of intention and movement. Breath and beat lead into the flow state. Blockages dissolve, energy transforms.
-                </p>
-                <div class="session-tags">Qigong • Rhythm • Healing</div>
-            </div>
-        </section>
-
-        <div class="cta-box">
-            <p>“Every process begins with resonance.”</p>
-            <a href="mailto:marynergy@gmail.com?subject=Inquiry%20Expression" class="btn-link">
-                Schedule a Conversation
-            </a>
-        </div>
-        
         <footer>
-            <a href="index.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s;">Back to Main Page</a>
-            
-            <div style="margin-top: 30px; font-size: 0.75rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px;">
-                <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
-                <span style="margin: 0 8px;">|</span>
+            <nav class="footer-nav">
+                <a href="index.html">← Back to Main Page</a>
+            </nav>
+            <div style="opacity: 0.5;">
+                <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> | 
                 <a href="imprint.html" style="color: inherit; text-decoration: none;">Imprint</a>
             </div>
-
-            <div style="margin-top: 15px; font-size: 0.75rem; opacity: 0.6;">
-                &copy; 2025 Marynergy
-            </div>
+            <div style="margin-top: 15px; opacity: 0.3;">&copy; 2025 Marynergy</div>
         </footer>
     </div>
 
-   <script>
-    const soundBtn = document.getElementById('sound-toggle');
-    // Wir holen uns das Video-Element, nicht ein Audio-Element
-    const video = document.getElementById('bg-video');
+    <script>
+        const video = document.getElementById('bg-video');
+        const soundBtn = document.getElementById('sound-toggle');
 
-    function toggleSound() {
-        // Wir prüfen, ob das Video stummgeschaltet ist
-        if (video.muted) {
-            video.muted = false; // Ton AN (Unmute)
-            soundBtn.innerHTML = "Sound: On";
-        } else {
-            video.muted = true; // Ton AUS (Mute)
-            soundBtn.innerHTML = "Sound: Off";
+        function toggleSound() {
+            if (video.muted) {
+                video.muted = false;
+                soundBtn.innerHTML = "Sound: On";
+            } else {
+                video.muted = true;
+                soundBtn.innerHTML = "Sound: Off";
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
