@@ -238,6 +238,26 @@
             .praxis { padding: 60px 0; } .section-header h2 { font-size: 2rem; } .routine-list { padding: 15px; }
             .cta-footer { padding: 80px 0 40px; } .cta-footer h2 { font-size: 2.2rem; } .cta-footer p { font-size: 1rem; } .footer-email { margin-top: 40px; }
         }
+.lang-switch {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            z-index: 110;
+        }
+        .lang-switch a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lang-switch a:hover {
+            color: var(--accent-color);
+        }
+        .lang-switch .active {
+            color: var(--accent-color);
+            cursor: default;
+        }
     </style>
 </head>
 <body>
@@ -271,9 +291,12 @@
         </div>
     </div>
 
-    <header>
+  <header>
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
+            <nav class="lang-switch">
+                <span class="active">DE</span> | <a href="https://marynergy.com/en.html">EN</a>
+            </nav>
         </div>
     </header>
 
