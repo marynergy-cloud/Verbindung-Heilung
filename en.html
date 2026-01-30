@@ -171,6 +171,50 @@
         .pillar-card h3::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--accent-color); margin: 15px auto 0; }
         .pillar-card p { color: var(--text-muted); font-size: 1rem; }
 
+        /* --- ABOUT SECTION (NEW) --- */
+        .about { 
+            padding: 120px 0; 
+            background-color: var(--bg-color); 
+            backdrop-filter: blur(10px); 
+        }
+        .about-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 80px; 
+            align-items: center; 
+        }
+        .about-image { 
+            position: relative; 
+            line-height: 0;
+        }
+        .about-image img { 
+            width: 100%; 
+            border-radius: var(--radius); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            filter: sepia(0.1) contrast(1.02);
+        }
+        /* Deco behind the image */
+        .about-image::before {
+            content: 'LOVE'; /* Watermark */
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            font-family: var(--font-display);
+            font-size: 8rem;
+            color: var(--accent-color);
+            opacity: 0.05;
+            z-index: -1;
+        }
+        .about-text h2 { 
+            font-size: 2.8rem; 
+            margin-bottom: 30px; 
+        }
+        .about-text p { 
+            margin-bottom: 20px; 
+            color: var(--text-muted); 
+            font-size: 1.1rem;
+        }
+
         /* --- QUOTE & COACHING & PRAXIS & FOOTER --- */
         .quote-section { padding: 120px 0; text-align: center; background-color: var(--bg-secondary); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(8px); }
         blockquote { font-family: var(--font-display); font-size: 2.2rem; font-style: italic; max-width: 800px; margin: 0 auto 30px; color: var(--text-main); line-height: 1.4; }
@@ -228,6 +272,7 @@
 
         /* --- ANIMATION & MOBILE --- */
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        
         @media (max-width: 768px) {
             #main-bg-video { filter: saturate(1.0) brightness(1.0) contrast(1.05); }
             .container { padding: 0 20px; }
@@ -236,12 +281,19 @@
             .hero p { font-size: 1.1rem; margin-bottom: 35px; margin-top: 60px; }
             .btn { width: 100%; max-width: 300px; }
             .grid { gap: 40px; }
+            
+            /* About Section Mobile */
+            .about-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .about-text h2 { font-size: 2.2rem; }
+            .about-image { order: -1; max-width: 80%; margin: 0 auto; }
+            
             .quote-section { padding: 80px 0; } blockquote { font-size: 1.5rem; }
             .coaching-card { padding: 30px 20px; } .coaching-card h3 { font-size: 1.8rem; }
             .praxis { padding: 60px 0; } .section-header h2 { font-size: 2rem; } .routine-list { padding: 15px; }
             .cta-footer { padding: 80px 0 40px; } .cta-footer h2 { font-size: 2.2rem; } .cta-footer p { font-size: 1rem; } .footer-email { margin-top: 40px; }
         }
-/* --- Language Switch Styles --- */
+        
+        /* --- Language Switch Styles --- */
         .lang-switch {
             font-size: 0.8rem;
             font-weight: 600;
@@ -299,7 +351,7 @@
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
             <nav class="lang-switch">
-                <a href="https://marynergy.com ">DE</a> | <span class="active">EN</span>
+                <a href="https://marynergy.com">DE</a> | <span class="active">EN</span>
             </nav>
         </div>
     </header>
@@ -334,6 +386,29 @@
                     <div class="pillar-card">
                         <h3>Practice</h3>
                         <p>Philosophy becomes action: through conscious control of action, substance, and environment, insight transforms into tangible freedom.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about-me">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="Lisboa.jpg" alt="William Marco Grgic - Founder of Marynergy">
+                    </div>
+                    <div class="about-text">
+                        <span class="card-tag">The Human Behind the Vision</span>
+                        <h2>William Marco Grgic</h2>
+                        <p>
+                            Since my youth, my search has been dedicated to the path of truth. However, before I could consciously walk this path, life led me through a deep valley of pain.
+                        </p>
+                        <p>
+                            This years-long process culminated in a holistic transformation that fosters connection, healing, and growth—sustained by a dedication to lifelong learning.
+                        </p>
+                        <p>
+                            <em>True satisfaction is the result of this inner work—a freedom that exists completely independent of external circumstances.</em>
+                        </p>
                     </div>
                 </div>
             </div>
