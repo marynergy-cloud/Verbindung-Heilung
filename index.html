@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marynergy 愛 | Verbindung. Heilung. Wachstum.</title>
-    <link rel="icon" type="image/png" href="favicon.png"><meta name="description" content="Marynergy ist die integrative Praxis für Verbindung, Heilung und Wachstum. Vereine physische Stärke, mentale Klarheit und universelle Energie.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Marynergy ist die integrative Praxis für Verbindung, Heilung und Wachstum. Vereine physische Stärke, mentale Klarheit und universelle Energie.">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marynergy.com">
@@ -171,50 +172,6 @@
         .pillar-card h3::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--accent-color); margin: 15px auto 0; }
         .pillar-card p { color: var(--text-muted); font-size: 1rem; }
 
-        /* --- ABOUT SECTION (NEU) --- */
-        .about { 
-            padding: 120px 0; 
-            background-color: var(--bg-color); 
-            backdrop-filter: blur(10px); 
-        }
-        .about-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1.2fr; 
-            gap: 80px; 
-            align-items: center; 
-        }
-        .about-image { 
-            position: relative; 
-            line-height: 0;
-        }
-        .about-image img { 
-            width: 100%; 
-            border-radius: var(--radius); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            filter: sepia(0.1) contrast(1.02);
-        }
-        /* Deko hinter dem Bild */
-        .about-image::before {
-            content: 'LIEBE';
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            font-family: var(--font-display);
-            font-size: 8rem;
-            color: var(--accent-color);
-            opacity: 0.05;
-            z-index: -1;
-        }
-        .about-text h2 { 
-            font-size: 2.8rem; 
-            margin-bottom: 30px; 
-        }
-        .about-text p { 
-            margin-bottom: 20px; 
-            color: var(--text-muted); 
-            font-size: 1.1rem;
-        }
-
         /* --- QUOTE & COACHING & PRAXIS & FOOTER --- */
         .quote-section { padding: 120px 0; text-align: center; background-color: var(--bg-secondary); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(8px); }
         blockquote { font-family: var(--font-display); font-size: 2.2rem; font-style: italic; max-width: 800px; margin: 0 auto 30px; color: var(--text-main); line-height: 1.4; }
@@ -251,22 +208,6 @@
         .footer-email:hover { color: #fff; text-decoration: underline; }
         .footer-note { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; }
         
-        /* --- MODAL --- */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
-        .modal-overlay.active { display: flex; opacity: 1; }
-        .modal-content { background: #fff; padding: 50px 40px; border-radius: 8px; max-width: 480px; width: 90%; text-align: center; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s ease; }
-        .modal-overlay.active .modal-content { transform: translateY(0); }
-        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #999; cursor: pointer; border: none; background: none; }
-        .modal-close:hover { color: #000; }
-        .modal-title { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 15px; }
-        .modal-text { color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; }
-        .modal-text strong { font-weight: 600; color: var(--text-main); }
-        .form-group { margin-bottom: 20px; }
-        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: var(--radius); font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color 0.3s; }
-        .form-input:focus { border-color: var(--accent-color); }
-        .form-disclaimer { font-size: 0.75rem; color: #999; margin-top: 15px; }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-
         /* --- ANIMATION & MOBILE --- */
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         
@@ -326,23 +267,6 @@
         Ton: An
     </button>
 
-    <div id="emailModal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button class="modal-close" onclick="closeModal()" aria-label="Schließen">&times;</button>
-            <h3 id="modal-title" class="modal-title">Der erste Schritt</h3>
-            <p class="modal-text">Gib deine E-Mail-Adresse ein, um das Manifest zu laden und den <strong>Fragebogen für deinen Start</strong> zu erhalten.</p>
-            <form id="manifestForm" method="POST">
-                <input type="hidden" id="clickSource" name="Quelle" value="Allgemein">
-                <div class="form-group">
-                    <label for="email" class="sr-only">E-Mail-Adresse</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="Deine E-Mail-Adresse" required autocomplete="email">
-                </div>
-                <button type="submit" id="submitBtn" class="btn btn-block">Absenden & Erhalten</button>
-                <p class="form-disclaimer">Kein Spam. Nur Substanz.</p>
-            </form>
-        </div>
-    </div>
-
   <header>
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
@@ -358,7 +282,7 @@
                 <h1>Verbindung. Heilung.<br>Wachstum.</h1>
                 <p>Marynergy ist gelebte Praxis.<br>Vereine physische Stärke, mentale Klarheit und universelle Energie.</p>
                 <div class="hero-buttons">
-                    <button onclick="openModal('Hero-Manifest')" class="btn">Manifest lesen</button>
+                    <a href="Manifest-Marynergy.pdf" target="_blank" class="btn">Manifest lesen</a>
                 </div>
             </div>
         </section>
@@ -407,7 +331,10 @@
                         <div class="card-body">
                             <p>Fördere durch gezieltes Training deine Funktionalität, Kraft und Ausdauer und entwickle bewusste Routinen zur Steigerung deiner Vitalität und Resilienz.</p>
                         </div>
-        
+                        <div class="card-footer">
+                             <a href="mailto:marynergy@gmail.com?subject=Anfrage%20Coaching%20Körper" class="btn btn-outline">Fundament bauen</a>
+                        </div>
+                    </div>
                     <div class="coaching-card highlight">
                         <div class="card-header">
                             <h3>Die Einheit</h3>
@@ -416,6 +343,12 @@
                         <div class="card-body">
                             <p>Körper, Geist und Herz vereint: Training wird zur bewegten Meditation, Philosophie zur Strategie für dein freies, selbstbestimmtes Handeln.</p>
                         </div>
+                        <div class="card-footer">
+                             <a href="mailto:marynergy@gmail.com?subject=Anfrage%20Coaching%20Einheit" class="btn">Einheit erfahren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="praxis">
@@ -439,7 +372,7 @@
         <div class="container">
             <h2>Bereit für echte Tiefe?</h2>
             <p>Erkenne deine Natur. Lebe deine Essenz. Finde die Einheit.</p>
-            <button onclick="openModal('Footer-Download')" class="btn btn-light">Manifest lesen</button>
+            <a href="Manifest-Marynergy.pdf" target="_blank" class="btn btn-light">Manifest lesen</a>
             <a href="mailto:marynergy@gmail.com" class="footer-email">marynergy@gmail.com</a>
             <div class="footer-note">
                 Intuition > Kalkül. Herz & Verstand: Eins.<br><br>
@@ -454,15 +387,8 @@
     </footer>
 
     <script>
-        const FORMSPREE_ID = "xqargdpr"; // Deine ID
-        const modal = document.getElementById('emailModal');
-        const emailInput = document.getElementById('email');
-        const form = document.getElementById('manifestForm');
-        const clickSourceInput = document.getElementById('clickSource');
         const soundBtn = document.getElementById('sound-toggle');
         const music = document.getElementById('bg-music');
-
-        form.action = `https://formspree.io/f/${FORMSPREE_ID}`;
 
         function toggleSound() {
             if (music.paused) {
@@ -473,47 +399,6 @@
                 soundBtn.innerHTML = "Ton: An"; 
             }
         }
-
-        function openModal(source = 'Allgemein') {
-            clickSourceInput.value = source;
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            setTimeout(() => { emailInput.focus(); }, 100);
-        }
-        function closeModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-        }
-        window.onclick = function(event) { if (event.target == modal) closeModal(); }
-        document.addEventListener('keydown', function(event) { if (event.key === "Escape" && modal.classList.contains('active')) closeModal(); });
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    closeModal();
-                    form.reset();
-                    window.open('Manifest-Marynergy.pdf', '_blank');
-                    const link = document.createElement('a');
-                    link.href = 'Manifest-Marynergy.pdf'; 
-                    link.download = 'Manifest-Marynergy.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    alert("Vielen Dank! Das Manifest öffnet sich jetzt zum Lesen.\n\nIch sende dir in Kürze eine persönliche Nachricht.");
-                } else {
-                    alert("Hoppla! Bitte prüfe deine E-Mail-Adresse.");
-                }
-            } catch (error) {
-                alert("Es ist ein Fehler aufgetreten.");
-            }
-        });
     </script>
 
 </body>
