@@ -206,6 +206,107 @@
         .footer-email { display: block; margin-top: 60px; margin-bottom: 10px; color: #666; font-size: 1rem; letter-spacing: 0.5px; word-wrap: break-word; }
         .footer-email:hover { color: #fff; text-decoration: underline; }
         .footer-note { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; }
+
+        /* --- BILDUNG & JOURNAL SECTION --- */
+        .journal-section {
+            padding: 100px 0;
+            background-color: var(--bg-secondary); /* Leichte Abhebung */
+            backdrop-filter: blur(5px);
+        }
+
+        /* Das einzelne Register-Element */
+        .journal-entry {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .journal-entry:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-color: rgba(45, 90, 39, 0.2);
+        }
+
+        /* Die Kopfzeile (Klickbar) */
+        .journal-summary {
+            padding: 24px 30px;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Standard-Dreieck entfernen */
+            user-select: none;
+            position: relative;
+        }
+        
+        /* Webkit-Browser Fix um Standard-Dreieck zu entfernen */
+        .journal-summary::-webkit-details-marker { display: none; }
+
+        /* Das Icon (+ / -) */
+        .journal-icon {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        /* Wenn geöffnet: Icon drehen */
+        details[open] .journal-icon {
+            transform: rotate(45deg); /* Macht aus dem + ein x */
+        }
+        
+        details[open] .journal-summary {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--accent-color);
+        }
+
+        /* Der Inhalt (Text & Zitate) */
+        .journal-content {
+            padding: 30px;
+            background: rgba(255,255,255,0.6);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .journal-content p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Spezielles Styling für Zitate im Journal */
+        .journal-quote-box {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #333;
+            background: rgba(45, 90, 39, 0.03); /* Ganz leichtes Grün */
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .journal-author {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            font-style: normal;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         
         /* --- ANIMATION & MOBILE --- */
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
@@ -328,6 +429,86 @@
                     <li><span><strong>Der Reset:</strong> 'Nichts als die Schlüssel' (Analoge Präsenz)</span><span class="check-icon" aria-hidden="true">✓</span></li>
                     <li><span><strong>Der Fokus:</strong> Offline-Zeiten & Stille</span><span class="check-icon" aria-hidden="true">✓</span></li>
                 </ul>
+            </div>
+        </section>
+        <section class="journal-section" id="bildung">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Bildung & Bibliothek</h2>
+                    <p>Ein digitales Journal für zeitlose Weisheit.</p>
+                </div>
+
+                <details class="journal-entry">
+                    <summary class="journal-summary">
+                        Der innere Fels: Stoizismus & Selbstbeherrschung
+                        <span class="journal-icon">+</span>
+                    </summary>
+                    <div class="journal-content">
+                        <p>Wahre Bildung beginnt nicht mit dem Ansammeln von Fakten, sondern mit der Erziehung des Charakters. Der Stoizismus lehrt uns, zwischen dem zu unterscheiden, was wir kontrollieren können, und dem, was außerhalb unserer Macht liegt.</p>
+                        
+                        <div class="journal-quote-box">
+                            „Du hast Macht über deinen Geist – nicht über die äußeren Ereignisse. Erkenne dies, und du wirst Stärke finden.“
+                            <span class="journal-author">— Marcus Aurelius</span>
+                        </div>
+
+                        <p>In der modernen Welt bedeutet dies: Emotionale Intelligenz statt reaktivem Verhalten. Wir nutzen Bildung, um einen Raum zwischen Reiz und Reaktion zu schaffen.</p>
+                        
+                        <div class="journal-quote-box">
+                            „Wir leiden öfter in der Vorstellung als in der Wirklichkeit.“
+                            <span class="journal-author">— Seneca</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="journal-entry">
+                    <summary class="journal-summary">
+                        Der Weg des Wassers: Taoismus & Flow
+                        <span class="journal-icon">+</span>
+                    </summary>
+                    <div class="journal-content">
+                        <p>Bildung ist oft starr. Wahre Weisheit aber ist fließend. Wie Wasser passt sie sich an, ohne ihre Essenz zu verlieren. Marynergy verbindet Struktur mit diesem Fluss.</p>
+                        
+                        <div class="journal-quote-box">
+                            „Sei leer, sei formlos. Wie Wasser. Wenn du Wasser in eine Tasse gibst, wird es zur Tasse. Sei Wasser, mein Freund.“
+                            <span class="journal-author">— Bruce Lee</span>
+                        </div>
+                        
+                         <div class="journal-quote-box">
+                            „Wer das Ziel kennt, kann entscheiden. Wer entscheidet, findet Ruhe. Wer Ruhe findet, ist sicher. Wer sicher ist, kann überlegen. Wer überlegt, kann verbessern.“
+                            <span class="journal-author">— Konfuzius</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="journal-entry">
+                    <summary class="journal-summary">
+                        Neuroplastizität & Mentale Programmierung
+                        <span class="journal-icon">+</span>
+                    </summary>
+                    <div class="journal-content">
+                        <p>Die Wissenschaft bestätigt heute, was alte Traditionen wussten: Das Gehirn ist formbar. Bildung ist der Prozess, neuronale Pfade neu zu verdrahten.</p>
+                        <div class="journal-quote-box">
+                            „Die Neuronen, die zusammen feuern, vernetzen sich zusammen.“
+                            <span class="journal-author">— Donald Hebb</span>
+                        </div>
+                        <p>Wir nutzen dieses Wissen für Growth Mindset und die bewusste Steuerung unserer Gewohnheiten.</p>
+                    </div>
+                </details>
+
+                <details class="journal-entry">
+                    <summary class="journal-summary">
+                        Somatische Bildung: Der Körper weiß es
+                        <span class="journal-icon">+</span>
+                    </summary>
+                    <div class="journal-content">
+                        <p>Bildung findet nicht nur im Kopf statt. Der Körper speichert Trauma, Freude und Wissen. Ein gebildeter Mensch ist auch ein verkörperter Mensch.</p>
+                        <div class="journal-quote-box">
+                            „Der Körper lügt nicht.“
+                            <span class="journal-author">— Unbekannt</span>
+                        </div>
+                    </div>
+                </details>
+
             </div>
         </section>
     </main>
