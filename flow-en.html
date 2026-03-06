@@ -9,7 +9,7 @@
     <meta name="description" content="Marynergy Flow: A space for artistic expression. Experience the synergy of music, dance, and QiDance to transform your energy.">
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marynergy.com/flow.html">
+    <meta property="og:url" content="https://marynergy.com/flow-en.html">
     <meta property="og:title" content="Marynergy Flow | Artistic Expression • Music, Dance & QiDance">
     <meta property="og:description" content="Marynergy Flow: A space for artistic expression. Experience the synergy of music, dance, and QiDance to transform your energy.">
     <meta property="og:image" content="https://marynergy.com/preview-flow.jpg">
@@ -90,11 +90,14 @@
             z-index: 1;
         }
 
-        header { padding: 40px 0; margin-bottom: 60px; }
-        header .container {
+        /* --- HEADER & SPRACHMENÜ --- */
+        header { 
+            padding: 40px 0; 
+            margin-bottom: 60px; 
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .logo { 
@@ -105,6 +108,28 @@
             color: var(--ink-color);
         }
         .logo span { font-weight: 400; font-style: italic; color: #ccc; margin-left: 5px; }
+
+        .lang-switch {
+            position: absolute;
+            right: 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+        }
+        .lang-switch a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lang-switch a:hover {
+            color: var(--ink-color);
+        }
+        .lang-switch .active {
+            color: var(--ink-color);
+            cursor: default;
+        }
 
         .hero h1 {
             font-family: var(--font-display);
@@ -208,6 +233,8 @@
         .footer-nav a:hover { opacity: 1; }
 
         @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            .lang-switch { position: static; }
             .hero h1 { font-size: 2.8rem; }
             .triptych { grid-template-columns: 1fr; }
         }
@@ -224,6 +251,11 @@
     <div class="container">
         <header>
             <div class="logo">Marynergy 愛<span>Flow</span></div>
+            <nav class="lang-switch">
+                <a href="flow-de.html">DE</a> | 
+                <span class="active">EN</span> | 
+                <a href="flow-es.html">ES</a>
+            </nav>
         </header>
         
         <main>
@@ -274,7 +306,7 @@
 
         <footer>
             <nav class="footer-nav">
-                <a href="https://marynergy.com/en.html">← Back to Main Page</a>
+                <a href="en.html">← Back to Main Page</a>
             </nav>
             <div style="opacity: 0.5;">
                 <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> | 
