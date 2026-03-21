@@ -22,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- DESIGN VARIABLES: PURE MONOCHROME --- */
         :root {
             --bg-color: #000000;
             --ink-color: #ffffff;
@@ -46,7 +45,6 @@
             overflow-x: hidden;
         }
 
-        /* VIDEO BACKGROUND */
         #bg-video {
             position: fixed;
             top: 0;
@@ -59,7 +57,6 @@
             filter: grayscale(100%) contrast(1.3) brightness(0.9);
         }
 
-        /* SOUND BUTTON */
         #sound-toggle {
             position: fixed;
             bottom: 20px;
@@ -91,7 +88,6 @@
             z-index: 1;
         }
 
-        /* HEADER & SPRACHMENÜ ANPASSUNG */
         header { 
             padding: 40px 0; 
             margin-bottom: 60px; 
@@ -206,7 +202,7 @@
         .cta-box {
             border: 1px solid var(--glass-border);
             padding: 50px;
-            margin-bottom: 80px; 
+            margin-bottom: 40px; 
             background: rgba(255, 255, 255, 0.08); 
             backdrop-filter: blur(10px);
             border-radius: 4px;
@@ -291,7 +287,8 @@
                 <div class="session-item">
                     <div class="session-name">QiDance</div>
                     <p class="session-desc">
-                        Die Verschmelzung von Intention und Bewegung. Atem und Takt führen in den Flow-Zustand. Blockaden lösen sich, Energie transformiert sich.                    </p>
+                        Die Verschmelzung von Intention und Bewegung. Atem und Takt führen in den Flow-Zustand. Blockaden lösen sich, Energie transformiert sich.
+                    </p>
                     <div class="session-tags">Qigong • Rhythmus • Heilung</div>
                 </div>
             </section>
@@ -300,16 +297,17 @@
                 <p>„Jeder Prozess beginnt mit Resonanz.“</p>
                 <a href="mailto:marynergy@gmail.com?subject=Anfrage%20Ausdruck" class="btn-link">Gespräch vereinbaren</a>
             </div>
+
+            <div class="cta-box" style="text-align: center; padding: 80px 0;">
+                <a href="https://www.youtube.com/playlist?list=PLMBaPDjum_0QlqEEhHkvvkBqbdcraklMA" target="_blank" style="display: inline-block; padding: 15px 45px; border: 1px solid rgba(255, 255, 255, 0.8); color: #ffffff; text-decoration: none; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;">
+                    Marynergy Flow
+                </a>
+            </div>
         </main>
-        <div class="cta-box" style="text-align: center; padding: 80px 0;">
-    <a href="https://www.youtube.com/playlist?list=PLMBaPDjum_0QlqEEhHkvvkBqbdcraklMA" target="_blank" style="display: inline-block; padding: 15px 45px; border: 1px solid rgba(255, 255, 255, 0.8); color: #ffffff; text-decoration: none; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;">
-        Marynergy Flow
-    </a>
-</div>
 
         <footer>
             <nav class="footer-nav">
-                <a href="/" style="color: #1a1a1a; text-decoration: none; font-weight: 600;">← Zurück zur Hauptseite</a>
+                <a href="/" style="font-weight: 600;">← Zurück zur Hauptseite</a>
             </nav>
             <div style="margin-top: 15px; opacity: 0.3;">&copy; 2025 Marynergy</div>
         </footer>
