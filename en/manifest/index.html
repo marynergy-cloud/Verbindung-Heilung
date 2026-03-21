@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Manifesto | Marynergy 愛</title>
+    <meta name="description" content="Marynergy 愛: The Manifesto. Connection & Healing. Education & Growth.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --bg-color: #080808; 
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --accent-color: #2d5a27;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --container-width: 800px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        header {
+            padding: 30px 20px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover { color: #fff; }
+
+        .logo { 
+            font-family: var(--font-display); 
+            font-size: 1.2rem; 
+            letter-spacing: 1px; 
+            font-weight: 600; 
+            color: #fff; 
+        }
+        .kanji { color: var(--accent-color); font-weight: 400; margin-left: 5px; }
+
+        /* Content Container */
+        .manifesto-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 24px 100px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            font-family: var(--font-body);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 80px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #d0d0d0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        p { margin-bottom: 24px; font-size: 1.05rem; }
+        
+        strong { color: #ffffff; font-weight: 500; }
+
+        /* Quotes */
+        blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #ffffff;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 30px;
+            margin: 50px 0;
+        }
+
+        .quote-author {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-style: normal;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        /* Epilogue & Footer */
+        .epilogue {
+            text-align: center;
+            margin-top: 100px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .epilogue p { margin-bottom: 10px; font-family: var(--font-display); font-size: 1.5rem; color: #fff;}
+        .epilogue .kanji-large { font-size: 3rem; color: var(--accent-color); display: block; margin-top: 30px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; margin-top: 60px; }
+            blockquote { font-size: 1.2rem; padding-left: 20px; margin: 40px 0; }
+            p, li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/en/" class="back-link">← Back to Home</a>
+        <div class="logo">Marynergy<span class="kanji">愛</span></div>
+    </header>
+
+    <main class="manifesto-container">
+        
+        <h1>The Manifesto</h1>
+        <div class="subtitle">Connection & Healing. Education & Growth.</div>
+
+        <h4>Preface</h4>
+        <p>Every human being has their own nature. Follow it.</p>
+        
+        <blockquote>
+            "At dawn, when you have trouble getting out of bed, tell yourself: 'I have to go to work - as a human being. What do I have to complain of, if I am going to do what I was born for? [...] Or is this what I was created for? To huddle under the blankets and stay warm?' You don't love yourself enough. Or you'd love your nature too, and what it demands of you."
+            <span class="quote-author">— Marcus Aurelius, Meditations</span>
+        </blockquote>
+
+        <h4>THE MARYNERGY PHILOSOPHY</h4>
+        <p>Marynergy is more than a method. It is a philosophy of life. It stands for the lived unity of body, mind, and heart. We live truthfulness, encounter the external world with respect, openness, and tolerance, yet remain firmly anchored in our own values.</p>
+        <p>The core is: Connection, Healing, Growth. This does not arise from theory, but from lived practice and responsibility in the midst of everyday life. Through continuous mindfulness, we create the path to inner freedom.</p>
+        <p>The goal is holistic health. It is the state of deep contentment and that happiness which arises when thinking, feeling, and acting are in harmony not as a fleeting moment, but as a constant state of being.</p>
+
+        <h4>No Rigid Dogmas</h4>
+        <p>Detach yourself from fixed methods. Only then do you open the gate to truth. Words are not enough. You must live it. The practice leads into the "Void" that emptiness where pure consciousness awaits.</p>
+
+        <blockquote>
+            "In the world of the 'Void,' there is no evil, only the good exists. Knowledge and talent encounter limits in the human world... Therefore, the spirit shall belong to the 'Void.' This means: Being infinite."
+            <span class="quote-author">— Miyamoto Musashi, The Book of Five Rings</span>
+        </blockquote>
+
+        <p>Whoever walks their path truthfully encounters universal truth.</p>
+
+        <h4>The Unity of Opposites</h4>
+        <p>Opposites are not enemies, but a unity. Measurable science connects with spiritual depth. Western strategy meets Far Eastern stillness. We need balance: Stoic calm and unconditional compassion. We need sharpness: Pragmatism, strategy, and vigilance for freedom. Non-violent power unites with pure mindfulness. Material success and spiritual greatness are no contradiction. Everything flows together.</p>
+
+        <blockquote>
+            "But if someone truly follows a Way, he will find commonalities with people who follow other Ways. It is important that everyone practices earnestly and carefully on the path of their choice."
+            <span class="quote-author">— Miyamoto Musashi, The Book of Five Rings</span>
+        </blockquote>
+
+        <p>Be inspired. But always feel into your innermost self. Do not walk another's path. Find and walk your own, unmistakable path.</p>
+
+        <h2>CHAPTER 1: CONNECTION AND HEALING</h2>
+
+        <h4>DEFINITION: UNITY OF BODY, MIND, AND HEART</h4>
+        <p>True connection begins within you. Those who are deeply rooted intuitively recognize what strengthens them and what weakens them. After phases of intense mental activity, the inner self seeks space and stillness. This space can be created in manifold ways: in nature, while running, through physical training, gardening, music, dance, art, and much more. The goal is to gain distance from the flood of thoughts. Whoever listens mindfully to their inner resonance transforms self-love into active action. Individual healing is always the starting point for collective healing.</p>
+
+        <h3>1.1 THE CORE TEACHING: WE ARE ALWAYS CONNECTED</h3>
+        <p>We are always connected. Any sense of separation is merely an illusion of the ego, becoming the root of fear and lack. Mindlessness scatters our energy into the pursuit of validation and possession-an escape from the self. The crucial question is: Do we act from the ego or from our true nature? Success may be measurable, yet intention is what counts. The answer requires an inward focus. For only inner harmony creates true freedom.</p>
+
+        <h4>THE ONGOING PROCESS</h4>
+        <p>Holistic health arises from the harmonious interplay of three components:</p>
+        <ul>
+            <li><strong>The Body</strong> is the physical foundation. Vitality through targeted training and conscious nutrition forms the indispensable basis.</li>
+            <li><strong>The Mind</strong> acts as the silent observer. Mindfulness dissolves identification with thoughts, which are merely passing clouds.</li>
+            <li><strong>The Heart</strong>, the emotional center, allows love and gratitude to become active energy-the bridge to the outside world.</li>
+        </ul>
+        <p>This is not a one-time act, but a continuous attitude. It is the consistent, daily practice of mindfulness.</p>
+
+        <h4>THE THREE ACTIVATORS</h4>
+        <p>True connection is not a passive state, but active action. Three fundamental pillars support this process:</p>
+        <ul>
+            <li><strong>Conscious Mindfulness</strong> is the anchor in the here and now; every action takes place with full presence.</li>
+            <li><strong>Bodywork</strong> offers direct access to the interior; targeted training is a moving meditation that harmonizes the flow of energy.</li>
+            <li><strong>Spiritual Practice</strong> is the expansion of consciousness; it unfolds, for example, in meditation, through reflection, and the experience of nature.</li>
+        </ul>
+
+        <h4>THE EXPANSION: THE GREATER WHOLE</h4>
+        <p>Inner healing opens the gate to universal existence. Fundamental principles become tangible:</p>
+        <ul>
+            <li><strong>Nature</strong> teaches the eternal cycle.</li>
+            <li><strong>The Dao</strong> reveals the flow and effortless action.</li>
+            <li><strong>Zen</strong> shows the pure moment.</li>
+            <li><strong>Qi</strong> connects us energetically.</li>
+            <li><strong>The Logos</strong> provides the structure-universal reason.</li>
+        </ul>
+        <p>Recognize the truth: You are connected. You are an inseparable part of the Greater Whole.</p>
+
+        <h3>1.2 ENERGY & TRUTH: BEYOND
