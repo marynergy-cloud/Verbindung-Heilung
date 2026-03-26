@@ -196,7 +196,9 @@
         <h1>Captura del Momento</h1>
         <div class="subtitle">Conexión. Sanación. Crecimiento.</div>
 
-        <form id="marynergy-scan" action="enviar.php" method="POST">
+        <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
+    <input type="hidden" name="_next" value="https://marynergy.com/es/">
+    <input type="hidden" name="_subject" value="Nueva Captura Marynergy (ES)">
 
             <h2>I. CUERPO</h2>
 
@@ -392,6 +394,11 @@
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Tu respuesta..." required></textarea>
             </div>
 
+            <div class="form-group">
+    <h3 class="question-title">Tu correo electrónico</h3>
+    <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="nombre@ejemplo.es" required>
+</div>
+
             <div class="submit-area">
                 <button type="submit" class="btn">Enviar y Conectar</button>
             </div>
@@ -399,14 +406,7 @@
         </form>
     </main>
 
-    <script>
-        // Placeholder for data handling
-        document.getElementById('marynergy-scan').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gracias por tu captura del momento. La conexión se ha establecido.');
-            // window.location.href = "/es/gracias.html"; // Optional Redirect
-        });
-    </script>
+    
 
 </body>
 </html>
