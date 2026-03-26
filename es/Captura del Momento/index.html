@@ -394,17 +394,55 @@
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Tu respuesta..." required></textarea>
             </div>
 
-            <div class="form-group">
-    <h3 class="question-title">Tu correo electrónico</h3>
-    <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="nombre@ejemplo.es" required>
-</div>
+           <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
+    <input type="hidden" name="_subject" value="Nueva Captura Marynergy (ES)">
 
-            <div class="submit-area">
-                <button type="submit" class="btn">Enviar y Conectar</button>
-            </div>
+    <div class="form-group">
+        <h3 class="question-title">Tu correo electrónico</h3>
+        <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="nombre@ejemplo.es" required>
+    </div>
 
-        </form>
-    </main>
+    <div class="submit-area">
+        <button type="submit" id="submit-btn" class="btn">Enviar y Conectar</button>
+        <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
+            Gracias. Tu captura ha sido transmitida.
+        </div>
+    </div>
+</form>
+
+            <script>
+  const form = document.getElementById("marynergy-scan");
+  const button = document.getElementById("submit-btn");
+  const status = document.getElementById("status-message");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    button.disabled = true;
+    button.innerText = "Transmitiendo...";
+
+    const data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        status.style.display = "block";
+        button.style.display = "none";
+        form.reset();
+        setTimeout(() => { window.location.href = "/es/"; }, 3000);
+      } else {
+        alert("Un pequeño error en el sistema. Por favor, inténtalo de nuevo.");
+        button.disabled = false;
+        button.innerText = "Enviar y Conectar";
+      }
+    }).catch(error => {
+      alert("Conexión interrumpida. Por favor, inténtalo de nuevo en un momento.");
+      button.disabled = false;
+      button.innerText = "Enviar y Conectar";
+    });
+  });
+</script>
 
     
 
