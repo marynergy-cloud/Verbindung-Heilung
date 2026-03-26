@@ -395,19 +395,21 @@
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Your answer..." required></textarea>
             </div>
 
-            <div class="form-group">
-    <h3 class="question-title">Your Email Address</h3>
-    <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="name@example.com" required>
-</div>
+            <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
+    <input type="hidden" name="_subject" value="New Marynergy Snapshot (EN)">
+    
+    <div class="form-group">
+        <h3 class="question-title">Your Email Address</h3>
+        <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="name@example.com" required>
+    </div>
 
-            <div class="submit-area">
-                <button type="submit" class="btn">Send & Connect</button>
-            </div>
-
-        </form>
-    </main>
-
-
-
+    <div class="submit-area">
+        <button type="submit" id="submit-btn" class="btn">Send & Connect</button>
+        <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
+            Thank you. Your snapshot has been transmitted.
+        </div>
+    </div>
+</form>
+            
 </body>
 </html>
