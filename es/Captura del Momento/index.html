@@ -144,7 +144,7 @@
         }
 
         /* --- TEXTAREA STYLING --- */
-        textarea.essenz-input {
+        textarea.essenz-input, input.essenz-input {
             width: 100%; height: 150px;
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
@@ -152,7 +152,8 @@
             font-size: 1.05rem; padding: 20px; border-radius: var(--radius);
             resize: vertical; outline: none; transition: border-color 0.3s ease;
         }
-        textarea.essenz-input:focus { border-color: var(--accent-color); }
+        input.essenz-input { height: auto; }
+        textarea.essenz-input:focus, input.essenz-input:focus { border-color: var(--accent-color); }
 
         /* --- SUBMIT BUTTON --- */
         .submit-area { text-align: center; margin-top: 100px; }
@@ -169,6 +170,31 @@
             background-color: var(--accent-hover);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(45, 90, 39, 0.25);
+        }
+
+        /* --- NEU: LEGAL DISCLAIMER STYLING --- */
+        footer.survey-footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+        }
+        .legal-disclaimer {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .consent-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
@@ -201,8 +227,8 @@
         </p>
 
         <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
-    <input type="hidden" name="_next" value="https://marynergy.com/es/">
-    <input type="hidden" name="_subject" value="Nueva Captura Marynergy (ES)">
+            <input type="hidden" name="_next" value="https://marynergy.com/es/">
+            <input type="hidden" name="_subject" value="Nueva Captura Marynergy (ES)">
 
             <h2>I. CUERPO</h2>
 
@@ -398,57 +424,65 @@
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Tu respuesta..." required></textarea>
             </div>
 
-           <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
-    <input type="hidden" name="_subject" value="Nueva Captura Marynergy (ES)">
+            <div class="form-group">
+                <h3 class="question-title">Tu correo electrónico</h3>
+                <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="nombre@ejemplo.es" required>
+            </div>
 
-    <div class="form-group">
-        <h3 class="question-title">Tu correo electrónico</h3>
-        <input type="email" name="email" class="essenz-input" style="height: 60px;" placeholder="nombre@ejemplo.es" required>
-    </div>
+            <div class="submit-area">
+                <div class="consent-text">
+                    Al enviar, aceptas el chequeo de resonancia y confirmas que has leído el aviso legal sobre la práctica a continuación.
+                </div>
+                
+                <button type="submit" id="submit-btn" class="btn">Enviar y Conectar</button>
+                <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
+                    Gracias. Tu captura ha sido transmitida.
+                </div>
+            </div>
+        </form>
+    </main>
 
-    <div class="submit-area">
-        <button type="submit" id="submit-btn" class="btn">Enviar y Conectar</button>
-        <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
-            Gracias. Tu captura ha sido transmitida.
+    <footer class="survey-footer">
+        <div class="container">
+            <div class="legal-disclaimer">
+                <strong>Aviso importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la integralidad. Queda expresamente aclarado que no constituye un tratamiento médico, terapéutico o psiquiátrico, ni una promesa de curación o diagnóstico en sentido legal o médico. Esta práctica no sustituye la consulta a un médico o profesional de la salud.
+            </div>
         </div>
-    </div>
-</form>
+    </footer>
 
-            <script>
-  const form = document.getElementById("marynergy-scan");
-  const button = document.getElementById("submit-btn");
-  const status = document.getElementById("status-message");
+    <script>
+        const form = document.getElementById("marynergy-scan");
+        const button = document.getElementById("submit-btn");
+        const status = document.getElementById("status-message");
 
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-    button.disabled = true;
-    button.innerText = "Transmitiendo...";
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            button.disabled = true;
+            button.innerText = "Transmitiendo...";
 
-    const data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        status.style.display = "block";
-        button.style.display = "none";
-        form.reset();
-        setTimeout(() => { window.location.href = "/es/"; }, 3000);
-      } else {
-        alert("Un pequeño error en el sistema. Por favor, inténtalo de nuevo.");
-        button.disabled = false;
-        button.innerText = "Enviar y Conectar";
-      }
-    }).catch(error => {
-      alert("Conexión interrumpida. Por favor, inténtalo de nuevo en un momento.");
-      button.disabled = false;
-      button.innerText = "Enviar y Conectar";
-    });
-  });
-</script>
-
-    
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    status.style.display = "block";
+                    button.style.display = "none";
+                    form.reset();
+                    setTimeout(() => { window.location.href = "/es/"; }, 3000);
+                } else {
+                    alert("Un pequeño error en el sistema. Por favor, inténtalo de nuevo.");
+                    button.disabled = false;
+                    button.innerText = "Enviar y Conectar";
+                }
+            }).catch(error => {
+                alert("Conexión interrumpida. Por favor, inténtalo de nuevo en un momento.");
+                button.disabled = false;
+                button.innerText = "Enviar y Conectar";
+            });
+        });
+    </script>
 
 </body>
 </html>
