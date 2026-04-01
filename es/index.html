@@ -77,7 +77,6 @@
             height: 100%;
             object-fit: cover;
             z-index: -1; 
-            /* Hell & Natürlich */
             filter: saturate(0.9) brightness(0.95) contrast(1.05);
             opacity: 1; 
         }
@@ -190,7 +189,22 @@
         .cta-footer h2 { font-size: 3rem; margin-bottom: 24px; color: #fff; }
         .footer-email { display: block; margin-top: 60px; margin-bottom: 10px; color: #666; font-size: 1rem; letter-spacing: 0.5px; word-wrap: break-word; }
         .footer-email:hover { color: #fff; text-decoration: underline; }
-        .footer-note { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; }
+        .footer-note { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; margin-bottom: 30px; }
+
+        /* --- NEU: LEGAL DISCLAIMER STYLING --- */
+        .legal-disclaimer {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 800px;
+            margin: 40px auto 20px;
+            line-height: 1.6;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-family: var(--font-body);
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
 
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         
@@ -316,6 +330,7 @@
         </section>
 
     </main>
+
     <section style="padding: 80px 0 40px; text-align: center;">
       <p style="color: #ffffff; font-style: italic; margin-bottom: 25px; font-family: var(--font-display); font-size: 1.3rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
         Profundiza la práctica.
@@ -345,7 +360,11 @@
         <div class="footer-note">
             Intuición > Cálculo. Corazón y Mente: Uno.<br><br>
             <a href="/flow-es/" style="color: #888; text-decoration: none;">Marynergy Flow</a><br>
-            &copy; 2025 Marynergy
+            &copy; 2026 Marynergy
+        </div>
+
+        <div class="legal-disclaimer">
+            <strong>Aviso importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la integralidad. Queda expresamente aclarado que no constituye un tratamiento médico, terapéutico o psiquiátrico, ni una promesa de curación o diagnóstico en sentido legal o médico. Esta práctica no sustituye la consulta a un médico o profesional de la salud.
         </div>
     </div>
 </footer>
