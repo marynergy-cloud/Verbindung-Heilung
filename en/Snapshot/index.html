@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marynergy 愛 | Snapshot - 12 Questions</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-    <meta name="description" content="Integrative scan of Body, Mind, and Heart. Instinctive 1-10 scale for connection, healing, and growth. The lived Marynergy philosophy.">
+    <meta name="description" content="Integrative scan of body, mind, and heart. Instinctive 1-10 scale for connection, healing, and growth. The lived Marynergy philosophy.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,14 +145,14 @@
 
         /* --- TEXTAREA STYLING --- */
         textarea.essenz-input, input.essenz-input {
-            width: 100%; height: 150px;
+            width: 100%; 
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-color);
             color: var(--text-main); font-family: var(--font-body);
             font-size: 1.05rem; padding: 20px; border-radius: var(--radius);
-            resize: vertical; outline: none; transition: border-color 0.3s ease;
+            outline: none; transition: border-color 0.3s ease;
         }
-        input.essenz-input { height: auto; }
+        textarea.essenz-input { height: 150px; resize: vertical; }
         textarea.essenz-input:focus, input.essenz-input:focus { border-color: var(--accent-color); }
 
         /* --- SUBMIT BUTTON --- */
@@ -223,19 +223,18 @@
         <div class="subtitle">Connection. Healing. Growth.</div>
 
         <p style="text-align: center; max-width: 650px; margin: 0 auto 80px; color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
-            This snapshot is a mirror of your current energy and requires ruthless honesty with yourself. Submit your answers to not only gain inner clarity but to receive a grounded, personal resonance—no empty phrases, but concrete impulses from lived practice to help you release blockages.
+            This snapshot is a reflection of your current energy and requires ruthless honesty with yourself. Submit your answers not only to gain inner clarity, but to receive a profound, personal resonance – no empty phrases, but concrete impulses from lived practice to help you resolve blockages.
         </p>
 
         <form id="marynergy-scan" action="https://formspree.io/f/xqargdpr" method="POST">
             <input type="hidden" name="_next" value="https://marynergy.com/en/">
-            <input type="hidden" name="_subject" value="New Marynergy Snapshot (EN)">
 
             <h2>I. BODY</h2>
 
             <div class="form-group">
-                <h3 class="question-title">1. Action: How do you perceive your body in daily movement?</h3>
+                <h3 class="question-title">1. Action: How do you feel your body in daily movement?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Heavy / Rigid) | <strong>5</strong> (Habitual / Functional) | <strong>10</strong> (Powerful / Flowing)
+                    Orientation: <strong>1</strong> (Heavy / Rigid) | <strong>5</strong> (Habitual / Functional) | <strong>10</strong> (Powerful / In Flow)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q1" id="q1-1" value="1" required><label for="q1-1">1</label></div>
@@ -252,9 +251,9 @@
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">2. Substance: What quality of physical nourishment and rest do you offer yourself?</h3>
+                <h3 class="question-title">2. Substance: What is the quality of the physical nourishment and rest you give yourself?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Taxing / Depleting) | <strong>5</strong> (Fluctuating / Average) | <strong>10</strong> (Pure / Nourishing)
+                    Orientation: <strong>1</strong> (Burdening / Depleting) | <strong>5</strong> (Fluctuating / Average) | <strong>10</strong> (Pure / Nourishing)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q2" id="q2-1" value="1" required><label for="q2-1">1</label></div>
@@ -273,7 +272,7 @@
             <div class="form-group">
                 <h3 class="question-title">3. Heaven & Earth: How often do you consciously spend time offline in nature?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Isolated / Indoors only) | <strong>5</strong> (Occasional / If time permits) | <strong>10</strong> (Deeply grounded / Pure nature)
+                    Orientation: <strong>1</strong> (Isolated / Only indoors) | <strong>5</strong> (Occasionally / When there is time) | <strong>10</strong> (Deeply grounded / Pure nature)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q3" id="q3-1" value="1" required><label for="q3-1">1</label></div>
@@ -294,7 +293,7 @@
             <div class="form-group">
                 <h3 class="question-title">4. Action: How focused are you on what you are doing right now?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Scattered / Restless) | <strong>5</strong> (Reactive / Functioning) | <strong>10</strong> (Laser-focus / Absolutely present)
+                    Orientation: <strong>1</strong> (Scattered / Restless) | <strong>5</strong> (Reactive / Functioning) | <strong>10</strong> (Laser-focused / Absolutely present)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q4" id="q4-1" value="1" required><label for="q4-1">1</label></div>
@@ -311,9 +310,9 @@
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">5. Substance: What nourishes your mind (media, environment, thoughts)?</h3>
+                <h3 class="question-title">5. Substance: What do you nourish your mind with (media, environment, thoughts)?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Noise / Negativity) | <strong>5</strong> (Passive consumption / Distraction) | <strong>10</strong> (Stillness / True inspiration)
+                    Orientation: <strong>1</strong> (Noise / Negativity) | <strong>5</strong> (Background noise / Distraction) | <strong>10</strong> (Silence / True inspiration)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q5" id="q5-1" value="1" required><label for="q5-1">1</label></div>
@@ -330,9 +329,9 @@
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">6. Heaven & Earth: Where does your consciousness dwell most of the time?</h3>
+                <h3 class="question-title">6. Heaven & Earth: Where does your consciousness dwell most of the day?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Yesterday (Regret) / Tomorrow (Worry)) | <strong>5</strong> (Fluctuating) | <strong>10</strong> (Anchored in the here and now)
+                    Orientation: <strong>1</strong> (Yesterday (Regret) / Tomorrow (Worry)) | <strong>5</strong> (Fluctuating) | <strong>10</strong> (Anchored in the Here and Now)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q6" id="q6-1" value="1" required><label for="q6-1">1</label></div>
@@ -351,9 +350,9 @@
             <h2>III. HEART</h2>
 
             <div class="form-group">
-                <h3 class="question-title">7. Action: How do you face sudden storms or external resistance?</h3>
+                <h3 class="question-title">7. Action: How do you face sudden storms or resistance in the outside world?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Struggle / Inner resistance) | <strong>5</strong> (Enduring / Functioning) | <strong>10</strong> (Inner peace / Acceptance)
+                    Orientation: <strong>1</strong> (Fight / Inner resistance) | <strong>5</strong> (Enduring / Functioning) | <strong>10</strong> (Inner peace / Acceptance)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q7" id="q7-1" value="1" required><label for="q7-1">1</label></div>
@@ -372,7 +371,7 @@
             <div class="form-group">
                 <h3 class="question-title">8. Substance: What deep underlying feeling accompanies you when the day ends?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Emptiness / Scarcity) | <strong>5</strong> (Neutrality) | <strong>10</strong> (Deep gratitude / Abundance)
+                    Orientation: <strong>1</strong> (Emptiness / Lack) | <strong>5</strong> (Neutrality) | <strong>10</strong> (Deep gratitude / Abundance)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q8" id="q8-1" value="1" required><label for="q8-1">1</label></div>
@@ -389,9 +388,9 @@
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">9. Heaven & Earth: How do you perceive your place in the greater whole?</h3>
+                <h3 class="question-title">9. Heaven & Earth: How do you perceive your place in the Greater Whole?</h3>
                 <div class="scale-orientation">
-                    Orientation: <strong>1</strong> (Separated / Lone fighter) | <strong>5</strong> (Functionally connected) | <strong>10</strong> (As an inseparable part / Unity)
+                    Orientation: <strong>1</strong> (Disconnected / Lone wolf) | <strong>5</strong> (Functionally connected) | <strong>10</strong> (As an inseparable part / Unity)
                 </div>
                 <div class="scale-container">
                     <div class="scale-box"><input type="radio" name="q9" id="q9-1" value="1" required><label for="q9-1">1</label></div>
@@ -410,18 +409,23 @@
             <h2>IV. ESSENCE</h2>
 
             <div class="form-group">
-                <h3 class="question-title">10. BODY: What does your physical foundation need most in this moment?</h3>
+                <h3 class="question-title">10. BODY: What does your physical foundation need most in this very moment?</h3>
                 <textarea name="q10_essenz_body" class="essenz-input" placeholder="Your answer..." required></textarea>
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">11. MIND: Which recurring thought is currently draining most of your energy?</h3>
+                <h3 class="question-title">11. MIND: Which recurring thought is currently draining the most of your energy?</h3>
                 <textarea name="q11_essenz_mind" class="essenz-input" placeholder="Your answer..." required></textarea>
             </div>
 
             <div class="form-group">
-                <h3 class="question-title">12. HEART: If the path and the moment are one – exactly how does your life feel then?</h3>
+                <h3 class="question-title">12. HEART: What is the one thing that must radically change in your life starting today?</h3>
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Your answer..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <h3 class="question-title">Your First Name</h3>
+                <input type="text" name="firstname" class="essenz-input" style="height: 60px;" placeholder="Your first name" required>
             </div>
 
             <div class="form-group">
@@ -431,27 +435,29 @@
 
             <div class="submit-area">
                 <div class="consent-text">
-                    By submitting, you agree to the resonance check and confirm that you have read the legal notice regarding the practice below.
+                    Submit your answers. I will personally evaluate your scan and send you an individual audio/video message giving you concrete impulses from practice to resolve current blockages.<br><br>
+                    <span style="font-size: 0.75rem; opacity: 0.7;">By submitting, you agree to the data processing for the resonance check and confirm the legal disclaimer (see below).</span>
                 </div>
                 
-                <button type="submit" id="submit-btn" class="btn">Send & Connect</button>
+                <button type="submit" id="submit-btn" class="btn">Request Results & Personal Resonance</button>
                 <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
-                    Thank you. Your snapshot has been transmitted.
+                    Thank you. Your snapshot has been submitted.
                 </div>
             </div>
         </form>
     </main>
-
+    
     <footer class="survey-footer">
         <div class="container">
             <div class="legal-disclaimer">
-                <strong>Important Notice:</strong> Marynergy is a life philosophy and practice for mental and physical development. The term 'healing' refers exclusively to holism. It expressly does not constitute medical, therapeutic, or psychiatric treatment, promises of healing, or diagnoses in a medical or legal sense. This practice does not replace a visit to a doctor or medical professional.
+                <strong>Important Notice:</strong> Marynergy is a life philosophy and practice for mental and physical development. The term 'healing' here refers exclusively to wholeness. It is expressly not medical, therapeutic, or psychiatric treatment, a promise of a cure, or a diagnosis. The practice does not replace a visit to the doctor.
             </div>
-            <div style="margin-top: 30px; font-size: 0.8rem;">
-            <a href="/imprint.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Imprint</a> 
+        <div style="margin-top: 30px; font-size: 0.8rem;">
+            <a href="/en/imprint.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Imprint</a> 
             <span style="color: #555; margin: 0 10px;">|</span> 
-            <a href="/privacy.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Privacy</a>
+            <a href="/en/privacy.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Privacy Policy</a>
         </div>
+    </div>
     </footer>
 
     <script>
@@ -460,11 +466,12 @@
         const status = document.getElementById("status-message");
 
         form.addEventListener("submit", async function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevents jumping to the Formspree page
             button.disabled = true;
-            button.innerText = "Transmitting...";
+            button.innerText = "Submitting...";
 
             const data = new FormData(event.target);
+            
             fetch(event.target.action, {
                 method: form.method,
                 body: data,
@@ -474,19 +481,20 @@
                     status.style.display = "block";
                     button.style.display = "none";
                     form.reset();
+                    // Optional: Redirect to homepage after 3 seconds
                     setTimeout(() => { window.location.href = "/en/"; }, 3000);
                 } else {
-                    alert("A small system error. Please try sending again.");
+                    alert("A small system error. Please submit again.");
                     button.disabled = false;
-                    button.innerText = "Send & Connect";
+                    button.innerText = "Request Results & Personal Resonance";
                 }
             }).catch(error => {
-                alert("Connection interrupted. Please try again in a moment.");
+                alert("Connection lost. Please try again in a moment.");
                 button.disabled = false;
-                button.innerText = "Send & Connect";
+                button.innerText = "Request Results & Personal Resonance";
             });
         });
     </script>
-            
+
 </body>
 </html>
