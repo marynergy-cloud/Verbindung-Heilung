@@ -418,9 +418,14 @@
                 <textarea name="q11_essenz_mind" class="essenz-input" placeholder="Deine Antwort..." required></textarea>
             </div>
 
-            <div class="form-group">
-                <h3 class="question-title">12. HERZ: Wenn der Weg und der Moment eins sind – wie genau fühlt sich dein Leben dann an?</h3>
+<div class="form-group">
+                <h3 class="question-title">12. HERZ: Was ist die eine Sache, die sich in deinem Leben ab heute radikal ändern muss?</h3>
                 <textarea name="q12_essenz_heart" class="essenz-input" placeholder="Deine Antwort..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <h3 class="question-title">Dein Vorname</h3>
+                <input type="text" name="vorname" class="essenz-input" style="height: 60px;" placeholder="Dein Vorname" required>
             </div>
 
             <div class="form-group">
@@ -430,10 +435,11 @@
 
             <div class="submit-area">
                 <div class="consent-text">
-                    Mit dem Absenden erklärst du dich bereit für den Resonanz-Check und bestätigst den untenstehenden rechtlichen Hinweis zur Praxis.
-                </div>
+    Sende deine Antworten ab. Ich werde deinen Scan persönlich auswerten und dir eine individuelle Audio-/Video-Nachricht senden, in der ich dir konkrete Impulse aus der Praxis gebe, um aktuelle Blockaden zu lösen.<br><br>
+    <span style="font-size: 0.75rem; opacity: 0.7;">Mit dem Absenden erklärst du dich mit der Datenverarbeitung für den Resonanz-Check einverstanden und bestätigst den rechtlichen Hinweis (siehe unten).</span>
+</div>
                 
-                <button type="submit" id="submit-btn" class="btn">Senden & Verbinden</button>
+               <button type="submit" id="submit-btn" class="btn">Ergebnisse & Persönliche Resonanz anfordern</button>
                 <div id="status-message" style="margin-top: 20px; display: none; font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-color);">
                     Danke. Deine Momentaufnahme wurde übertragen.
                 </div>
@@ -480,12 +486,12 @@
                 } else {
                     alert("Ein kleiner Fehler im System. Bitte sende es erneut.");
                     button.disabled = false;
-                    button.innerText = "Senden & Verbinden";
+                   button.innerText = "Ergebnisse & Persönliche Resonanz anfordern";
                 }
             }).catch(error => {
                 alert("Verbindung unterbrochen. Bitte versuche es gleich noch einmal.");
                 button.disabled = false;
-                button.innerText = "Senden & Verbinden";
+                button.innerText = "Ergebnisse & Persönliche Resonanz anfordern";
             });
         });
     </script>
