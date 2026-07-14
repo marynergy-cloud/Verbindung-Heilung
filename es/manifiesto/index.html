@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* --- DESIGN VARIABLES --- */
         :root {
-            --bg-color: #080808; 
+            --bg-color: #0a0c0a; /* Elegante negro bosque profundo para unificar la identidad de marca */
             --text-main: #e0e0e0;
             --text-muted: #888888;
             --accent-color: #2d5a27;
@@ -21,7 +22,9 @@
             --container-width: 800px;
         }
 
+        /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
         body {
             background-color: var(--bg-color);
@@ -30,11 +33,13 @@
             line-height: 1.8;
             font-weight: 300;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* --- NAVIGATION / HEADER --- */
         header {
-            padding: 30px 20px;
+            padding: 40px 24px 20px;
             max-width: var(--container-width);
             margin: 0 auto;
             display: flex;
@@ -45,31 +50,34 @@
         .back-link {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: color 0.3s ease;
         }
-
-        .back-link:hover { color: #fff; }
+        .back-link:hover { color: #ffffff; }
 
         .logo { 
             font-family: var(--font-display); 
             font-size: 1.2rem; 
             letter-spacing: 1px; 
             font-weight: 600; 
-            color: #fff; 
+            color: #ffffff; 
         }
         .kanji { color: var(--accent-color); font-weight: 400; margin-left: 5px; }
 
-        /* Content Container */
+        /* --- CONTENT CONTAINER --- */
         .manifesto-container {
             max-width: var(--container-width);
             margin: 0 auto;
-            padding: 40px 24px 100px;
+            padding: 40px 24px 80px;
+            /* Efecto suave y elegante de aparición gradual al cargar */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        /* Typography */
+        /* --- TYPOGRAPHY --- */
         h1, h2, h3, h4 {
             font-family: var(--font-display);
             color: #ffffff;
@@ -77,56 +85,58 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .subtitle {
             text-align: center;
             color: var(--accent-color);
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 60px;
+            letter-spacing: 2.5px;
+            margin-bottom: 80px;
             font-family: var(--font-body);
+            font-weight: 500;
         }
 
         h2 {
             font-size: 2rem;
-            margin-top: 80px;
+            margin-top: 90px;
             margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             padding-bottom: 15px;
             color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         h3 {
-            font-size: 1.3rem;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            color: #d0d0d0;
+            font-size: 1.4rem;
+            margin-top: 60px;
+            margin-bottom: 24px;
+            color: #e0e0e0;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         h4 {
             font-family: var(--font-body);
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--accent-color);
-            margin-top: 40px;
+            margin-top: 45px;
             margin-bottom: 15px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        p { margin-bottom: 24px; font-size: 1.05rem; }
-        
+        p { margin-bottom: 28px; font-size: 1.05rem; color: #d0d0d0; }
         strong { color: #ffffff; font-weight: 500; }
 
-        /* Quotes */
+        /* --- QUOTES (ELEGANT EDITORIAL LOOK) --- */
         blockquote {
             font-family: var(--font-display);
             font-style: italic;
@@ -134,76 +144,130 @@
             line-height: 1.6;
             color: #ffffff;
             border-left: 2px solid var(--accent-color);
-            padding-left: 30px;
-            margin: 50px 0;
+            padding-left: 35px;
+            margin: 60px 0;
         }
 
         .quote-author {
             display: block;
             font-family: var(--font-body);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--accent-color);
             font-style: normal;
-            margin-top: 15px;
+            margin-top: 18px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 500;
         }
 
-        /* Lists */
+        /* --- LISTS (CLEAN ALIGNMENT) --- */
         ul {
             list-style: none;
             margin-bottom: 40px;
         }
 
         li {
-            margin-bottom: 15px;
-            padding-left: 20px;
+            margin-bottom: 18px;
+            padding-left: 24px;
             position: relative;
             font-size: 1.05rem;
+            color: #d0d0d0;
         }
 
         li::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 0.65em; /* Alinea dinámicamente el marcador con la primera línea de texto */
+            transform: translateY(-50%);
             width: 6px;
             height: 6px;
             background-color: var(--accent-color);
             border-radius: 50%;
         }
 
-        /* Epilogue & Footer */
+        /* --- EPILOGUE & FOOTER --- */
         .epilogue {
             text-align: center;
-            margin-top: 100px;
-            padding-top: 60px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 120px;
+            padding-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .epilogue p { 
+            margin-bottom: 12px; 
+            font-family: var(--font-display); 
+            font-size: 1.6rem; 
+            color: #ffffff;
+            font-style: italic;
+        }
+        .epilogue .kanji-large { 
+            font-size: 4rem; 
+            color: var(--accent-color); 
+            display: block; 
+            margin-top: 40px; 
+            font-style: normal;
         }
 
-        .epilogue p { margin-bottom: 10px; font-family: var(--font-display); font-size: 1.5rem; color: #fff;}
-        .epilogue .kanji-large { font-size: 3rem; color: var(--accent-color); display: block; margin-top: 30px; }
+        /* --- LEGAL DISCLAIMER & FOOTER LINKS --- */
+        .manifesto-footer {
+            margin-top: 60px;
+            text-align: center;
+        }
 
+        .legal-disclaimer {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.35);
+            max-width: 800px;
+            margin: 40px auto 20px;
+            line-height: 1.7;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 25px;
+            font-family: var(--font-body);
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            font-family: var(--font-body);
+        }
+        .footer-links a {
+            color: #888888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+        .footer-links .divider {
+            color: #333333;
+            margin: 0 10px;
+        }
+
+        /* --- LOAD ANIMATION --- */
+        @keyframes textFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
+            header { padding: 30px 20px 10px; }
+            .manifesto-container { padding: 20px 20px 60px; }
+            h1 { font-size: 2.4rem; }
+            .subtitle { margin-bottom: 50px; font-size: 0.8rem; }
             h2 { font-size: 1.6rem; margin-top: 60px; }
-            blockquote { font-size: 1.2rem; padding-left: 20px; margin: 40px 0; }
+            h3 { font-size: 1.2rem; margin-top: 40px; }
+            blockquote { font-size: 1.25rem; padding-left: 20px; margin: 40px 0; }
             p, li { font-size: 1rem; }
+            .epilogue { margin-top: 80px; padding-top: 60px; }
+            .epilogue p { font-size: 1.3rem; }
+            .epilogue .kanji-large { font-size: 3rem; margin-top: 30px; }
         }
-        /* --- LEGAL DISCLAIMER STYLING --- */
-.legal-disclaimer {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.4);
-    max-width: 800px;
-    margin: 40px auto 20px;
-    line-height: 1.6;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    font-family: var(--font-body);
-    text-transform: none;
-    letter-spacing: 0.5px;
-}
     </style>
 </head>
 <body>
@@ -242,7 +306,7 @@
         <p>Quien recorre su camino con autenticidad, se encuentra con la verdad universal.</p>
 
         <h4>La unidad de los opuestos</h4>
-        <p>Los opuestos no son enemigos, sino una unidad. La ciencia medible se une a la profundidad espiritual. La estrategia occidental se encuentra con el silencio del Lejano Oriente. Necesitamos equilibrio: Calma estoica y amor incondicional al prójimo. Necesitamos agudeza: Pragmatismo, estrategia y vigilancia para la libertad. La fuerza no violenta se une a la atención plena pura. El éxito material y la grandeza espiritual no son una contradicción. Todo fluye en conjunto.</p>
+        <p>Los opuestos no son enemigos, sino una unidad. La ciencia medible se une a la profundidad espiritual. La estrategia occidental se encuentra con el silencio del Lejano Oriente. Necesitamos equilibrio: Calma estoica y amor incondicional al prójimo. Necesitamos agudeza: Pragmatismo, estrategia y vigilia para la libertad. La fuerza no violenta se une a la atención plena pura. El éxito material y la grandeza espiritual no son una contradicción. Todo fluye en conjunto.</p>
 
         <blockquote>
             «Pero si alguien sigue verdaderamente un camino, descubrirá puntos en común con personas que siguen otros caminos. Es importante que cada uno practique seria y cuidadosamente en el camino de su elección.»
@@ -295,7 +359,7 @@
             <li><strong>La verdad personal</strong> es el reconocimiento honesto del estado actual (heridas, éxitos, sombras) sin juicios.</li>
             <li><strong>La verdad universal</strong> es el principio eterno. Que detrás de cada experiencia hay un potencial y un orden ilimitados.</li>
         </ul>
-        <p>La sanación surge en esta síntesis: Aceptamos plenamente el presente imperfecto y, al mismo tiempo, reconocemos que no nos define. En esta confluencia asumimos la responsabilidad total.</p>
+        <p>La sanación surge en esta síntesis: Aceptamos plenamente el presente imperfecto y, al mismo tiempo, reconocemos que no nos define. In esta confluencia asumimos la responsabilidad total.</p>
 
         <h4>MÁS ALLÁ DEL EGO</h4>
         <p>La resistencia es el ego. Un constructo de roles y recuerdos que vive en el pasado y en el futuro. Genera separación. La verdadera sanación se encuentra más allá de estos límites. El método no es la lucha, sino la observación: Retírale el liderazgo a la ilusión. La presencia pura disuelve la identificación. Las acciones surgen entonces del núcleo del ser de la naturaleza interior.</p>
@@ -303,8 +367,8 @@
         <h4>HERRAMIENTAS PARA LA LIBERACIÓN</h4>
         <p>Dos rutinas disuelven la ilusión de separación:</p>
         <ul>
-            <li><strong>La observación atenta.</strong> Reconoce los pensamientos como fenómenos pasajeros. El principio rector: «Tengo este pensamiento, pero yo no soy este pensamiento.»</li>
-            <li><strong>El ancla (la respiración).</strong> Te centra en el aquí y el ahora.</li>
+            <li><strong>La observación atenta:</strong> Reconoce los pensamientos como fenómenos pasajeros. El principio rector: «Tengo este pensamiento, pero yo no soy este pensamiento.»</li>
+            <li><strong>El ancla (la respiración):</strong> Te centra en el aquí y el ahora.</li>
         </ul>
         <p>En esta presencia absoluta, el falso yo no encuentra asidero y se disuelve.</p>
 
@@ -331,7 +395,7 @@
         <h4>INDIVIDUALIDAD</h4>
         <p>Elige con claridad. No adoptes métodos a ciegas, sino encuentra herramientas que resuenen con tu propia naturaleza.</p>
         
-        <blockquote>
+        blockquote>
             «No se debe preferir un arma a otra. Lo mismo se aplica a todas las cosas de la vida. Uno debe elegir su arma de forma que se adapte a uno mismo, y no debe intentar imitar a los demás.»
             <span class="quote-author">— Miyamoto Musashi, El libro de los cinco anillos</span>
         </blockquote>
@@ -349,7 +413,7 @@
             <li><strong>Atención plena:</strong> La renuncia consciente fortalece la disciplina. Los impulsos se observan, no se siguen a ciegas. Este es un paso decisivo hacia la soberanía interior.</li>
         </ul>
 
-        <h4>PAUSAS MENTALES: SOBERANÍA MENTAl</h4>
+        <h4>PAUSAS MENTALES: SOBERANÍA MENTAL</h4>
         <p>Vivimos en una era de bombardeo constante. La información sin filtrar provoca sobrecarga y dispersión. La solución es la soberanía mental. Desconectar conscientemente crea espacio de inmediato. Rompe la disponibilidad constante y dale descanso al sistema nervioso. Silencio: Solo cuando el ruido exterior se apaga, el ruido interior se calma. El silencio no es una carencia, sino el requisito previo para la claridad.</p>
 
         <h4>LA FERTILIDAD DEL VACÍO</h4>
@@ -460,7 +524,7 @@
             <span class="quote-author">— Marco Aurelio, Meditaciones</span>
         </blockquote>
         
-        <p>El verdadero poder reside únicamente en lo que controlamos: los juicios y las decisiones. El exterior no es fiable. El verdadero cambio comienza con la responsabilidad total. No existe la mentalidad de víctima, solo el poder creativo.</p>
+        <p>El verdadero cambio comienza con la responsabilidad total. No existe la mentalidad de víctima, solo el poder creativo.</p>
 
         <h4>LA DICOTOMÍA DEL CONTROL</h4>
         <p>Distingue claramente entre dos áreas:</p>
@@ -498,7 +562,7 @@
         
         <p>En momentos de estrés, cuando el ego busca tomar el control, utiliza la respiración como palanca. Te devuelve a la claridad.</p>
 
-        <h4>EL PAPEL DE LA RESPIRACIÓN EN EL SISTEMA</h4>
+        <h4>EL PAPEL DE LA RESPIRACIÓN IN EL SISTEMA</h4>
         <ul>
             <li><strong>En la vida cotidiana:</strong> La respiración profunda calma el sistema y despeja la mente. El estrés se transforma en energía concentrada.</li>
             <li><strong>En el entrenamiento:</strong> La respiración es el combustible. Dirige directamente el rendimiento y la regeneración del cuerpo.</li>
@@ -531,13 +595,13 @@
             <li><strong>EL DIRECTOR:</strong> Cuando el espacio esté abierto, asume el liderazgo. Dirige el enfoque hacia el objetivo. Elige la acción que se corresponda con los valores. No seas un juguete de los impulsos. Sé soberano.</li>
         </ul>
 
-        <h4>LA ESENCIA DE LA PRESENCIA</h4>
+        <h4>DAS WESEN DER PRÄSENZ</h4>
         <p>La disciplina más elevada reza: «Dondequiera que estés, está allí totalmente». Cuando la mente, el cuerpo y el corazón se concentran, surge la atención plena. Practica el «no pensar» en la naturaleza o mantente en meditación. Haz higiene mental mediante tiempos de desconexión (offline). Solo una mente descansada puede observar con claridad y dirigir con sabiduría.</p>
 
         <h3>3.5 EL VACÍO: LIBERTAD MÁS ALLÁ DE LAS REGLAS</h3>
 
         <h4>LOS NIVELES DE LA MAESTRÍA</h4>
-        <p>Las rutinas (por ejemplo, el ayuno, el trabajo de respiración, el entrenamiento físico) son la base. Sirven para moldear el carácter hasta que la actitud (disciplina) ya no tenga que ser forzada, sino que surja orgánicamente. La verdadera libertad no reside en abandonar la forma, sino en el dominio de la forma hasta que se vuelva invisible. El camino pasó por la Conexión, el Crecimiento y la Práctica. Pero el objetivo no es la regla. El objetivo es la liberación de todos los sistemas. La cima de la práctica es dejar ir la práctica. El regreso al Vacío.</p>
+        <p>Las rutinas (por ejemplo, el ayuno, el trabajo de respiración, el entrenamiento físico) son la base. Sirven para moldear el carácter hasta que la actitud (disiplina) ya no tenga que ser forzada, sino que surja orgánicamente. La verdadera libertad no reside en abandonar la forma, sino en el dominio de la forma hasta que se vuelva invisible. El camino pasó por la Conexión, el Crecimiento y la Práctica. Pero el objetivo no es la regla. El objetivo es la liberación de todos los sistemas. La cima de la práctica es dejar ir la práctica. El regreso al Vacío.</p>
 
         <h4>LA MAESTRÍA DEL VACÍO</h4>
         <p>La verdadera estrategia no tiene forma.</p>
@@ -603,11 +667,10 @@
             <li><strong>La Biblia:</strong> El libro de ejemplos y advertencias. Muestra modelos a seguir. Muestra a los que se perdieron. Ambas partes son cruciales para la orientación.</li>
         </ul>
 
-        <p><strong>Personalidades inspiradoras:</strong><br>
-        Estas personalidades son más que historia. Son encarnaciones de energía y principios.</p>
+        <p><strong>Personalidades inspiradoras:</strong></p>
         <ul>
             <li><strong>Buda:</strong> El camino del desapego. Las enseñanzas son herramientas, no posesiones. La espiritualidad no es una carga, sino liberación. Suelta para vivir.</li>
-            <li><strong>Jesús:</strong> La encarnación del amor. Compasión, perdón, incondicionalidad. Acércate a los demás con empatía. Vive un amor más allá del juicio y el miedo.</li>
+            <li><strong>Jesús:</strong> El encarnación del amor. Compasión, perdón, incondicionalidad. Acércate a los demás con empatía. Vive un amor más allá del juicio y el miedo.</li>
             <li><strong>Confucio:</strong> Ética e integridad. Sabiduría a través de la autorreflexión. Un ancla para la acción moral en tiempos tormentosos.</li>
             <li><strong>Lao-Tse:</strong> Armonía y Wu Wei. El Dao. Actuar a través del no-actuar. Vive con sencillez. No luches contra la corriente.</li>
             <li><strong>Heráclito:</strong> Cambio. Panta Rhei - Todo fluye. Unidad de los opuestos. Acepta la inevitabilidad de la transformación.</li>
@@ -683,23 +746,23 @@
         </ul>
 
         <div class="epilogue">
-            <p>Intuición > Cálculo.</p>
+            <p>Intuición &gt; Cálculo.</p>
             <p>Corazón y Mente: Uno.</p>
             <p>Gratitud.</p>
             <p>Amor</p>
             <span class="kanji-large">愛</span>
         </div>
-        <footer><div class="legal-disclaimer">
-    <strong>Aviso importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la integralidad. Queda expresamente aclarado que no constituye un tratamiento médico, terapéutico o psiquiátrico, ni una promesa de curación o diagnóstico en sentido legal o médico. Esta práctica no sustituye la consulta a un médico o profesional de la salud.
-</div>
-            </div>
-    <div style="margin-top: 30px; font-size: 0.8rem;">
-            <a href="/aviso-legal.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Aviso-legal</a> 
-            <span style="color: #555; margin: 0 10px;">|</span> 
-            <a href="/privacidad.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Privacidad</a>
-        </div>
-        </footer>
 
+        <footer class="manifesto-footer">
+            <div class="legal-disclaimer">
+                <strong>Aviso importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la integralidad. Queda expresamente aclarado que no constituye un tratamiento médico, terapéutico o psiquiátrico, ni una promesa de curación o diagnóstico en sentido legal o médico. Esta práctica no sustituye la consulta a un médico o profesional de la salud.
+            </div>
+            <div class="footer-links">
+                <a href="/aviso-legal.html">Aviso-legal</a> 
+                <span class="divider">|</span> 
+                <a href="/privacidad.html">Privacidad</a>
+            </div>
+        </footer>
     </main>
 
 </body>
