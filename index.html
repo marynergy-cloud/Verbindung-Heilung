@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marynergy 愛 | Verbindung. Heilung. Wachstum.</title>
+    <title>Marynergy 愛 | Holistisches Mentoring, Klarheit & Energiepraxis</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-    <meta name="description" content="Marynergy ist die integrative Praxis für Verbindung, Heilung und Wachstum. Vereine physische Stärke, mentale Klarheit und universelle Energie.">
+    <meta name="description" content="Löse mentale Erschöpfung, Stress und Orientierungslosigkeit. Marynergy vereint physische Stärke, mentale Klarheit und universelle Energiepraxis.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
         html { scroll-behavior: smooth; }
         
         body {
-            background-color: #f7f7f7; /* Helles Fallback schützt vor Kontrastproblemen, während das Video lädt */
+            background-color: #f7f7f7;
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
@@ -134,7 +134,6 @@
 
         .kanji { color: var(--accent-color); font-weight: 400; margin-left: 5px; }
 
-        /* Hauptnavigation Styling */
         .main-nav {
             display: flex;
             align-items: center;
@@ -171,7 +170,6 @@
             color: var(--accent-color);
         }
 
-        /* Dezenter CTA-Button in der Navigation */
         .main-nav a.nav-cta {
             background-color: var(--accent-color);
             color: #ffffff !important;
@@ -207,7 +205,6 @@
         .lang-switch a:hover { color: var(--accent-color); }
         .lang-switch .active { color: var(--accent-color); cursor: default; }
 
-        /* Mobile Hamburger Toggle */
         .mobile-nav-toggle {
             display: none;
             background: none;
@@ -243,21 +240,38 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 40px; 
+            gap: 32px; 
+            max-width: 850px;
+            margin: 0 auto;
         }
         .hero h1 { 
-            font-size: 4rem; 
+            font-size: 3.8rem; 
             letter-spacing: -1px; 
             text-shadow: 0 0 30px rgba(255,255,255,0.95); 
+            line-height: 1.15;
         }
         .hero p { 
-            font-size: 1.3rem; 
+            font-size: 1.25rem; 
             color: #1a1a1a; 
-            max-width: 720px; 
+            max-width: 740px; 
             margin: 0 auto;
             font-weight: 500; 
             line-height: 1.6; 
             text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 0.9); 
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero-secondary-btn {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.4);
         }
 
         /* --- BUTTONS --- */
@@ -491,10 +505,11 @@
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             .hero { padding: 120px 0 60px; }
-            .hero h1 { font-size: 2.5rem; line-height: 1.1; }
+            .hero h1 { font-size: 2.4rem; line-height: 1.15; }
             .hero-content { gap: 24px; }
             .hero p { font-size: 1.1rem; }
-            .btn { width: 100%; max-width: 300px; }
+            .hero-cta-wrapper { flex-direction: column; width: 100%; }
+            .btn { width: 100%; max-width: 100%; }
             .grid { gap: 40px; }
             .quote-section { padding: 80px 0; } 
             blockquote { font-size: 1.5rem; }
@@ -523,10 +538,8 @@
 
     <header>
         <div class="container header-container">
-            <!-- Logo -->
             <a href="/" class="logo">Marynergy<span class="kanji">愛</span></a>
 
-            <!-- Hauptnavigation -->
             <nav class="main-nav" id="main-nav">
                 <a href="#ueber-mary">Über Mary</a>
                 <a href="/flow/">Flow</a>
@@ -534,7 +547,6 @@
                 <a href="#kontakt" class="nav-cta">Erstgespräch</a>
             </nav>
 
-            <!-- Rechte Seite: Sprachwechsler & Mobile-Toggle -->
             <div class="header-right">
                 <div class="lang-switch">
                     <span class="active">DE</span> | <a href="/en/">EN</a> | <a href="/es/">ES</a>
@@ -552,8 +564,18 @@
     <main>
         <section class="hero">
             <div class="container hero-content">
-                <h1>Verbindung. Heilung.<br>Wachstum.</h1>
-                <p>Marynergy ist gelebte Praxis.<br>Vereine physische Stärke, mentale Klarheit und universelle Energie.</p>
+                <h1>Aus mentaler Erschöpfung<br>in unerschütterliche Klarheit.</h1>
+                <p>
+                    Löse Stress, mentale Blockaden und innere Unruhe. Marynergy vereint holistisches Mentoring, physische Stärke und intuitive Energiepraxis für deine persönliche Transformation.
+                </p>
+                <div class="hero-cta-wrapper">
+                    <a href="https://calendly.com/marynergy/marynergy-kennenlerngesprach-1-1-video-call" target="_blank" rel="noopener" class="btn">
+                        Erstgespräch vereinbaren
+                    </a>
+                    <a href="#ueber-mary" class="btn btn-outline hero-secondary-btn">
+                        Mehr erfahren
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -652,7 +674,6 @@
                 mainNav.classList.toggle('active');
             });
 
-            // Schließt das Menü mobil nach dem Klick auf einen Link
             document.querySelectorAll('.main-nav a').forEach(link => {
                 link.addEventListener('click', () => {
                     mainNav.classList.remove('active');
@@ -666,7 +687,6 @@
 
         function toggleSound() {
             if (music.paused) {
-                // Fängt die Promise ab, um unschöne Autoplay-Blocking-Fehler in Browsern zu vermeiden
                 music.play()
                     .then(() => {
                         soundBtn.innerHTML = "🔇 Sound ausschalten"; 
@@ -688,7 +708,6 @@
         gsap.registerPlugin(ScrollTrigger);
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Animiert die 4 Säulen nacheinander (Stagger), sobald sie im Viewport erscheinen
             gsap.from(".pillar-card", {
                 opacity: 0,
                 y: 40,
