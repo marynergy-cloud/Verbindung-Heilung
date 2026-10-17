@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://marynergy.com/</loc></url>
-  
-  <url><loc>https://marynergy.com/en.html</loc></url>
-  <url><loc>https://marynergy.com/flow.html</loc></url>
-  <url><loc>https://marynergy.com/flow-en.html</loc></url>
+    <url>
+        <loc>https://maryqi.com/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/en/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/es/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/manifest/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/en/manifesto/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/es/manifiesto/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/flow/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/flow-en/</loc>
+    </url>
+    <url>
+        <loc>https://maryqi.com/flow-es/</loc>
+    </url>
 </urlset>
