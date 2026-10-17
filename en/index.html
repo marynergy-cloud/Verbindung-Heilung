@@ -3,38 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow"> 
     <title>Marynergy 愛 | Connection. Healing. Growth.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="description" content="Marynergy is the integrative practice for connection, healing, and growth. Unite physical strength, mental clarity, and universal energy.">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marynergy.com/en/">
+    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Marynergy 愛 | Connection. Healing. Growth.">
-    <meta property="og:description" content="The lived unity of body, mind, and heart. Experience the Marynergy philosophy for inner freedom, physical strength, and the union of strategy and stillness.">
-    <meta property="og:image" content="https://marynergy.com/preview-image.jpg">
+    <meta property="og:description" content="The integrative practice for connection, healing, and growth. Unite physical strength, mental clarity, and universal energy.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Marynergy 愛">
-    <meta property="twitter:description" content="Connection. Healing. Growth.">
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+    <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "WebSite",
       "name": "Marynergy",
       "url": "https://marynergy.com/en/",
-      "logo": "https://marynergy.com/logo.png",
-      "description": "Integrative practice for connection, healing, and growth. A multidisciplinary approach to uniting physical strength, mental clarity, and universal energy.",
-      "founder": {
-        "@type": "Person",
-        "name": "William | Marynergy" 
-      }
+      "inLanguage": "en",
+      "description": "The integrative practice for connection, healing, and growth."
     }
     </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         /* --- DESIGN VARIABLES --- */
@@ -56,7 +51,7 @@
         html { scroll-behavior: smooth; }
         
         body {
-            background-color: #f7f7f7; /* Prevents dark-on-dark contrast issues before the video loads */
+            background-color: #f7f7f7;
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
@@ -337,30 +332,18 @@
             background-color: rgba(15, 17, 15, 0.95); 
             backdrop-filter: blur(10px); 
             color: #fff; 
-            padding: 120px 0 60px; 
+            padding: 100px 0 60px; 
             text-align: center; 
             margin-top: auto; 
         }
-        .cta-footer h2 { font-size: 3rem; margin-bottom: 24px; color: #fff; }
+        .cta-footer h2 { font-size: 2.5rem; margin-bottom: 16px; color: #fff; }
         
-        .contact-trigger-wrapper { margin: 30px 0 40px; }
-        .contact-subline { 
-            font-size: 0.75rem; 
-            color: #666; 
-            margin-top: 12px; 
-            font-style: italic; 
-            letter-spacing: 0.5px; 
-            text-transform: uppercase; 
-        }
-
         .footer-email { 
             display: block; 
-            margin-top: 30px; 
-            margin-bottom: 15px; 
+            margin: 40px 0 15px; 
             color: #888; 
             font-size: 1rem; 
             letter-spacing: 0.5px; 
-            word-wrap: break-word; 
         }
         .footer-email:hover { color: #fff; text-decoration: underline; }
         
@@ -372,7 +355,6 @@
             line-height: 1.6; 
             margin-bottom: 30px; 
         }
-        .footer-note a { color: #888; text-decoration: none; }
 
         .legal-disclaimer {
             font-size: 0.7rem;
@@ -384,8 +366,6 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
             font-family: var(--font-body);
-            text-transform: none;
-            letter-spacing: 0.5px;
         }
 
         .footer-links { margin-top: 30px; font-size: 0.8rem; }
@@ -414,8 +394,7 @@
             blockquote { font-size: 1.5rem; }
             .praxis { padding: 60px 0; }
             .cta-footer { padding: 80px 0 40px; } 
-            .cta-footer h2 { font-size: 2.2rem; } 
-            .footer-email { margin-top: 30px; }
+            .cta-footer h2 { font-size: 2rem; } 
         }
     </style>
 </head>
@@ -431,17 +410,15 @@
         <source src="/nature-sound.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="sound-toggle">
-        🔊 Turn Sound On
+    <button id="sound-toggle" aria-label="Toggle sound playback">
+        🔊 Enable Sound
     </button>
 
     <header>
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
             <nav class="lang-switch">
-                <a href="/">DE</a> | 
-                <span class="active">EN</span> | 
-                <a href="/es/">ES</a>
+                <a href="/">DE</a> | <span class="active">EN</span> | <a href="/es/">ES</a>
             </nav>
         </div>
     </header>
@@ -459,7 +436,7 @@
                 <div class="grid">
                     <div class="pillar-card">
                         <h3>Connection</h3>
-                        <p>The deepest connection is our nature: we overcome the illusion of separation and find our way back to the unity of body, mind, and heart.</p>
+                        <p>The deepest connection is our nature: we overcome the illusion of separation and return to the unity of body, mind, and heart.</p>
                     </div>
                     <div class="pillar-card">
                         <h3>Healing</h3>
@@ -467,11 +444,11 @@
                     </div>
                     <div class="pillar-card">
                         <h3>Growth</h3>
-                        <p>Education is unfolding: body, character, and mind are cultivated – from pure knowledge to true wisdom.</p>
+                        <p>Education is unfolding: body, character, and intellect are cultivated – from pure knowledge to true wisdom.</p>
                     </div>
                     <div class="pillar-card">
                         <h3>Practice</h3>
-                        <p>Philosophy becomes action: through conscious control of action, substance, and heaven &amp; earth, insight transforms into tangible freedom.</p>
+                        <p>Philosophy becomes action: through conscious control of action, substance, and heaven & earth, knowledge transforms into tangible freedom.</p>
                     </div>
                 </div>
             </div>
@@ -479,7 +456,7 @@
 
         <section class="quote-section">
             <div class="container">
-                <blockquote>"Wherever you are,<br>be all there."</blockquote>
+                <blockquote>“Wherever you are,<br>be there totally.”</blockquote>
                 <cite>— Marynergy</cite>
             </div>
         </section>
@@ -488,7 +465,7 @@
             <div class="container">
                 <div class="praxis-cta">
                     <p>Expression through music, dance, and QiDance.</p>
-                    <a href="/flow-en/" class="btn btn-outline">Marynergy Flow</a>
+                    <a href="/en/flow/" class="btn btn-outline">Marynergy Flow</a>
                 </div>
             </div>
         </section>
@@ -496,43 +473,38 @@
 
     <section class="manifest-section">
         <div class="container">
-            <a href="/en/manifesto/" class="manifest-btn">
+            <a href="/en/manifest/" class="manifest-btn">
                 The Manifesto
             </a>
         </div>
     </section>
 
-    <footer id="contact" class="cta-footer">
+    <footer id="kontakt" class="cta-footer">
         <div class="container">
-            <h2>Recognize your nature</h2>
-
-           <div class="contact-trigger-wrapper">
-    <a href="https://calendly.com/marynergy/marynergy-kennenlerngesprach-1-1-video-call?locale=en" target="_blank" rel="noopener" class="btn">
-        Book a session
-    </a>
-</div>
-                <p class="contact-subline">
-                    Grounding • First Practice • Individual Routine Plan
-                </p>
-            </div>
+            <h2>Recognize Your Nature</h2>
             
-            <div>
-                <a href="mailto:connect@marynergy.com" class="footer-email">connect@marynergy.com</a>
-                <div class="footer-note">
-                    Intuition &gt; Calculation. Heart &amp; Mind: One.<br><br>
-                    <a href="/flow-en/">Marynergy Flow</a><br>
-                    &copy; 2026 Marynergy
-                </div>
+            <div style="margin-top: 20px;">
+                <a href="mailto:connect@marynergy.com" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+                    Get in Touch
+                </a>
+            </div>
+
+            <div class="footer-email">connect@marynergy.com</div>
+            
+            <div class="footer-note">
+                Intuition &gt; Calculus. Heart &amp; Mind: One.<br><br>
+                <a href="/en/flow/" style="color: #888; text-decoration: none;">Marynergy Flow</a><br>
+                &copy; 2026 Marynergy
             </div>
 
             <div class="legal-disclaimer">
-                <strong>Important Notice:</strong> Marynergy is a life philosophy and practice for mental and physical development. The term 'healing' refers exclusively to holism. It expressly does not constitute medical, therapeutic, or psychiatric treatment, promises of healing, or diagnoses in a medical or legal sense. This practice does not replace a visit to a doctor or medical professional.
+                <strong>Important Note:</strong> Marynergy is a life philosophy and practice for mental and physical unfolding. The term 'healing' refers exclusively to holism. It is expressly not a medical, therapeutic, or psychiatric treatment, healing promise, or diagnosis within the meaning of medical laws. The practice does not replace a doctor's visit.
             </div>
 
             <div class="footer-links">
-                <a href="/imprint.html">Imprint</a> 
+                <a href="/en/imprint.html">Imprint</a> 
                 <span class="divider">|</span> 
-                <a href="/privacy.html">Privacy</a>
+                <a href="/en/privacy.html">Privacy Policy</a>
             </div>
         </div> 
     </footer>
@@ -547,17 +519,16 @@
 
         function toggleSound() {
             if (music.paused) {
-                // Prevent browser autoplay-blocking errors programmatically
                 music.play()
                     .then(() => {
-                        soundBtn.innerHTML = "🔇 Turn Sound Off"; 
+                        soundBtn.innerHTML = "🔇 Disable Sound"; 
                     })
                     .catch(err => {
-                        console.warn("Audio playback was blocked by the browser. Interact with the page first.", err);
+                        console.warn("Audio playback was blocked by the browser.", err);
                     });
             } else {
                 music.pause();
-                soundBtn.innerHTML = "🔊 Turn Sound On"; 
+                soundBtn.innerHTML = "🔊 Enable Sound"; 
             }
         }
 
@@ -569,7 +540,6 @@
         gsap.registerPlugin(ScrollTrigger);
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Animate the 4 cards sequentially (Stagger) as they enter the viewport
             gsap.from(".pillar-card", {
                 opacity: 0,
                 y: 40,
