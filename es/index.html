@@ -3,42 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow"> 
     <title>Marynergy 愛 | Conexión. Sanación. Crecimiento.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-    <meta name="description" content="Marynergy es la práctica integrativa para la conexión, la sanación y el crecimiento. Unifica la fuerza física, la claridad mental y la energía universal.">
+    <meta name="description" content="Marynergy es la práctica integradora para la conexión, la sanación y el crecimiento. Une la fuerza física, la claridad mental y la energía universal.">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marynergy.com/es/">
+    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Marynergy 愛 | Conexión. Sanación. Crecimiento.">
-    <meta property="og:description" content="La unidad vivida de cuerpo, mente y corazón. Experimenta la filosofía de Marynergy para la libertad interior, la fuerza física y la conexión entre estrategia y silencio.">
-    <meta property="og:image" content="https://marynergy.com/preview-image.jpg">
+    <meta property="og:description" content="La práctica integradora para la conexión, la sanación y el crecimiento. Une la fuerza física, la claridad mental y la energía universal.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Marynergy 愛">
-    <meta property="twitter:description" content="Conexión. Sanación. Crecimiento.">
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <!-- Schema.org / JSON-LD -->
+    <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "WebSite",
       "name": "Marynergy",
       "url": "https://marynergy.com/es/",
-      "logo": "https://marynergy.com/logo.png",
-      "description": "Práctica integrativa para la conexión, la sanación y el crecimiento. Un enfoque multidisciplinar para unificar la fuerza física, la claridad mental y la energía universal.",
-      "founder": {
-        "@type": "Person",
-        "name": "William | Marynergy" 
-      }
+      "inLanguage": "es",
+      "description": "La práctica integradora para la conexión, sanación y crecimiento."
     }
     </script>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         /* --- DESIGN VARIABLES --- */
@@ -60,7 +51,7 @@
         html { scroll-behavior: smooth; }
         
         body {
-            background-color: #f7f7f7; /* Fondo claro de seguridad para evitar problemas de contraste mientras carga el video */
+            background-color: #f7f7f7;
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.7;
@@ -341,30 +332,18 @@
             background-color: rgba(15, 17, 15, 0.95); 
             backdrop-filter: blur(10px); 
             color: #fff; 
-            padding: 120px 0 60px; 
+            padding: 100px 0 60px; 
             text-align: center; 
             margin-top: auto; 
         }
-        .cta-footer h2 { font-size: 3rem; margin-bottom: 24px; color: #fff; }
+        .cta-footer h2 { font-size: 2.5rem; margin-bottom: 16px; color: #fff; }
         
-        .contact-trigger-wrapper { margin: 30px 0 40px; }
-        .contact-subline { 
-            font-size: 0.75rem; 
-            color: #666; 
-            margin-top: 12px; 
-            font-style: italic; 
-            letter-spacing: 0.5px; 
-            text-transform: uppercase; 
-        }
-
         .footer-email { 
             display: block; 
-            margin-top: 30px; 
-            margin-bottom: 15px; 
+            margin: 40px 0 15px; 
             color: #888; 
             font-size: 1rem; 
             letter-spacing: 0.5px; 
-            word-wrap: break-word; 
         }
         .footer-email:hover { color: #fff; text-decoration: underline; }
         
@@ -387,8 +366,6 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
             font-family: var(--font-body);
-            text-transform: none;
-            letter-spacing: 0.5px;
         }
 
         .footer-links { margin-top: 30px; font-size: 0.8rem; }
@@ -417,14 +394,12 @@
             blockquote { font-size: 1.5rem; }
             .praxis { padding: 60px 0; }
             .cta-footer { padding: 80px 0 40px; } 
-            .cta-footer h2 { font-size: 2.2rem; } 
-            .footer-email { margin-top: 30px; }
+            .cta-footer h2 { font-size: 2rem; } 
         }
     </style>
 </head>
 <body>
 
-    <!-- Video y audio nativos de HTML5 para un rendimiento óptimo -->
     <div class="video-background-wrapper">
         <video autoplay muted loop playsinline id="main-bg-video" poster="/preview-image.jpg">
             <source src="/nature-video.mp4" type="video/mp4">
@@ -435,8 +410,7 @@
         <source src="/nature-sound.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Botón intuitivo para el control de sonido -->
-    <button id="sound-toggle">
+    <button id="sound-toggle" aria-label="Activar/Desactivar sonido">
         🔊 Activar sonido
     </button>
 
@@ -444,128 +418,113 @@
         <div class="container">
             <div class="logo">Marynergy<span class="kanji">愛</span></div>
             <nav class="lang-switch">
-                <a href="/">DE</a> | 
-                <a href="/en/">EN</a> | 
-                <span class="active">ES</span>
+                <a href="/">DE</a> | <a href="/en/">EN</a> | <span class="active">ES</span>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Sección Hero -->
         <section class="hero">
             <div class="container hero-content">
                 <h1>Conexión. Sanación.<br>Crecimiento.</h1>
-                <p>Marynergy es práctica vivida.<br>Unifica la fuerza física, la claridad mental y la energía universal.</p>
+                <p>Marynergy es práctica vivida.<br>Une la fuerza física, la claridad mental y la energía universal.</p>
             </div>
         </section>
 
-        <!-- Sección Pilares -->
         <section class="pillars">
             <div class="container">
                 <div class="grid">
                     <div class="pillar-card">
                         <h3>Conexión</h3>
-                        <p>La conexión más profunda es nuestra naturaleza: superamos la ilusión de separación y reencontramos la unidad de cuerpo, mente y corazón.</p>
+                        <p>La conexión más profunda es nuestra naturaleza: superamos la ilusión de la separación y volvemos a la unidad de cuerpo, mente y corazón.</p>
                     </div>
                     <div class="pillar-card">
                         <h3>Sanación</h3>
-                        <p>La sanación es el valor de la verdad: nos liberamos a través del silencio y creamos espacio para la fuerza primordial.</p>
+                        <p>La sanación es el valor de la verdad: nos liberamos a través del silencio y creamos espacio para la fuerza primigenia.</p>
                     </div>
                     <div class="pillar-card">
                         <h3>Crecimiento</h3>
-                        <p>La formación es despliegue: se cultivan el cuerpo, el carácter y la mente, pasando del mero conocimiento a la verdadera sabiduría.</p>
+                        <p>La educación es despliegue: el cuerpo, el carácter y el intelecto se cultivan, pasando del conocimiento puro a la verdadera sabiduría.</p>
                     </div>
                     <div class="pillar-card">
                         <h3>Práctica</h3>
-                        <p>La filosofía se hace acción: a través de la dirección consciente de la acción, la sustancia y el cielo y la tierra, el conocimiento se transforma en libertad tangible.</p>
+                        <p>La filosofía se convierte en acción: mediante el control consciente de la acción, la sustancia y el cielo y la tierra, el conocimiento se transforma en libertad tangible.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Cita -->
         <section class="quote-section">
             <div class="container">
-                <blockquote>«Dondequiera que estés,<br>está allí totalmente.»</blockquote>
+                <blockquote>„Dondequiera que estés,<br>sé completamente allí.“</blockquote>
                 <cite>— Marynergy</cite>
             </div>
         </section>
         
-        <!-- Sección Práctica -->
         <section class="praxis">
             <div class="container">
                 <div class="praxis-cta">
-                    <p>Expresión a través de la música, el baile y el QiDance.</p>
-                    <a href="/flow-es/" class="btn btn-outline">Marynergy Flow</a>
+                    <p>Expresión a través de la música, la danza y el QiDance.</p>
+                    <a href="/es/flow/" class="btn btn-outline">Marynergy Flow</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Sección Botón Manifiesto -->
     <section class="manifest-section">
         <div class="container">
-            <a href="/es/manifiesto/" class="manifest-btn">
+            <a href="/es/manifest/" class="manifest-btn">
                 El Manifiesto
             </a>
         </div>
     </section>
 
-    <!-- Footer y Contacto -->
-    <footer id="contacto" class="cta-footer">
+    <footer id="kontakt" class="cta-footer">
         <div class="container">
             <h2>Reconoce tu naturaleza</h2>
-
-            <div class="contact-trigger-wrapper">
-    <a href="https://calendly.com/marynergy/marynergy-kennenlerngesprach-1-1-video-call?locale=es" target="_blank" rel="noopener" class="btn">
-        Reservar una cita
-    </a>
-</div>
-                <p class="contact-subline">
-                    Centrado • Primera Práctica • Plan de Rutina Individual
-                </p>
-            </div>
             
-            <div>
-                <a href="mailto:connect@marynergy.com" class="footer-email">connect@marynergy.com</a>
-                <div class="footer-note">
-                    Intuición &gt; Cálculo. Corazón y Mente: Uno.<br><br>
-                    <a href="/flow-es/" style="color: #888; text-decoration: none;">Marynergy Flow</a><br>
-                    &copy; 2026 Marynergy
-                </div>
+            <div style="margin-top: 20px;">
+                <a href="mailto:connect@marynergy.com" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+                    Contactar
+                </a>
+            </div>
+
+            <div class="footer-email">connect@marynergy.com</div>
+            
+            <div class="footer-note">
+                Intuición &gt; Cálculo. Corazón y Mente: Uno.<br><br>
+                <a href="/es/flow/" style="color: #888; text-decoration: none;">Marynergy Flow</a><br>
+                &copy; 2026 Marynergy
             </div>
 
             <div class="legal-disclaimer">
-                <strong>Aviso importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la integralidad. Queda expresamente aclarado que no constituye un tratamiento médico, terapéutico o psiquiátrico, ni una promesa de curación o diagnóstico en sentido legal o médico. Esta práctica no sustituye la consulta a un médico o profesional de la salud.
+                <strong>Nota importante:</strong> Marynergy es una filosofía de vida y una práctica para el desarrollo mental y físico. El término 'sanación' se refiere exclusivamente a la holística. Expresamente no constituye un tratamiento médico, terapéutico o psiquiátrico, ni promesas de curación o diagnósticos en el sentido de las leyes de salud. La práctica no sustituye la visita a un médico.
             </div>
 
             <div class="footer-links">
-                <a href="/aviso-legal.html">Aviso-legal</a> 
+                <a href="/es/imprint.html">Aviso Legal</a> 
                 <span class="divider">|</span> 
-                <a href="/privacidad.html">Privacidad</a>
+                <a href="/es/privacy.html">Política de Privacidad</a>
             </div>
         </div> 
     </footer>
 
-    <!-- Librería de Animaciones GSAP y Scripts personalizados -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
-        // --- CONTROL DE AUDIO MULTIMEDIA ---
+        // --- MULTIMEDIA SOUND TOGGLE ---
         const soundBtn = document.getElementById('sound-toggle');
         const music = document.getElementById('bg-music');
 
         function toggleSound() {
             if (music.paused) {
-                // Se gestiona la promesa de reproducción para prevenir bloqueos de autoplay en navegadores modernos
                 music.play()
                     .then(() => {
                         soundBtn.innerHTML = "🔇 Desactivar sonido"; 
                     })
                     .catch(err => {
-                        console.warn("La reproducción de audio fue bloqueada por el navegador. Interactúa primero con la página.", err);
+                        console.warn("La reproducción de audio fue bloqueada por el navegador.", err);
                     });
             } else {
                 music.pause();
@@ -577,11 +536,10 @@
             soundBtn.addEventListener('click', toggleSound);
         }
 
-        // --- ANIMACIONES GSAP SCROLL-TRIGGER ---
+        // --- GSAP SCROLL-TRIGGER ANIMATIONS ---
         gsap.registerPlugin(ScrollTrigger);
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Animación secuencial (staggered) de las tarjetas de pilares al entrar en pantalla
             gsap.from(".pillar-card", {
                 opacity: 0,
                 y: 40,
