@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Optional in der Schwebephase: Hält Suchmaschinen vorerst dezent zurück -->
     <meta name="robots" content="index, follow"> 
     <title>Marynergy 愛 | Verbindung. Heilung. Wachstum.</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta name="description" content="Marynergy ist die integrative Praxis für Verbindung, Heilung und Wachstum. Vereine physische Stärke, mentale Klarheit und universelle Energie.">
 
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Marynergy 愛 | Verbindung. Heilung. Wachstum.">
+    <meta property="og:description" content="Die integrative Praxis für Verbindung, Heilung und Wachstum. Vereine physische Stärke, mentale Klarheit und universelle Energie.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Marynergy",
+      "url": "https://marynergy.com",
+      "inLanguage": "de",
+      "description": "Die integrative Praxis für Verbindung, Heilung und Wachstum."
+    }
+    </script>
 
     <style>
         /* --- DESIGN VARIABLES --- */
@@ -309,7 +327,7 @@
             box-shadow: 0 4px 15px rgba(255,255,255,0.1);
         }
 
-        /* --- FOOTER & CONTACT (SCHWEBEPHASE-OPTIMIERT) --- */
+        /* --- FOOTER & CONTACT --- */
         .cta-footer { 
             background-color: rgba(15, 17, 15, 0.95); 
             backdrop-filter: blur(10px); 
@@ -392,7 +410,7 @@
         <source src="/nature-sound.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="sound-toggle">
+    <button id="sound-toggle" aria-label="Audio-Wiedergabe umschalten">
         🔊 Sound einschalten
     </button>
 
@@ -461,7 +479,6 @@
         </div>
     </section>
 
-    <!-- In der Schwebephase: Fokus auf reinen Kontakt/Austausch statt kommerzieller Terminbuchung -->
     <footer id="kontakt" class="cta-footer">
         <div class="container">
             <h2>Erkenne deine Natur</h2>
